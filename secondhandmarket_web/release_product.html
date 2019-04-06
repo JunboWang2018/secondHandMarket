@@ -20,7 +20,31 @@
 				width: 100px;
 			}
 		</style>
-		
+		<script>
+			$(document).ready(function() {
+				$("#release_product").click(function() {
+					$.ajax({
+						url : "",
+						data : {
+							product_name : $("#product_name").val(),
+							product_type : $("#product_type").val(),
+							product_desc : $("#prodcut_desc").val(),
+							product_depreciation_rate : $("#product_depreciation_rate").val(),
+							product_price : $("#product_price").val(),
+							product_sale_way : $("#product_sale_way").val()
+						},
+						type : "POST",
+						dataType : "json",
+						success : function(data) {
+							
+						},
+						error : function() {
+							
+						}
+					});
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<!--引入头文件-->  
@@ -35,12 +59,12 @@
 					<div class="input-group">
 						
 						<span class="input-group-addon" style="width: 100px;">物品名称</span>
-						<input type="text" class="form-control" placeholder="请输入物品名称">
+						<input id="product_name" type="text" class="form-control" placeholder="请输入物品名称">
 					</div>
 					<br>
 					<div class="input-group">
 						<span class="input-group-addon" style="width: 100px;">分类</span>
-						<select class="form-control">
+						<select id="product_type" class="form-control">
 						  	<option>请选择物品分类</option>
 						  	<option value="PA">Pennsylvania</option>
 						  	<option value="CT">Connecticut</option>
@@ -52,22 +76,22 @@
 					<br>
 					<div class="input-group">
 						<span class="input-group-addon" style="width: 100px;">描述</span>
-						<input type="" class="form-control" placeholder="请输入物品描述">
+						<input id="prodcut_desc" type="" class="form-control" placeholder="请输入物品描述">
 					</div>
 					<br>
 					<div class="input-group">
 						<span class="input-group-addon" style="width: 100px;">折旧率</span>
-						<input type="" class="form-control" placeholder="请输入折旧率">
+						<input id="product_depreciation_rate" type="" class="form-control" placeholder="请输入折旧率">
 					</div>
 					<br>
 					<div class="input-group">
 						<span class="input-group-addon" style="width: 100px;">售价</span>
-						<input type="" class="form-control" placeholder="请输入售价">
+						<input id="product_price" type="text" class="form-control" placeholder="请输入售价">
 					</div>
 					<br>
 					<div class="input-group">
 						<span class="input-group-addon" style="width: 100px;">出售形式</span>
-						<select class="form-control">
+						<select id="product_sale_way" class="form-control">
 						  	<option>请选择出售形式</option>
 						  	<option value="PA">Pennsylvania</option>
 						  	<option value="CT">Connecticut</option>
@@ -78,7 +102,7 @@
 					</div>
 					<br>
 					<div style="margin-left: 160px;">
-						<button type="button" class="btn btn-primary" >发布物品</button>	
+						<button id="release_product" type="button" class="btn btn-primary" >发布物品</button>	
 					</div>
 			</div>
 		</div>
