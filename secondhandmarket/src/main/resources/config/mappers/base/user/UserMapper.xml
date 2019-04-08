@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.showclear.www.dao.base.UserDao">
+    <select id="login" resultType="cn.showclear.www.pojo.base.UserDo" parameterType="java.lang.String">
+        SELECT user_name, password FROM T_USER WHERE user_name = #{userName}
+    </select>
+
+    <insert id="register" parameterType="cn.showclear.www.pojo.base.UserDo">
+        INSERT INTO T_USER(user_name, password, create_date) VALUES(#{userName}, #{password}, #{createDate})
+    </insert>
+
+</mapper>

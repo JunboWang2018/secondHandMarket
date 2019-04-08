@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>登录页面</title>
+		<title>注册页面</title>
 		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
         <link rel="stylesheet" href="css/bootstrap.min.css" />
 		<script type="text/javascript" src="js/bootstrap.min.js" ></script>
@@ -24,8 +24,29 @@
 			.input-group-addon{
 				width: 67px;
 			}
-			
 		</style>
+		<script>
+			$(document).ready(function(){
+				$("#register").click(function(){
+					$.ajax({
+						type : "post",
+						url : "http://localhost:8080/ajax_json_jquery/ajaxServlet",
+						async : true,
+						data : {
+							username : $("#username").val(),
+							password : $("#password").val()
+						},
+						success : function(data) {
+							alert("success");
+							$(document).attr("href", "index.html");
+						},
+						error : function() {
+							alert("error");
+						}
+					});
+				});
+			});
+		</script>
 	</head>
 	<body>
 
@@ -33,21 +54,21 @@
 			<div class="col-md-5">
 				<div
 					style="width: 440px; border: 1px solid #E7E7E7; padding: 20px 0 20px 30px; border-radius: 5px; margin-top:; background: #fff;">
-					<font style="margin-left: 170px;" size="4">登录</font>
+					<font style="margin-left: 170px;" size="4">注册</font>
 					<div>&nbsp;</div>
 					<div class="input-group">
+						
 						<span class="input-group-addon">用户名</span>
-						<input type="text" class="form-control" placeholder="请输入用户名">
+						<input id="username" type="text" class="form-control" placeholder="请输入用户名">
 					</div>
 					<br>
 					<div class="input-group">
 						<span class="input-group-addon">密码</span>
-						<input type="password" class="form-control" placeholder="请输入密码">
+						<input id="password" type="password" class="form-control" placeholder="请输入密码">
 					</div>
 					<br>
-					<div style="margin-left: 140px;">
-						<button type="button" class="btn btn-primary">登录</button>		
-						<button type="button" class="btn btn-primary" >注册</button>	
+					<div style="margin-left: 160px;">
+						<button id="register" type="button" class="btn btn-primary" >注册</button>	
 					</div>
 			</div>
 		</div>

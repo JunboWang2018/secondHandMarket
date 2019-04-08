@@ -32,6 +32,7 @@
     <mvc:resources mapping="/plugin/**" location="/plugin/"/>
     <mvc:resources mapping="/images/**" location="/images/"/>
     <mvc:resources mapping="/resource/**" location="/resource/"/>
+
        
     
     <!-- 拦截器     --> 
