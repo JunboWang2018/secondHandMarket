@@ -33,13 +33,30 @@
 				$("#login").click(function() {
 					$.ajax({
 						type : "post",
-						url : "http://localhost:8080/ajax_json_jquery/ajaxServlet",
+						url : "/login.action",
 						async : true,
 						dataType : 'json',
 						data : {
 							username:$("#username").val(),
 							password: $("#password").val()
-						}
+						},
+						success: function(data) {
+                            var jsonData = JSON.parse(data);
+							alert(jsonData);
+							if (jsonData.code == 1) {
+							    alert(jsonData.message);
+                                $(location).attr("href", "index.html");
+                            } else {
+                                alert("登陆失败");
+                            }
+						},
+                        error: function (data) {
+                            var jsonData = JSON.parse(data);
+                            alert(jsonData);
+                            if (jsonData.code == 0) {
+                                alert(jsonData.message);
+                            }
+                        }
 					});
 				});
 			});
