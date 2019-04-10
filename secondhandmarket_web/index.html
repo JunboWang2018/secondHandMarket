@@ -10,6 +10,19 @@
 		<script type="text/javascript" src="js/bootstrap.min.js" ></script>
   		<script>
 			window.onload = function () {
+				//获取当前url
+				var curWwwPath = window.document.location.href;
+				alert(curWwwPath);
+				//获取主机地址之后的目录
+				var pathName = window.document.location.pathname;
+				alert(pathName);
+				var position = curWwwPath.indexOf(pathName);
+				//截取主机地址
+				var localhostPath = curWwwPath.substring(0, position);
+				alert(localhostPath);
+				//截取项目名
+				var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+				alert(localhostPath+projectName);
 				$("#header").load("header.html");
 			}
       </script>
