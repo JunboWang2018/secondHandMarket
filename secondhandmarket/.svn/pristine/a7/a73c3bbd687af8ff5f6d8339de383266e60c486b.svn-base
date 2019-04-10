@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录页面</title>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+		<style type="text/css">
+			.center-in-center{   
+            position: absolute;   
+            top: 50%;   
+            left: 50%;   
+            -webkit-transform: translate(-50%, -50%);   
+            -moz-transform: translate(-50%, -50%);   
+            -ms-transform: translate(-50%, -50%);   
+            -o-transform: translate(-50%, -50%);   
+            transform: translate(-50%, -50%);   
+        	}   
+			.input-group{
+				width: 378px;
+				margin-right: 30px;
+			}
+			.input-group-addon{
+				width: 67px;
+			}
+		</style>
+		<script>
+			$(document).ready(function(){
+				$("#register").click(function() {
+					$(location).attr("href", "register.html");
+				});	
+				$("#login").click(function() {
+					$.ajax({
+						type : "post",
+						url : "/login.action",
+						async : true,
+						dataType : 'json',
+						data : {
+							username:$("#username").val(),
+							password: $("#password").val()
+						},
+						success: function(data) {
+                            var jsonData = JSON.parse(data);
+							alert(jsonData);
+							if (jsonData.code == 1) {
+							    alert(jsonData.message);
+                                $(location).attr("href", "index.html");
+                            } else {
+                                alert("登陆失败");
+                            }
+						},
+                        error: function (data) {
+                            var jsonData = JSON.parse(data);
+                            alert(jsonData);
+                            if (jsonData.code == 0) {
+                                alert(jsonData.message);
+                            }
+                        }
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+
+		<div class="center-in-center">
+			<div class="col-md-5">
+				<div
+					style="width: 440px; border: 1px solid #E7E7E7; padding: 20px 0 20px 30px; border-radius: 5px; margin-top:; background: #fff;">
+					<font style="margin-left: 170px;" size="4">登录</font>
+					<div>&nbsp;</div>
+					<div class="input-group">
+						<span class="input-group-addon">用户名</span>
+						<input id="username" type="text" class="form-control" placeholder="请输入用户名">
+					</div>
+					<br>
+					<div class="input-group">
+						<span class="input-group-addon">密码</span>
+						<input id="password" type="password" class="form-control" placeholder="请输入密码">
+					</div>
+					<br>
+					<div style="margin-left: 140px;">
+						<button id="login" type="button" class="btn btn-primary">登录</button>		
+						<button id="register" type="button" class="btn btn-primary" >注册</button>	
+					</div>
+			</div>
+		</div>
+
+	</body>
+</html>

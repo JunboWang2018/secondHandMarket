@@ -17,8 +17,9 @@ public class ProductDo {
     private String image;
     private Double price;
     private Integer isSold;
-    private Integer typeCode;           //商品类型
-    private Integer saleWayCode;        //出售形式
+    private String typeCode;           //商品类型
+    private String saleWayCode;        //出售形式
+    private Integer timeLimit;
     private Integer userId;
     private Timestamp createDate;
     private Timestamp modifyDate;
@@ -95,20 +96,28 @@ public class ProductDo {
         this.isSold = isSold;
     }
 
-    public Integer getTypeCode() {
+    public String getTypeCode() {
         return typeCode;
     }
 
-    public void setTypeCode(Integer typeCode) {
+    public void setTypeCode(String typeCode) {
         this.typeCode = typeCode;
     }
 
-    public Integer getSaleWayCode() {
+    public String getSaleWayCode() {
         return saleWayCode;
     }
 
-    public void setSaleWayCode(Integer saleWayCode) {
+    public void setSaleWayCode(String saleWayCode) {
         this.saleWayCode = saleWayCode;
+    }
+
+    public Integer getTimeLimit() {
+        return timeLimit;
+    }
+
+    public void setTimeLimit(Integer timeLimit) {
+        this.timeLimit = timeLimit;
     }
 
     public Integer getUserId() {
@@ -149,6 +158,7 @@ public class ProductDo {
                 ", isSold=" + isSold +
                 ", typeCode=" + typeCode +
                 ", saleWayCode=" + saleWayCode +
+                ", timeLimit=" + timeLimit +
                 ", userId=" + userId +
                 ", createDate=" + createDate +
                 ", modifyDate=" + modifyDate +

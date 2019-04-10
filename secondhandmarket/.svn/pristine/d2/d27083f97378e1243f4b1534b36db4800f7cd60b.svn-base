@@ -1,0 +1,45 @@
+package cn.showclear.www.controller.data;
+
+import cn.com.scooper.common.resp.APIRespJson;
+
+/**
+ * @author Wang Junbo
+ * @description
+ * @date 2019/4/9
+ */
+public class UserDataController extends BaseDataController{
+    private int code;
+    private String msg;
+
+    public UserDataController() {
+    }
+
+    public UserDataController(int code, String msg) {
+        this.code = code;
+        this.msg = msg;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    /**
+     * 返回指定错误码，并携带错误信息
+     * @return
+     */
+    public APIRespJson responseUserData() {
+        return this.response(code, msg);
+    }
+}

@@ -1,0 +1,82 @@
+package cn.showclear.www.controller.data;
+
+import cn.com.scooper.common.resp.APIRespJson;
+import cn.showclear.www.pojo.base.DemandInfoDo;
+import cn.showclear.www.pojo.base.ProductDo;
+
+import java.util.List;
+
+/**
+ * @author Wang Junbo
+ * @description
+ * @date 2019/4/9
+ */
+public class SearchDataController<T> extends BaseDataController{
+    private List<T> dataList;
+    private int code;
+    private String msg;
+    private T data;
+
+    public SearchDataController() {
+    }
+
+    public SearchDataController(T data) {
+        this.data = data;
+    }
+
+    public SearchDataController(List<T> dataList) {
+        this.dataList = dataList;
+    }
+
+    public SearchDataController(int code, String msg) {
+        this.code = code;
+        this.msg = msg;
+    }
+
+    public SearchDataController(List<T> dataList, int code, String msg) {
+        this.dataList = dataList;
+        this.code = code;
+        this.msg = msg;
+    }
+
+    public List<T> getDataList() {
+        return dataList;
+    }
+
+    public void setDataList(List<T> dataList) {
+        this.dataList = dataList;
+    }
+
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    /**
+     * 返回查询结果
+     * @return
+     */
+    public APIRespJson responseSearchData() {
+        return this.responseData(data);
+    }
+
+    /**
+     * 返回查询结果集
+     * @return
+     */
+    public APIRespJson responseSearchDataList() {
+        return this.responseList(dataList);
+    }
+
+    /**
+     * 返回指定错误码，并携带错误信息
+     * @return
+     */
+    public APIRespJson responseMsgData() {
+        return this.response(code, msg);
+    }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.showclear.www.dao.base.ReleaseDao">
+    <insert id="releaseProduct" parameterType="cn.showclear.www.pojo.base.ProductDo">
+        INSERT INTO T_PRODUCT(product_number, name, description, image, depreciation_rate, quantity, price, is_sold, type_code, sale_way_code, user_id, create_date) VALUES(#{productNumber}, #{name}, #{description}, #{image}, #{depreciationRate}, #{quantity}, #{price}, #{isSold}, #{typeCode}, #{saleWayCode}, #{userId}, CURRENT_TIMESTAMP);
+    </insert>
+
+    <insert id="releaseDemandInfo" parameterType="cn.showclear.www.pojo.base.DemandInfoDo">
+        INSERT INTO T_DEMAND_INFO(name, type_code, depreciation_rate, number, price, other, user_id, create_date) VALUES(#{name}, #{typeCode}, #{depreciationRate}, #{number}, #{price}, #{other}, #{userId}, CURRENT_TIMESTAMP);
+    </insert>
+
+</mapper>
