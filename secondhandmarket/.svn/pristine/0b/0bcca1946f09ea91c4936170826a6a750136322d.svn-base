@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.showclear.www.dao.base.user.UserDao">
+    <sql id="Base_Col_List">
+            user_id, user_name, password, create_date, modify_date
+    </sql>
+
+    <resultMap id="Base_Col_ResultMap" type="cn.showclear.www.pojo.base.UserDo">
+        <result property="userId" column="user_id"/>
+        <result property="userName" column="user_name"/>
+        <result property="password" column="password"/>
+        <result property="create_date" column="createDate"/>
+        <result property="modify_date" column="modifyDate"/>
+    </resultMap>
+
+    <select id="searchUser" resultType="cn.showclear.www.pojo.base.UserDo" parameterType="java.lang.String">
+        SELECT
+        <include refid="Base_Col_List"/>
+        FROM T_USER
+        WHERE user_name = #{userName}
+    </select>
+
+    <select id="searchUserByCol" resultMap="Base_Col_ResultMap" parameterType="cn.showclear.www.pojo.base.UserDo">
+        SELECT
+        <include refid="Base_Col_List"/>
+        FROM T_USER
+        <where>
+            <if test="userName != null">
+                user_name = #{userName}
+            </if>
+            <if test="password != null">
+                AND password = #{password}
+            </if>
+            <if test="createDate != null">
+                AND  create_date = #{createDate}
+            </if>
+            <if test="modifyDate != null">
+                AND  modify_date = #{modifyDate}
+            </if>
+        </where>
+    </select>
+
+    <insert id="register" parameterType="cn.showclear.www.pojo.base.UserDo">
+        INSERT INTO T_USER(user_name, password, create_date) VALUES(#{userName}, #{password}, CURRENT_TIMESTAMP)
+    </insert>
+
+
+</mapper>

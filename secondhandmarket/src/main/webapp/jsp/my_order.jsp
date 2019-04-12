@@ -1,0 +1,147 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的订单</title>
+
+    <script type="text/javascript" src="/secondhandmarket/js/jquery-3.3.1.min.js" ></script>
+    <link rel="stylesheet" href="/secondhandmarket/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/secondhandmarket/js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="/secondhandmarket/js/loadHeader.js"></script>
+    <script type="text/javascript" src="/secondhandmarket/js/common.js"></script>
+    <style type="text/css">
+        td{
+            text-align: center
+        }
+
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $("#check_record").click(function(){
+                $("#myModalLabel").text("记录");
+                $('#myModal').modal();
+            });
+        });
+
+    </script>
+</head>
+<body>
+<jsp:include page="header.jsp"/>
+<div class="container-fluid" >
+    <table class="table table-striped table-hover">
+        <span class="label label-info">购买记录</span>
+        <thead>
+        <tr>
+            <th width="20%" style="text-align: center;">名称</th>
+            <th width="60%" style="text-align: center;">描述</th>
+            <th width="10%" style="text-align: center;">价格</th>
+            <th width="10%" style="text-align: center;">交易类型</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Tanmay</td>
+            <td>Bangalore</td>
+            <td>560001</td>
+            <td>560001</td>
+        </tr>
+        <tr>
+            <td>Sachin</td>
+            <td>Mumbai</td>
+            <td>400003</td>
+            <td>560001</td>
+        </tr>
+        <tr>
+            <td>Uma</td>
+            <td>Pune</td>
+            <td>411027</td>
+            <td>560001</td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="table table-striped table-hover">
+        <span class="label label-info">出售记录</span>
+        <thead>
+        <tr>
+            <th width="20%" style="text-align: center;">名称</th>
+            <th width="60%" style="text-align: center;">描述</th>
+            <th width="10%" style="text-align: center;">价格</th>
+            <th width="10%" style="text-align: center;">交易类型</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Tanmay</td>
+            <td>Bangalore</td>
+            <td>560001</td>
+            <td>竞价
+                <button id="check_record">查看记录</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Sachin</td>
+            <td>Mumbai</td>
+            <td>400003</td>
+            <td>560001</td>
+        </tr>
+        <tr>
+            <td>Uma</td>
+            <td>Pune</td>
+            <td>411027</td>
+            <td>560001</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<!--
+    作者：offline
+    时间：2019-04-05
+    描述：隐藏的记录框
+-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">新增</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped table-hover">
+                    <span class="label label-info">竞价记录</span>
+                    <thead>
+                    <tr>
+                        <th width="40%" style="text-align: center;">出价人</th>
+                        <th width="20%" style="text-align: center;">出价</th>
+                        <th width="40%" style="text-align: center;">出价时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Tanmay</td>
+                        <td>Bangalore</td>
+                        <td>560001</td>
+                    </tr>
+                    <tr>
+                        <td>Sachin</td>
+                        <td>Mumbai</td>
+                        <td>400003</td>
+                    </tr>
+                    <tr>
+                        <td>Uma</td>
+                        <td>Pune</td>
+                        <td>411027</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

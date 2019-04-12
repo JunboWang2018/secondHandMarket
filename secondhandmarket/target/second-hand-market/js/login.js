@@ -1,27 +1,26 @@
 $(document).ready(function(){
     $("#login").click(function() {
         $.ajax({
-            type : "post",
-            url : "login",
+            type : "get",
+            url : "/secondhandmarket/data/user/login",
             async : true,
             dataType : 'json',
             data : {
-                username:$("#username").val(),
-                password: $("#password").val()
+                userName : $("#username").val(),
+                password : $("#password").val()
             },
             success: function(data) {
-                if (data.code == 1) {
+                if (data.code == 102) {
                     alert(data.message);
-                    jumpToIndex();
-                } else if (data.code == 0) {
-                    alert(data.message);
+                    window.location.href = getRootPath() + "/";
                 } else {
-                    alert("登陆失败");
+                    alert(data.message);
                 }
             },
-            error: function (data) {
+            error: function () {
                 alert("请求失败");
             }
         });
     });
+
 });

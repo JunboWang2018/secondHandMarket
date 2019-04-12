@@ -1,6 +1,5 @@
 package cn.showclear.www.controller.view;
 
-import cn.showclear.www.controller.data.BaseDataController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -12,27 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @date 2019/4/10
  */
 @Controller
-public class UserViewController extends BaseDataController {
+@RequestMapping("/view/user")
+public class UserViewController {
     private static final Logger log = LoggerFactory.getLogger(UserViewController.class);
-
-    /**
-     * 跳转首页
-     * @return
-     */
-    @RequestMapping("/")
-    public String index() {
-        return "/html/index.html";
-    }
-
-    /**
-     * 跳转首页
-     * @return
-     */
-    @RequestMapping("/index")
-    public String index1() {
-        log.info("index1");
-        return "/html/index.html";
-    }
 
     /**
      * 跳转登录页面
@@ -41,7 +22,7 @@ public class UserViewController extends BaseDataController {
     @RequestMapping("/toLogin")
     public String login() {
         log.info("login view");
-        return "html/login.html";
+        return "/jsp/login.jsp";
     }
 
     /**
@@ -51,7 +32,7 @@ public class UserViewController extends BaseDataController {
     @RequestMapping("/toRegister")
     public String register() {
         log.info("to register");
-        return "html/register.html";
+        return "/jsp/register.jsp";
     }
 
 

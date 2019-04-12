@@ -1,25 +1,23 @@
 $(document).ready(function () {
     $("#register").click(function(){
         $.ajax({
-            type : "post",
-            url : "register",
+            type : "get",
+            url : "/secondhandmarket/data/user/register",
             async : true,
             dataType : 'json',
             data : {
-                username : $("#username").val(),
+                userName : $("#username").val(),
                 password : $("#password").val()
             },
             success: function(data) {
-                if (data.code == 1) {
+                if (data.code == 103) {
                     alert(data.message);
-
-                } else if (data.code == 0) {
-                    alert(data.message);
+                    window.location.href = getRootPath() + "/";
                 } else {
-                    alert("注册失败");
+                    alert(data.message);
                 }
             },
-            error: function (data) {
+            error: function () {
                 alert("请求失败");
             }
         });

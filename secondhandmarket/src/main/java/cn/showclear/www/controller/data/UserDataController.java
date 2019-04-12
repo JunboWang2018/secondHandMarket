@@ -2,6 +2,7 @@ package cn.showclear.www.controller.data;
 
 import cn.com.scooper.common.resp.APIRespJson;
 import cn.showclear.www.common.constant.CommonConstant;
+import cn.showclear.www.common.constant.Message;
 import cn.showclear.www.pojo.base.UserDo;
 import cn.showclear.www.service.user.UserService;
 import com.alibaba.fastjson.JSONObject;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * @author Junbo Wang
@@ -22,7 +25,7 @@ import javax.servlet.http.HttpSession;
  * @date 2019/4/5
  */
 @Controller
-@Scope("prototype")
+@RequestMapping("/data/user")
 public class UserDataController extends BaseDataController{
     private static final Logger log = LoggerFactory.getLogger(UserDataController.class);
 
@@ -30,79 +33,83 @@ public class UserDataController extends BaseDataController{
     private UserService userService;
 
     /**
-     * 用户登录，登录成功跳转到首页
-     * @param username
-     * @param password
+     * 用户登录：
+     *  1. 登录成功将用户名存入session
+     *  2. 返回登录结果信息
+     * @param userDo
      * @param session
      * @param response
      * @return
      */
-    @RequestMapping(value = "/login")
-    public void login(String username, String password, HttpSession session, HttpServletResponse response) {
-        log.info("Enter UserController.login");
-        log.info("username = " + username + ", password = " + password);
+    @RequestMapping("/login")
+    public void login(UserDo userDo, HttpSession session, HttpServletResponse response) {
+        log.info("username = " + userDo.getUserName() + ", password = " + userDo.getPassword());
+        PrintWriter writer = null;
+        Message message = null;
+        //设置返回数据格式为json
+        response.setContentType("application/json");
         try {
-            if (StringUtils.isEmpty(username)) {
-                response.getWriter().write(JSONObject.toJSONString(this.response(0, "用户名为空！")));
-            }
-            if (StringUtils.isEmpty(password)) {
-                response.getWriter().write(JSONObject.toJSONString(this.response(0, "密码为空")));
-            }
-            UserDo userDo = userService.userLogin(username);
-            //设置返回数据格式为json
-            response.setContentType("application/json");
-            if (userDo == null) {
-                log.info("username is not exist");
-                response.getWriter().write(JSONObject.toJSONString(this.response(0, "用户名不存在")));
-            } else if (userDo.getPassword().equals(password)) {
-                log.info("login success, put user to session");
-                response.getWriter().write(JSONObject.toJSONString(this.response(1, "登陆成功")));
-                session.setAttribute("user", username);
-            } else {
-                log.info("login failed, password is not right");
-                response.getWriter().write(JSONObject.toJSONString(this.response(0, "密码错误")));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+            writer = response.getWriter();
+            message = userService.userLogin(userDo);
+        } catch (IllegalArgumentException e) {
+            writer.write(JSONObject.toJSONString(this.handleIllegalArgumentException(e)));
+        } catch (IOException e) {
+            log.error("获取response.write异常",e);
         }
-        log.info("exit UserController.login");
+        //若登录成功，将用户名放入session
+        if (message.getCode() == 102) {
+            session.setAttribute("user", userDo.getUserName());
+        }
+        writer.write(JSONObject.toJSONString(this.response(message.getCode(), message.getMessage())));
     }
 
     /**
-     * 用户注册，注册成功跳转到首页
-     * @param username
-     * @param password
+     * 用户注册:
+     *  1. 注册成功将用户名存入session
+     *  2. 返回注册结果信息
+     * @param userDo
      * @return
      */
     @RequestMapping("/register")
-    public void register(String username, String password, HttpSession session, HttpServletResponse response) {
-        log.info("enter UserController.register");
-        log.info("username = " + username + ", password = " + password);
+    public void register(UserDo userDo, HttpSession session, HttpServletResponse response) {
+        PrintWriter writer = null;
+        Message message = null;
+        //设置返回数据格式为json
+        response.setContentType("application/json");
         try {
-            if (StringUtils.isEmpty(username)) {
-                response.getWriter().write(JSONObject.toJSONString(new APIRespJson(0, "用户名为空！")));
-            }
-            if (StringUtils.isEmpty(password)) {
-                response.getWriter().write(JSONObject.toJSONString(new APIRespJson(0, "密码为空！")));
-            }
-            //查询用户是否存在
-            UserDo userDo = userService.userLogin(username);
-            //设置返回数据格式为json
-            response.setContentType("application/json");
-            if (userDo != null) {
-                log.info("username is exist");
-                response.getWriter().write(JSONObject.toJSONString(new APIRespJson(0, "用户名已存在")));
-            } else {
-                String result = userService.userRegister(username,password);
-                if (result.equals(CommonConstant.SUCCESS)) {
-                    log.info("register success, put user to session");
-                    response.getWriter().write(JSONObject.toJSONString(new APIRespJson(1, "注册成功")));
-                    session.setAttribute("user", username);
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+            writer = response.getWriter();
+            message = userService.userRegister(userDo);
+        } catch (IllegalArgumentException e) {
+            writer.write(JSONObject.toJSONString(this.handleIllegalArgumentException(e)));
+        } catch (IOException e) {
+            log.error("获取response.write异常", e);
         }
-        log.info("exit UserController.register");
+        if (message.getCode() == 103) {
+            log.info("register success, put user to session");
+            session.setAttribute("user", userDo.getUserName());
+        }
+        writer.write(JSONObject.toJSONString(this.response(message.getCode(), message.getMessage())));
+    }
+
+    /**
+     * 用户退出:
+     *  1. sesssion中清除用户信息
+     * @return
+     */
+    @RequestMapping("/logout")
+    public String register(HttpSession session, HttpServletResponse response) {
+        PrintWriter writer = null;
+        Message message = null;
+        //设置返回数据格式为json
+        response.setContentType("application/json");
+        try {
+            writer = response.getWriter();
+        } catch (IllegalArgumentException e) {
+            writer.write(JSONObject.toJSONString(this.handleIllegalArgumentException(e)));
+        } catch (IOException e) {
+            log.error("获取response.write异常", e);
+        }
+        session.removeAttribute("user");
+        return "/jsp/index.jsp";
     }
 }

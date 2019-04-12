@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>注册页面</title>
-		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
-        <link rel="stylesheet" href="css/bootstrap.min.css" />
-		<script type="text/javascript" src="js/bootstrap.min.js" ></script>
-		<script type="text/javascript" src="js/register.js" ></script>
+		<script type="text/javascript" src="/secondhandmarket/js/jquery-3.3.1.min.js" ></script>
+        <link rel="stylesheet" href="/secondhandmarket/css/bootstrap.min.css" />
+		<script type="text/javascript" src="/secondhandmarket/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="/secondhandmarket/js/register.js" ></script>
 		<style type="text/css">
 			.center-in-center{   
             position: absolute;   
@@ -26,38 +26,6 @@
 				width: 67px;
 			}
 		</style>
-		<script>
-			/*$(document).ready(function () {
-				$("#register").click(function(){
-					$.ajax({
-						type : "post",
-						url : "register",
-						async : true,
-						data : {
-							username : $("#username").val(),
-							password : $("#password").val()
-						},
-						success: function(data) {
-							var jsonData = JSON.parse(data);
-							alert(jsonData);
-							if (jsonData.code == 1) {
-								alert(jsonData.message);
-								$(location).attr("href", "index.html");
-							} else {
-								alert("注册失败");
-							}
-						},
-						error: function (data) {
-							var jsonData = JSON.parse(data);
-							alert(jsonData);
-							if (jsonData.code == 0) {
-								alert(jsonData.message);
-							}
-						}
-					});
-				});
-			});*/
-		</script>
 	</head>
 	<body>
 

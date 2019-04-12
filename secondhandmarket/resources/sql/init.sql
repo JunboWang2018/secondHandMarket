@@ -91,7 +91,7 @@ CREATE TABLE T_DEMAND_INFO(
     demand_info_id INT PRIMARY KEY AUTO_INCREMENT,
     demand_info_number varchar(50) NOT NULL DEFAULT '',
     name VARCHAR(50) NOT NULL DEFAULT '',
-    type_code INT NOT NULL DEFAULT 0,
+    type_code CHAR(4) NOT NULL DEFAULT 0,
     depreciation_rate VARCHAR(10),
     quantity INT,
     price FLOAT,

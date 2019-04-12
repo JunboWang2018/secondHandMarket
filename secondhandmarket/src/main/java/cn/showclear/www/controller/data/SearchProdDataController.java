@@ -1,0 +1,61 @@
+package cn.showclear.www.controller.data;
+
+import cn.showclear.www.pojo.base.ProductDo;
+import cn.showclear.www.service.product.ProductService;
+import com.alibaba.fastjson.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+/**
+ * @author Wang Junbo
+ * @description 物品查询类
+ * @date 2019/4/11
+ */
+@Controller
+@RequestMapping("/data/search")
+public class SearchProdDataController extends BaseDataController {
+    private static final Logger log = LoggerFactory.getLogger(SearchProdDataController.class);
+
+    @Autowired
+    private ProductService productService;
+
+    @RequestMapping("/searchProduct")
+    public void searchProduct(String productNumber, HttpServletResponse response) {
+        log.info("productNumber = " + productNumber);
+        PrintWriter writer = null;
+        ProductDo productDo = null;
+        try {
+            writer = response.getWriter();
+            productService.searchProduct(productNumber);
+        } catch (IOException e) {
+            log.error("获取response.writer失败", e);
+        } catch (IllegalArgumentException e) {
+            writer.write(JSONObject.toJSONString(this.handleIllegalArgumentException(e)));
+        }
+
+    }
+
+    @RequestMapping("/searchProdList")
+    public void searchProductList(ProductDo productDo, HttpServletResponse response) {
+        log.info(productDo.toString());
+        PrintWriter writer = null;
+        List<ProductDo> productList = null;
+        try {
+            writer = response.getWriter();
+            productList = productService.searchProductList(productDo);
+        } catch (IOException e) {
+            log.error("获取response.writer失败", e);
+        } catch (IllegalArgumentException e) {
+            writer.write(JSONObject.toJSONString(this.handleIllegalArgumentException(e)));
+        }
+        writer.write(JSONObject.toJSONString(this.responseList(productList)));
+    }
+}

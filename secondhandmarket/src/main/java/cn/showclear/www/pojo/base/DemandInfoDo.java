@@ -12,7 +12,7 @@ public class DemandInfoDo {
     private Integer demandInfoId;
     private String demandInfoNumber;
     private String name;
-    private Integer typeCode;
+    private String typeCode;
     private String depreciationRate;
     private Integer quantity;
     private Double price;
@@ -45,11 +45,11 @@ public class DemandInfoDo {
         this.name = name;
     }
 
-    public Integer getTypeCode() {
+    public String getTypeCode() {
         return typeCode;
     }
 
-    public void setTypeCode(Integer typeCode) {
+    public void setTypeCode(String typeCode) {
         this.typeCode = typeCode;
     }
 
