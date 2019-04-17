@@ -23,6 +23,7 @@
                 <c:if test="${!empty sessionScope.user}">
                     <li>你好，${sessionScope.user}</li>
                     <li><a href="/secondhandmarket/data/user/logout">退出</a></li>
+                    <li><a href="/secondhandmarket/view/order/toMyOrder">我的订单</a></li>
                 </c:if>
 
                 <li><a href="/secondhandmarket/view/release/toReleaseProduct">发布物品</a></li>
@@ -49,10 +50,10 @@
                 </div>
                 <form class="navbar-form navbar-right" role="search" >
                     <div class="form-group">
-                        <input id="search_key" type="text" class="form-control" placeholder="Search">
+                        <input id="search_key" type="text" class="form-control">
                     </div>
-                    <button type="button" class="btn btn-default" onclick="prodKeySearch()">搜索物品</button>
-                    <button type="button" class="btn btn-default" onclick="demdInfoKeySearch()">搜索求购</button>
+                    <button type="button" class="btn btn-default" onclick="toProdKeySearch()">搜索物品</button>
+                    <button type="button" class="btn btn-default" onclick="toDemdInfoKeySearch()">搜索求购</button>
                 </form>
             </div>
         </nav>

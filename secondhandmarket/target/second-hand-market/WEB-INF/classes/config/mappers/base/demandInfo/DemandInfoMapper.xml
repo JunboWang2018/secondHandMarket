@@ -27,34 +27,34 @@
         demand_info_id, <include refid="Base_Col_List"/>, modify_date
         FROM T_DEMAND_INFO
         <where>
-            <if test="demandInfoId != null">
+            <if test="demandInfoId != null and demandInfoId != ''">
                 AND demand_info_id=#{demandInfoId}
             </if>
-            <if test="demandInfoNumber != null">
+            <if test="demandInfoNumber != null and demandInfoNumber != ''">
                 AND demand_info_number=#{demandInfoNumber}
             </if>
-            <if test="name != null">
+            <if test="name != null and name != ''">
                 AND name LIKE "%"#{name}"%"
             </if>
-            <if test="depreciationRate != null">
+            <if test="depreciationRate != null and depreciationRate != ''">
                 AND depreciation_rate = #{depreciationRate}
             </if>
-            <if test="quantity != null">
+            <if test="quantity != null and quantity != ''">
                 AND quantity = #{quantity}
             </if>
-            <if test="price != null">
+            <if test="price != null and price != ''">
                 AND price = #{price}
             </if>
-            <if test="typeCode != null">
+            <if test="typeCode != null and typeCode != ''">
                 AND type_code = #{typeCode}
             </if>
-            <if test="other != null">
+            <if test="other != null and other != ''">
                 AND other = #{other}
             </if>
-            <if test="userId != null">
+            <if test="userId != null and userId != ''">
                 AND user_id = #{userId}
             </if>
-            <if test="createDate != null">
+            <if test="createDate != null and createDate != ''">
                 AND create_date = #{create_date}
             </if>
         </where>
@@ -65,5 +65,16 @@
         T_DEMAND_INFO(<include refid="Base_Col_List"/>)
         VALUES(#{demandInfoNumber}, #{name}, #{typeCode}, #{depreciationRate}, #{quantity}, #{price}, #{other}, #{userId}, CURRENT_TIMESTAMP);
     </insert>
+
+    <select id="searchDemdInfoListByQo" parameterType="cn.showclear.www.pojo.base.SearchProdListQo" resultMap="Base_Col_ResultMap">
+        SELECT
+        demand_info_id, <include refid="Base_Col_List"/>, modify_date
+        FROM T_DEMAND_INFO
+        <where>
+            <if test="typeCode != null and typeCode != ''">
+                type_code=#{typeCode}
+            </if>
+        </where>
+    </select>
 
 </mapper>

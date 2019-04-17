@@ -10,74 +10,52 @@
     <script type="text/javascript" src="/secondhandmarket/js/bootstrap.min.js" ></script>
     <script type="text/javascript" src="/secondhandmarket/js/loadHeader.js"></script>
     <script type="text/javascript" src="/secondhandmarket/js/common.js"></script>
+    <script>
+        window.onload = function () {
+            var productNumber = "${productNumber}";
+            prodNumberSearch(productNumber);
+        }
+    </script>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-<div class="container">
-    <div class="row">
-        <div
-                style="border: 1px solid #e4e4e4; width: 930px; margin-bottom: 10px; margin: 0 auto; padding: 10px; margin-bottom: 10px;">
-            <a href="search.html">分类名&nbsp;&nbsp;</a>&gt;&nbsp;物品名
-        </div>
-
-        <div style="margin: 0 auto; width: 950px;">
-            <div class="col-md-6">
-                <img style="opacity: 1; width: 400px; height: 350px;" title=""
-                     class="medium"
-                     src="">
-            </div>
-
-            <div class="col-md-6" style="margin-top: 10px;">
-                <div>
-                    <strong>物品名</strong>
-                </div>
-
-                <div style="margin: 10px 0 10px 0;">
-                    当前最高价: <strong style="color: #ef0101;">￥：100元</strong> 原价：
-                    <span>￥10.00元</span>
-                </div>
-
-                <div style="margin: 10px 0 10px 0;">
-                    交易方式: <span>竞拍</span>
-                </div>
-
-                <div style="margin: 10px 0 10px 0;">
-                    倒计时: <span>time</span>
-                </div>
-
-                <div
-                        style="padding: 10px; border: 1px solid #e7dbb1; width: 330px; margin: 15px 0 10px 0;; background-color: #FFFFFF;">
-
-                    <div
-                            style="border-bottom: 1px solid #faeac7; margin-top: 20px; padding-left: 10px;">
-                        出价: <input id="quantity" name="quantity" value="1"
-                                   maxlength="4" size="10" type="text">
-                    </div>
-
-                    <div style="margin: 20px 0 10px 0;; text-align: center;">
-                        <a href="cart.htm"> <input
-                                style="background: #BCE8F1; height: 36px; width: 127px;"
-                                value="出价" type="button">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div style="width: 950px; margin: 0 auto;">
+    <div class="container">
+        <div class="row">
             <div
-                    style="background-color: #FFFFF; width: 930px; padding: 10px 10px; margin: 10px 0 10px 0; ">
-                <strong>物品介绍</strong>
+                    style="border: 1px solid #e4e4e4; width: 930px; margin-bottom: 10px; margin: 0 auto; padding: 10px; margin-bottom: 10px;">
+                <span id="navTypeName">分类名</span>&nbsp;&nbsp;&gt;&nbsp<span id="navProdName"></span>;
             </div>
 
-            <div>
-                <img
-                        src="">
+            <div style="margin: 0 auto; width: 950px;">
+                <div class="col-md-6">
+                    <img id="prodImg" style="opacity: 1; width: 400px; height: 350px;" title=""
+                         class="medium"
+                         src="">
+                </div>
+
+                <div class="col-md-6" style="margin-top: 10px;">
+                    <div>
+                        <strong>物品编号 : </strong>
+                        <span id="prodNumber"></span>
+                    </div>
+                    <br>
+                    <div>
+                        <strong>物品名 : </strong>
+                        <span id="prodName"></span>
+                    </div>
+                    <br>
+                    <div id="saleInfo">
+
+                    </div>
+                </div>
             </div>
         </div>
-
+        <div class="row" style="margin-top: 40px">
+            <h4><strong>物品描述</strong></h4>
+            <br>
+            <span id="prodDesc"></span>
+        </div>
     </div>
-</div>
 </body>
 </html>
 

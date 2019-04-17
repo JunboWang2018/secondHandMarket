@@ -1,0 +1,65 @@
+package cn.showclear.www.service.biddingRecord.impl;
+
+import cn.showclear.www.common.constant.Message;
+import cn.showclear.www.dao.base.biddingRecord.BiddingRecordDao;
+import cn.showclear.www.pojo.base.BiddingRecordDo;
+import cn.showclear.www.service.biddingRecord.BiddingRecordService;
+import cn.showclear.www.service.validate.ValidateService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * @author Wang Junbo
+ * @description
+ * @date 2019/4/15
+ */
+@Service
+public class BiddingRecordServiceImpl implements BiddingRecordService {
+    private static final Logger log = LoggerFactory.getLogger(BiddingRecordServiceImpl.class);
+
+    @Autowired
+    private BiddingRecordDao biddingRecordDao;
+
+    @Autowired
+    private ValidateService validateService;
+
+    @Override
+    public List<BiddingRecordDo> searchBiddRecordList(BiddingRecordDo biddingRecordDo) {
+        validateService.validateBiddRecdSearch(biddingRecordDo);
+        log.info("data validate pass before search bidding record list");
+        return biddingRecordDao.searchBiddRecdList(biddingRecordDo);
+    }
+
+    @Override
+    public BiddingRecordDo searchMaxPriceRecord(BiddingRecordDo biddingRecordDo) {
+        List<BiddingRecordDo> list = this.searchBiddRecordList(biddingRecordDo);
+        if (list == null || list.size() == 0) {
+            log.info("bidding record is null");
+            return null;
+        }
+        BiddingRecordDo maxPriceRecord = list.get(0);
+        for (int i = 0; i < list.size(); i++) {
+            if (maxPriceRecord.getBiddingPrice() < list.get(i).getBiddingPrice()) {
+                maxPriceRecord = list.get(i);
+            }
+        }
+        log.info("max price record is " + maxPriceRecord.toString());
+        return maxPriceRecord;
+    }
+
+    @Override
+    public Message addBiddRecord(BiddingRecordDo biddingRecordDo) {
+        validateService.validateBiddRecdInsert(biddingRecordDo);
+        log.info("data validate pass before insert bidding record");
+        Integer result = biddingRecordDao.addRecord(biddingRecordDo);
+        if (result == 1) {
+            return Message.BIDDING_SUCCESS;
+        } else {
+            return Message.BIDDING_FAILED;
+        }
+    }
+}

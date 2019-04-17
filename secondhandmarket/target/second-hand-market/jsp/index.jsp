@@ -38,37 +38,39 @@
                 <div class="form-group condition-search" >
                     <label for="product_type">物品分类:</label>
                     <select id="product_type" class="form-control" style="width: 200px; display: inline-block;">
-                        <option>请选择物品分类</option>
-                        <option value="test">家具</option>
-                        <option value="test">电器</option>
-                        <option value="test">数码</option>
-                        <option value="test">交通工具</option>
-                        <option value="test">五金器具</option>
-                        <option value="test">装饰摆件</option>
-                        <option value="test">服饰包具</option>
-                        <option value="test">点券</option>
-                        <option value="test">数字商品</option>
+                        <option value="">请选择物品分类</option>
+                        <option value="FURN">家具</option>
+                        <option value="ELAP">电器</option>
+                        <option value="DGTL">数码</option>
+                        <option value="TSPT">交通工具</option>
+                        <option value="HDWR">五金器具</option>
+                        <option value="DCRT">装饰摆件</option>
+                        <option value="CLTB">服饰包具</option>
+                        <option value="TCKT">点券</option>
+                        <option value="DGTP">数字商品</option>
                     </select>
                 </div>
                 <div class="form-group condition-search">
                     <label for="product_depreciationRate">折旧率:</label>
                     <select id="product_dr_condition" class="form-control" style="width: 110px; display: inline-block;">
-                        <option value="=">等于</option>
-                        <option value=">">大于</option>
-                        <option value=">=">大于等于</option>
-                        <option value="<">小于</option>
-                        <option value="<=">小于等于</option>
+                        <option value="equal">等于</option>
+                        <option value="big">大于</option>
+                        <option value="bigEqual">大于等于</option>
+                        <option value="small">小于</option>
+                        <option value="smallEqual">小于等于</option>
                     </select>
                     <select id="product_depreciationRate" class="form-control" style="width: 140px; display: inline-block;">
-                        <option>请选择折旧率</option>
+                        <option value="">请选择折旧率</option>
                         <option value="0.1">0.1</option>
                         <option value="0.2">0.2</option>
+                        <option value="0.3">0.3</option>
                         <option value="0.4">0.4</option>
                         <option value="0.5">0.5</option>
                         <option value="0.6">0.6</option>
                         <option value="0.7">0.7</option>
                         <option value="0.8">0.8</option>
                         <option value="0.9">0.9</option>
+                        <option value="1">1(全新)</option>
                     </select>
                 </div>
                 <div class="form-group condition-search">
@@ -80,14 +82,14 @@
                 <div class="form-group condition-search">
                     <label for="product_saleWay">出售形式:</label>
                     <select id="product_saleWay" class="form-control" style="width: 200px; display: inline-block;">
-                        <option>请选择出售形式</option>
-                        <option value="test">一口价</option>
-                        <option value="test">竞价</option>
-                        <option value="test">议价</option>
+                        <option value="">请选择出售形式</option>
+                        <option value="BOUT">一口价</option>
+                        <option value="BIDD">竞价</option>
+                        <option value="BARG">议价</option>
                     </select>
                 </div>
                 <div class="form-group condition-search" >
-                    <button id="prod_condtion_search" type="button" class="btn btn-primary" >条件搜索</button>
+                    <button id="prod_condtion_search" type="button" class="btn btn-primary" onclick="prodListConditionSearch()">条件搜索</button>
                 </div>
             </div>
         </div>
@@ -95,7 +97,7 @@
     <div id="product_list" class="container-fluid">
 
     </div>
-    <div class="container-fluid" style="margin-bottom: 10px;">
+    <div class="container-fluid" style="margin-top: 10px;">
         <h3><span class="label label-info">求购信息</span></h3>
     </div>
     <div class="container-fluid">
@@ -107,41 +109,43 @@
                 <div class="form-group condition-search" >
                     <label for="demandInfo_type">物品分类:</label>
                     <select id="demandInfo_type" class="form-control" style="width: 200px; display: inline-block;">
-                        <option>请选择物品分类</option>
-                        <option value="test">家具</option>
-                        <option value="test">电器</option>
-                        <option value="test">数码</option>
-                        <option value="test">交通工具</option>
-                        <option value="test">五金器具</option>
-                        <option value="test">装饰摆件</option>
-                        <option value="test">服饰包具</option>
-                        <option value="test">点券</option>
-                        <option value="test">数字商品</option>
+                        <option value="">请选择物品分类</option>
+                        <option value="FURN">家具</option>
+                        <option value="ELAP">电器</option>
+                        <option value="DGTL">数码</option>
+                        <option value="TSPT">交通工具</option>
+                        <option value="HDWR">五金器具</option>
+                        <option value="DCRT">装饰摆件</option>
+                        <option value="CLTB">服饰包具</option>
+                        <option value="TCKT">点券</option>
+                        <option value="DGTP">数字商品</option>
                     </select>
                 </div>
                 <div class="form-group condition-search">
                     <label for="demandInfo_depreciationRate">折旧率:</label>
                     <select id="demandInfo_dr_condition" class="form-control" style="width: 110px; display: inline-block;">
-                        <option value="=">等于</option>
-                        <option value=">">大于</option>
-                        <option value=">=">大于等于</option>
-                        <option value="<">小于</option>
-                        <option value="<=">小于等于</option>
+                        <option value="equal">等于</option>
+                        <option value="big">大于</option>
+                        <option value="bigEqual">大于等于</option>
+                        <option value="small">小于</option>
+                        <option value="smallEqual">小于等于</option>
                     </select>
                     <select id="demandInfo_depreciationRate" class="form-control" style="width: 140px; display: inline-block;">
-                        <option>请选择折旧率</option>
+                        <option value="">请选择折旧率</option>
                         <option value="0.1">0.1</option>
                         <option value="0.2">0.2</option>
+                        <option value="0.3">0.3</option>
                         <option value="0.4">0.4</option>
                         <option value="0.5">0.5</option>
                         <option value="0.6">0.6</option>
                         <option value="0.7">0.7</option>
                         <option value="0.8">0.8</option>
                         <option value="0.9">0.9</option>
+                        <option value="1">1(全新)</option>
                     </select>
                 </div>
                 <div class="form-group condition-search" >
-                    <button id="dmdI_condtion_search" type="button" class="btn btn-primary" >条件搜索</button>
+                    <button id="demd_condtion_search" type="button" class="btn btn-primary" onclick="DemdInfoListCondSearch()">条件搜索</button>
                 </div>
             </div>
         </div>

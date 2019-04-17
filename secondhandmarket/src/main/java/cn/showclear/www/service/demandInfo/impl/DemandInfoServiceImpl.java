@@ -1,9 +1,14 @@
 package cn.showclear.www.service.demandInfo.impl;
 
+import cn.com.scooper.common.exception.BusinessException;
+import cn.showclear.utils.FilterByConditionUtil;
 import cn.showclear.www.dao.base.demandInfo.DemandInfoDao;
-import cn.showclear.www.pojo.base.DemandInfoDo;
+import cn.showclear.www.pojo.base.*;
 import cn.showclear.www.service.demandInfo.DemandInfoService;
+import cn.showclear.www.service.product.ProdTypeService;
+import cn.showclear.www.service.user.UserService;
 import cn.showclear.www.service.validate.ValidateService;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,18 +31,46 @@ public class DemandInfoServiceImpl implements DemandInfoService {
     @Autowired
     private ValidateService validateService;
 
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private ProdTypeService prodTypeService;
+
+    @Override
+    public DemandInfoDo searchDemandInfo(String demandInfoNumber) {
+        log.info("search product, which number is " + demandInfoNumber);
+        List<DemandInfoDo> list = null;
+        DemandInfoDo demandInfoDo = new DemandInfoDo();
+        demandInfoDo.setDemandInfoNumber(demandInfoNumber);
+        list = this.searchDemandInfoList(demandInfoDo);
+        if (list == null || list.size() == 0) {
+            return null;
+        }
+        return list.get(0);
+    }
+
     /**
-     * 通过number查找某条求购信息
+     * 通过number查找某条求购信息,并查询需要的信息
      * @param demandInfoNumber
      * @return 求购信息对象
      */
     @Override
-    public DemandInfoDo searchDemandInfo(String demandInfoNumber) throws IllegalArgumentException {
+    public SearchDemdInfoQo searchDemdInfoQo(String demandInfoNumber) throws BusinessException {
         log.info("search product, which number is " + demandInfoNumber);
-        DemandInfoDo demandInfoDo = new DemandInfoDo();
-        demandInfoDo.setDemandInfoNumber(demandInfoNumber);
-        DemandInfoDo resultDemandInfo = this.searchDemandInfoList(demandInfoDo).get(0);
-        return resultDemandInfo;
+        DemandInfoDo resultDemandInfo = null;
+        SearchDemdInfoQo searchDemdInfoQo = new SearchDemdInfoQo();
+        resultDemandInfo = this.searchDemandInfo(demandInfoNumber);
+        searchDemdInfoQo.setDemandInfoDo(resultDemandInfo);
+        //查询类别名称
+        ProductTypeDo productTypeDo = new ProductTypeDo();
+        productTypeDo.setCode(resultDemandInfo.getTypeCode());
+        searchDemdInfoQo.setTypeName(prodTypeService.searchProdType(productTypeDo).getName());
+        //查询用户名称
+        UserDo userDo = new UserDo();
+        userDo.setUserId(resultDemandInfo.getUserId());
+        searchDemdInfoQo.setUserName(userService.searchUser(userDo).getUserName());
+        return searchDemdInfoQo;
     }
 
     /**
@@ -46,10 +79,26 @@ public class DemandInfoServiceImpl implements DemandInfoService {
      * @return 求购信息对象
      */
     @Override
-    public List<DemandInfoDo> searchDemandInfoList(DemandInfoDo demandInfoDo) throws IllegalArgumentException {
+    public List<DemandInfoDo> searchDemandInfoList(DemandInfoDo demandInfoDo) {
         log.info(demandInfoDo.toString());
         validateService.validateDemandInfoSearch(demandInfoDo);
         List<DemandInfoDo> demandInfoDoList= demandInfoDao.searchDemandInfoByCol(demandInfoDo);
         return demandInfoDoList;
+    }
+
+    /**
+     * 按自定义条件查询求购信息
+     * @param searchProdListQo
+     * @return
+     * @throws IllegalArgumentException
+     */
+    @Override
+    public List<DemandInfoDo> searchDemdInfoListByQo(SearchProdListQo searchProdListQo) {
+        List<DemandInfoDo> resultList = demandInfoDao.searchDemdInfoListByQo(searchProdListQo);
+        //按折旧率过滤求购信息
+        if (resultList != null && !StringUtils.isEmpty(searchProdListQo.getDepRateSymbol()) && searchProdListQo.getDepreciationRate() != null) {
+            resultList = FilterByConditionUtil.filterDemdInfoListByRate(resultList, searchProdListQo.getDepRateSymbol(), searchProdListQo.getDepreciationRate());
+        }
+        return resultList;
     }
 }

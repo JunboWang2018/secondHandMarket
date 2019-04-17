@@ -10,6 +10,7 @@ $(document).ready(function(){
         formData.append("price", $("#product_price").val());
         formData.append("saleWayCode", $("#product_sale_way").val());
         formData.append("timeLimit", $("#time_limit").val());
+        formData.append("addPriceLimit", $("#add_price_limit").val());
         $.ajax({
             type : "post",
             url : "/secondhandmarket/data/release/product",
@@ -21,6 +22,7 @@ $(document).ready(function(){
             success: function(data) {
                 if (data.code == 104) {
                     alert(data.message);
+                    window.location.href = getRootPath() + "/";
                 } else {
                     alert("发布失败");
                 }
@@ -50,6 +52,7 @@ $(document).ready(function(){
             success : function(data) {
                 if (data.code == 104) {
                     alert(data.message);
+                    window.location.href = getRootPath() + "/";
                 } else {
                     alert("发布失败");
                 }

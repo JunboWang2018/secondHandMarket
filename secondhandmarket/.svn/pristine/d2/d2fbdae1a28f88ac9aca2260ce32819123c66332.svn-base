@@ -1,0 +1,141 @@
+package cn.showclear.www.service.order.impl;
+
+import cn.com.scooper.common.exception.BusinessException;
+import cn.showclear.utils.AutoGenerateNumberUtil;
+import cn.showclear.www.common.constant.Message;
+import cn.showclear.www.dao.base.order.OrderDao;
+import cn.showclear.www.pojo.base.*;
+import cn.showclear.www.service.order.OrderService;
+import cn.showclear.www.service.prodType.ProdTypeService;
+import cn.showclear.www.service.product.ProductService;
+import cn.showclear.www.service.user.UserService;
+import cn.showclear.www.service.validate.ValidateService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @author Wang Junbo
+ * @description
+ * @date 2019/4/16
+ */
+@Service
+public class OrderServiceImpl implements OrderService {
+    private static final Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
+
+    @Autowired
+    private OrderDao orderDao;
+
+    @Autowired
+    private ValidateService validateService;
+
+    @Autowired
+    private ProductService productService;
+
+    @Autowired
+    private ProdTypeService prodTypeService;
+
+    @Autowired
+    private UserService userService;
+
+    @Override
+    public List<OrderDo> searchOrderListByCol(OrderDo orderDo) throws IllegalArgumentException {
+        validateService.validateOrderSearch(orderDo);
+        log.info("pass order validate before searching order list");
+        return orderDao.searchOrderListByCol(orderDo);
+    }
+
+    @Override
+    public Message generateOrder(String productNumber, String username) throws IllegalArgumentException, BusinessException {
+        log.info("Generate order, productNumber = " + productNumber + ", username is " + username);
+        OrderDo orderDo = new OrderDo();
+        //通过物品number查询物品信息
+        ProductDo queryPord = new ProductDo();
+        queryPord.setProductNumber(productNumber);
+        ProductDo resultProd = productService.searchProduct(queryPord);
+        if (resultProd == null) {
+            return Message.PRODUCT_NOT_EXIST;
+        }
+        //取出prodID、saleUserId，并设置
+        orderDo.setProductId(resultProd.getProductId());
+        orderDo.setSaleUserId(resultProd.getUserId());
+        //通过username查找buyUserId，并设置
+        UserDo queryUser = new UserDo();
+        queryUser.setUserName(username);
+        UserDo resultUser = userService.searchUser(queryUser);
+        log.info("sale user id is " + orderDo.getSaleUserId() + ", buy user id is " + resultUser.getUserId());
+        if (orderDo.getSaleUserId().equals(resultUser.getUserId())) {
+            throw new BusinessException(Message.SAME_SALE_AND_BUY_USER.getCode(), Message.SAME_SALE_AND_BUY_USER.getMessage());
+        }
+        orderDo.setBuyUserId(resultUser.getUserId());
+        //自动生成订单编号，前缀为'ORDER',并设置
+        String orderNumber = AutoGenerateNumberUtil.getAutoGenerateId("ORDER");
+        orderDo.setOrderNumber(orderNumber);
+        //设置对应物品的is_sold为1
+        productService.saleProduct(productNumber);
+        validateService.validateOrderInsert(orderDo);
+        log.info("pass order validate before insert order");
+        Integer result = orderDao.generateOrder(orderDo);
+        if (result == 1) {
+            return Message.ORDER_GEN_SUCCESS;
+        }
+        return Message.ORDER_GEN_FAILED;
+    }
+
+    @Override
+    public SearchOrderQo searchOrderQo(OrderDo orderDo) {
+        log.info("Enter OrderServiceImpl.searchOrderQo");
+        List<OrderDo> resultList = this.searchOrderListByCol(orderDo);
+        if (resultList == null || resultList.size() == 0) {
+            return null;
+        }
+        return this.queryOrderInfo(resultList.get(0));
+    }
+
+    @Override
+    public List<SearchOrderQo> searchOrderQoList(OrderDo orderDo) {
+        log.info("Enter OrderServiceImpl.searchOrderQoList");
+        List<SearchOrderQo> orderQoList = new ArrayList<>();
+        List<OrderDo> orderList = this.searchOrderListByCol(orderDo);
+        if (orderList == null || orderList.size() == 0) {
+            return null;
+        }
+        for (int i = 0; i < orderList.size(); i++) {
+            orderQoList.add(this.queryOrderInfo(orderList.get(i)));
+        }
+        return orderQoList;
+    }
+
+    private SearchOrderQo queryOrderInfo(OrderDo order) {
+        SearchOrderQo orderQo = new SearchOrderQo();
+        orderQo.setOrderDo(order);
+        //查找订单对应物品,并取出所需信息
+        ProductDo queryProd = new ProductDo();
+        queryProd.setProductId(order.getProductId());
+        ProductDo productDo = productService.searchProduct(queryProd);
+        orderQo.setProdName(productDo.getName());
+        orderQo.setProdPrice(productDo.getPrice());
+        orderQo.setProdQuantity(productDo.getQuantity());
+        //根据物品种类编码，查询种类名称
+        ProductTypeDo queryProdType = new ProductTypeDo();
+        queryProdType.setCode(productDo.getTypeCode());
+        ProductTypeDo productTypeDo = prodTypeService.searchProdType(queryProdType);
+        orderQo.setTypeName(productTypeDo.getName());
+        //根据买家和卖家id查询用户名
+        UserDo queryUser = new UserDo();
+        queryUser.setUserId(orderQo.getOrderDo().getBuyUserId());
+        UserDo userDo = userService.searchUser(queryUser);
+        orderQo.setBuyUserName(userDo.getUserName());
+
+        queryUser.setUserId(orderQo.getOrderDo().getSaleUserId());
+        userDo = userService.searchUser(queryUser);
+        orderQo.setSaleUserName(userDo.getUserName());
+
+        log.info("orderQo info success, result is" + orderQo.toString());
+        return orderQo;
+    }
+}

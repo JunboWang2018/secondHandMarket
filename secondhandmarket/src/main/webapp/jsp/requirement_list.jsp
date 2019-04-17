@@ -12,7 +12,18 @@
     <script type="text/javascript" src="js/common.js"></script>
     <script>
         window.onload = function () {
-            document.getElementById("requirement_list_page").innerHTML = localStorage.getItem("demdIResultListString");
+            var searchKey = "${searchKey}";
+            var typeCode = "${typeCode}";
+            var depRateSymbol = "${depRateSymbol}";
+            var depreciationRate = "${depreciationRate}";
+            if (searchKey != null && searchKey.length > 0) {
+                alert(searchKey);
+                demandInfoKeySearch(searchKey);
+            } else {
+                alert(typeCode);
+                DemdInfoListCondSearch(typeCode, depRateSymbol, depreciationRate);
+            }
+
         }
     </script>
     <style type="text/css">

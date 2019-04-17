@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.showclear.www.dao.base.saleWay.SaleWayDao">
+    <sql id="Base_Col_List">
+        code, name, create_date
+    </sql>
+
+    <resultMap id="Base_Col_ResultMap" type="cn.showclear.www.pojo.base.SaleWayDo">
+        <result property="saleWayId" column="sale_way_id"/>
+        <result property="code" column="code"/>
+        <result property="name" column="name"/>
+        <result property="createDate" column="create_date"/>
+    </resultMap>
+
+    <select id="searchSaleWayListByCol" parameterType="cn.showclear.www.pojo.base.SaleWayDo" resultMap="Base_Col_ResultMap" >
+        SELECT
+        sale_way_id, <include refid="Base_Col_List"/>
+        FROM T_SALE_WAY
+        <where>
+            <if test="saleWayId != null and saleWayId != ''">
+                sale_way_id = #{saleWayId}
+            </if>
+            <if test="code != null and code != ''">
+                AND code = #{code}
+            </if>
+            <if test="name != null and name != ''">
+                AND name = #{name}
+            </if>
+            <if test="createDate != null and createDate != ''">
+                AND create_date = #{create_date}
+            </if>
+        </where>
+    </select>
+
+</mapper>

@@ -18,12 +18,13 @@
     </style>
 
     <script>
-        $(document).ready(function(){
+        window.onload = loadMyOrder();
+        /*$(document).ready(function(){
             $("#check_record").click(function(){
                 $("#myModalLabel").text("记录");
                 $('#myModal').modal();
             });
-        });
+        });*/
 
     </script>
 </head>
@@ -31,75 +32,43 @@
 <jsp:include page="header.jsp"/>
 <div class="container-fluid" >
     <table class="table table-striped table-hover">
-        <span class="label label-info">购买记录</span>
+        <h3><span class="label label-info">购买记录</span></h3>
         <thead>
-        <tr>
-            <th width="20%" style="text-align: center;">名称</th>
-            <th width="60%" style="text-align: center;">描述</th>
-            <th width="10%" style="text-align: center;">价格</th>
-            <th width="10%" style="text-align: center;">交易类型</th>
-        </tr>
+            <tr>
+                <th width="20%" style="text-align: center;">订单编号</th>
+                <th width="30%" style="text-align: center;">商品名称</th>
+                <th width="10%" style="text-align: center;">卖家</th>
+                <th width="10%" style="text-align: center;">单价</th>
+                <th width="10%" style="text-align: center;">数量</th>
+                <th width="10%" style="text-align: center;">订单总价</th>
+                <th width="10%" style="text-align: center;">交易类型</th>
+            </tr>
         </thead>
-        <tbody>
-        <tr>
-            <td>Tanmay</td>
-            <td>Bangalore</td>
-            <td>560001</td>
-            <td>560001</td>
-        </tr>
-        <tr>
-            <td>Sachin</td>
-            <td>Mumbai</td>
-            <td>400003</td>
-            <td>560001</td>
-        </tr>
-        <tr>
-            <td>Uma</td>
-            <td>Pune</td>
-            <td>411027</td>
-            <td>560001</td>
-        </tr>
+        <tbody id="buy_order_list">
         </tbody>
     </table>
     <table class="table table-striped table-hover">
-        <span class="label label-info">出售记录</span>
+        <h3><span class="label label-info">出售记录</span></h3>
         <thead>
-        <tr>
-            <th width="20%" style="text-align: center;">名称</th>
-            <th width="60%" style="text-align: center;">描述</th>
-            <th width="10%" style="text-align: center;">价格</th>
-            <th width="10%" style="text-align: center;">交易类型</th>
-        </tr>
+            <tr>
+                <th width="20%" style="text-align: center;">订单编号</th>
+                <th width="30%" style="text-align: center;">商品名称</th>
+                <th width="10%" style="text-align: center;">买家</th>
+                <th width="10%" style="text-align: center;">单价</th>
+                <th width="10%" style="text-align: center;">数量</th>
+                <th width="10%" style="text-align: center;">订单总价</th>
+                <th width="10%" style="text-align: center;">交易类型</th>
+            </tr>
         </thead>
-        <tbody>
-        <tr>
-            <td>Tanmay</td>
-            <td>Bangalore</td>
-            <td>560001</td>
-            <td>竞价
-                <button id="check_record">查看记录</button>
-            </td>
-        </tr>
-        <tr>
-            <td>Sachin</td>
-            <td>Mumbai</td>
-            <td>400003</td>
-            <td>560001</td>
-        </tr>
-        <tr>
-            <td>Uma</td>
-            <td>Pune</td>
-            <td>411027</td>
-            <td>560001</td>
-        </tr>
+        <tbody id="sale_order_list">
         </tbody>
     </table>
 </div>
-<!--
+<<!--
     作者：offline
     时间：2019-04-05
     描述：隐藏的记录框
--->
+--->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -109,20 +78,20 @@
             </div>
             <div class="modal-body">
                 <table class="table table-striped table-hover">
-                    <span class="label label-info">竞价记录</span>
-                    <thead>
+                    <h4><span id="record_name" class="label label-info"></span></h4>
+                    <thead id="price_record_head">
                     <tr>
                         <th width="40%" style="text-align: center;">出价人</th>
                         <th width="20%" style="text-align: center;">出价</th>
                         <th width="40%" style="text-align: center;">出价时间</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <td>Tanmay</td>
-                        <td>Bangalore</td>
-                        <td>560001</td>
-                    </tr>
+                    <tbody id="price_record_body">
+                        <tr>
+                            <td>Tanmay</td>
+                            <td>Bangalore</td>
+                            <td>560001</td>
+                        </tr>
                     <tr>
                         <td>Sachin</td>
                         <td>Mumbai</td>

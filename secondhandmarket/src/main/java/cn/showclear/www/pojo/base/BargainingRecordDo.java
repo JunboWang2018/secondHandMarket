@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 public class BargainingRecordDo {
     private Integer bargainingRecordId;
     private Integer productId;
-    private Double bargaringPrice;
+    private Double bargainingPrice;
     private String description;
     private Integer userId;
     private Timestamp createDate;
@@ -31,12 +31,12 @@ public class BargainingRecordDo {
         this.productId = productId;
     }
 
-    public Double getBargaringPrice() {
-        return bargaringPrice;
+    public Double getBargainingPrice() {
+        return bargainingPrice;
     }
 
-    public void setBargaringPrice(Double bargaringPrice) {
-        this.bargaringPrice = bargaringPrice;
+    public void setBargainingPrice(Double bargainingPrice) {
+        this.bargainingPrice = bargainingPrice;
     }
 
     public String getDescription() {
@@ -68,7 +68,7 @@ public class BargainingRecordDo {
         return "BargainingRecordDo{" +
                 "bargainingRecordId=" + bargainingRecordId +
                 ", productId=" + productId +
-                ", bargaringPrice=" + bargaringPrice +
+                ", bargainingPrice=" + bargainingPrice +
                 ", description='" + description + '\'' +
                 ", userId=" + userId +
                 ", createDate=" + createDate +

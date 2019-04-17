@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <title>搜索结果</title>
 
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <script type="text/javascript" src="js/bootstrap.min.js" ></script>
-    <script type="text/javascript" src="js/loadHeader.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="/secondhandmarket/js/jquery-3.3.1.min.js" ></script>
+    <link rel="stylesheet" href="/secondhandmarket/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/secondhandmarket/js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="/secondhandmarket/js/loadHeader.js"></script>
+    <script type="text/javascript" src="/secondhandmarket/js/common.js"></script>
     <script>
         window.onload = function () {
-            document.getElementById("product_list_page").innerHTML = localStorage.getItem("prodResultListString");
+            var searchKey = "${searchKey}";
+            prodKeySearch(searchKey);
         }
     </script>
 </head>

@@ -12,7 +12,7 @@ public class ProductDo {
     private String productNumber;
     private String name;
     private String description;
-    private String depreciationRate;    //折旧率
+    private Double depreciationRate;    //折旧率
     private Integer quantity;           //数量
     private String image;
     private Double price;
@@ -20,6 +20,7 @@ public class ProductDo {
     private String typeCode;           //商品类型
     private String saleWayCode;        //出售形式
     private Integer timeLimit;
+    private Integer addPriceLimit;
     private Integer userId;
     private Timestamp createDate;
     private Timestamp modifyDate;
@@ -56,11 +57,11 @@ public class ProductDo {
         this.description = description;
     }
 
-    public String getDepreciationRate() {
+    public Double getDepreciationRate() {
         return depreciationRate;
     }
 
-    public void setDepreciationRate(String depreciationRate) {
+    public void setDepreciationRate(Double depreciationRate) {
         this.depreciationRate = depreciationRate;
     }
 
@@ -120,6 +121,14 @@ public class ProductDo {
         this.timeLimit = timeLimit;
     }
 
+    public Integer getAddPriceLimit() {
+        return addPriceLimit;
+    }
+
+    public void setAddPriceLimit(Integer addPriceLimit) {
+        this.addPriceLimit = addPriceLimit;
+    }
+
     public Integer getUserId() {
         return userId;
     }
@@ -151,14 +160,15 @@ public class ProductDo {
                 ", productNumber='" + productNumber + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", depreciationRate='" + depreciationRate + '\'' +
+                ", depreciationRate=" + depreciationRate +
                 ", quantity=" + quantity +
                 ", image='" + image + '\'' +
                 ", price=" + price +
                 ", isSold=" + isSold +
-                ", typeCode=" + typeCode +
-                ", saleWayCode=" + saleWayCode +
+                ", typeCode='" + typeCode + '\'' +
+                ", saleWayCode='" + saleWayCode + '\'' +
                 ", timeLimit=" + timeLimit +
+                ", addPriceLimit=" + addPriceLimit +
                 ", userId=" + userId +
                 ", createDate=" + createDate +
                 ", modifyDate=" + modifyDate +

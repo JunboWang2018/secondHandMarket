@@ -20,13 +20,14 @@ CREATE TABLE T_PRODUCT(
     name VARCHAR(50) NOT NULL DEFAULT '',
     description TEXT,
     image VARCHAR(100) DEFAULT '',
-    depreciation_rate VARCHAR(10) NOT NULL DEFAULT '', #折旧率
+    depreciation_rate FLOAT NOT NULL DEFAULT '', #折旧率
     quantity INT NOT NULL DEFAULT 1,
     price FLOAT NOT NULL DEFAULT 0,
     is_sold TINYINT NOT NULL DEFAULT 0,
     type_code CHAR(4) NOT NULL DEFAULT '',
     sale_way_code CHAR(4) NOT NULL DEFAULT '',
     time_limit int COMMENT '竞价时间期限',   #竞价时间期限
+    add_price_limit int DEFAULT NULL COMMENT '加价幅度',
     user_id INT NOT NULL DEFAULT 0,
     create_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     modify_date TIMESTAMP COMMENT '数据更新时间'
@@ -92,7 +93,7 @@ CREATE TABLE T_DEMAND_INFO(
     demand_info_number varchar(50) NOT NULL DEFAULT '',
     name VARCHAR(50) NOT NULL DEFAULT '',
     type_code CHAR(4) NOT NULL DEFAULT 0,
-    depreciation_rate VARCHAR(10),
+    depreciation_rate DOUBLE,
     quantity INT,
     price FLOAT,
     other VARCHAR(50),

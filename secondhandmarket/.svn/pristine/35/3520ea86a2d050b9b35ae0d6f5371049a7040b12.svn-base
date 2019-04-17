@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.showclear.www.dao.base.biddingRecord.BiddingRecordDao">
+    <sql id="Base_Col_List">
+            product_id, bidding_price, description, user_id, create_date
+    </sql>
+
+    <resultMap id="Base_Col_ResultMap" type="cn.showclear.www.pojo.base.BiddingRecordDo">
+        <result property="biddingRecordId" column="bidding_record_id"/>
+        <result property="productId" column="product_id"/>
+        <result property="biddingPrice" column="bidding_price"/>
+        <result property="description" column="description"/>
+        <result property="userId" column="user_id"/>
+        <result property="createDate" column="create_date"/>
+    </resultMap>
+
+    <select id="searchBiddRecdList" resultMap="Base_Col_ResultMap" parameterType="cn.showclear.www.pojo.base.BiddingRecordDo">
+        SELECT
+        bidding_record_id, <include refid="Base_Col_List"/>
+        FROM T_BIDDING_RECORD
+        <where>
+            <if test="biddingRecordId != null and biddingRecordId != ''">
+                bidding_record_id = #{biddingRecordId}
+            </if>
+            <if test="productId != null and productId != ''">
+                AND product_id = #{productId}
+            </if>
+            <if test="biddingPrice != null and biddingPrice != ''">
+                AND bidding_price = #{biddingPrice}
+            </if>
+            <if test="userId != null and userId != ''">
+                AND user_id = #{userId}
+            </if>
+            <if test="createDate != null and createDate != ''">
+                AND create_date = #{createDate}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addRecord" parameterType="cn.showclear.www.pojo.base.BiddingRecordDo">
+        INSERT INTO T_BIDDING_RECORD(<include refid="Base_Col_List"></include>) VALUES(#{productId}, #{biddingPrice}, #{description}, #{userId} CURRENT_TIMESTAMP)
+    </insert>
+
+
+</mapper>

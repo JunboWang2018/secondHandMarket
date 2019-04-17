@@ -1,18 +1,16 @@
 package cn.showclear.www.controller.data;
 
 import cn.com.scooper.common.resp.APIRespJson;
-import cn.showclear.www.common.constant.CommonConstant;
 import cn.showclear.www.common.constant.Message;
 import cn.showclear.www.pojo.base.UserDo;
 import cn.showclear.www.service.user.UserService;
 import com.alibaba.fastjson.JSONObject;
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -41,26 +39,21 @@ public class UserDataController extends BaseDataController{
      * @param response
      * @return
      */
+    @ResponseBody
     @RequestMapping("/login")
-    public void login(UserDo userDo, HttpSession session, HttpServletResponse response) {
+    public APIRespJson login(UserDo userDo, HttpSession session, HttpServletResponse response) {
         log.info("username = " + userDo.getUserName() + ", password = " + userDo.getPassword());
-        PrintWriter writer = null;
         Message message = null;
-        //设置返回数据格式为json
-        response.setContentType("application/json");
         try {
-            writer = response.getWriter();
             message = userService.userLogin(userDo);
         } catch (IllegalArgumentException e) {
-            writer.write(JSONObject.toJSONString(this.handleIllegalArgumentException(e)));
-        } catch (IOException e) {
-            log.error("获取response.write异常",e);
+            return this.handleIllegalArgumentException(e);
         }
         //若登录成功，将用户名放入session
         if (message.getCode() == 102) {
             session.setAttribute("user", userDo.getUserName());
         }
-        writer.write(JSONObject.toJSONString(this.response(message.getCode(), message.getMessage())));
+         return this.response(message.getCode(), message.getMessage());
     }
 
     /**
@@ -70,25 +63,20 @@ public class UserDataController extends BaseDataController{
      * @param userDo
      * @return
      */
+    @ResponseBody
     @RequestMapping("/register")
-    public void register(UserDo userDo, HttpSession session, HttpServletResponse response) {
-        PrintWriter writer = null;
+    public APIRespJson register(UserDo userDo, HttpSession session, HttpServletResponse response) {
         Message message = null;
-        //设置返回数据格式为json
-        response.setContentType("application/json");
         try {
-            writer = response.getWriter();
             message = userService.userRegister(userDo);
         } catch (IllegalArgumentException e) {
-            writer.write(JSONObject.toJSONString(this.handleIllegalArgumentException(e)));
-        } catch (IOException e) {
-            log.error("获取response.write异常", e);
+            return this.handleIllegalArgumentException(e);
         }
         if (message.getCode() == 103) {
             log.info("register success, put user to session");
             session.setAttribute("user", userDo.getUserName());
         }
-        writer.write(JSONObject.toJSONString(this.response(message.getCode(), message.getMessage())));
+        return this.response(message.getCode(), message.getMessage());
     }
 
     /**

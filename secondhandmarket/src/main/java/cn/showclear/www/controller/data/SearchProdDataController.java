@@ -1,17 +1,18 @@
 package cn.showclear.www.controller.data;
 
+import cn.com.scooper.common.exception.BusinessException;
+import cn.com.scooper.common.resp.APIRespJson;
 import cn.showclear.www.pojo.base.ProductDo;
+import cn.showclear.www.pojo.base.SearchProdListQo;
+import cn.showclear.www.pojo.base.SearchProductQo;
 import cn.showclear.www.service.product.ProductService;
-import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 /**
@@ -27,35 +28,58 @@ public class SearchProdDataController extends BaseDataController {
     @Autowired
     private ProductService productService;
 
-    @RequestMapping("/searchProduct")
-    public void searchProduct(String productNumber, HttpServletResponse response) {
+    /**
+     * 根据物品编号查询物品信息
+     * @param productNumber
+     */
+    @ResponseBody
+    @RequestMapping("/searchProductInfo")
+    public APIRespJson searchProduct(String productNumber) {
         log.info("productNumber = " + productNumber);
-        PrintWriter writer = null;
-        ProductDo productDo = null;
+        SearchProductQo productQo = null;
         try {
-            writer = response.getWriter();
-            productService.searchProduct(productNumber);
-        } catch (IOException e) {
-            log.error("获取response.writer失败", e);
+            ProductDo productDo = new ProductDo();
+            productDo.setProductNumber(productNumber);
+            productQo = productService.searchProductQo(productDo);
+            log.info("searchNumber " + productNumber + " result is " + productQo.toString());
         } catch (IllegalArgumentException e) {
-            writer.write(JSONObject.toJSONString(this.handleIllegalArgumentException(e)));
+            return this.handleIllegalArgumentException(e);
+        } catch (BusinessException e) {
+            return this.response(e.getCode(), e.getMessage());
         }
-
+        return this.responseData(productQo);
     }
 
+    /**
+     * 根据条件查询物品列表
+     * @param productDo
+     */
+    @ResponseBody
     @RequestMapping("/searchProdList")
-    public void searchProductList(ProductDo productDo, HttpServletResponse response) {
+    public APIRespJson searchProductList(ProductDo productDo) {
         log.info(productDo.toString());
-        PrintWriter writer = null;
         List<ProductDo> productList = null;
         try {
-            writer = response.getWriter();
             productList = productService.searchProductList(productDo);
-        } catch (IOException e) {
-            log.error("获取response.writer失败", e);
         } catch (IllegalArgumentException e) {
-            writer.write(JSONObject.toJSONString(this.handleIllegalArgumentException(e)));
+            return this.handleIllegalArgumentException(e);
         }
-        writer.write(JSONObject.toJSONString(this.responseList(productList)));
+        return this.responseList(productList);
+    }
+
+    /**
+     * 根据用户特定条件查询物品列表
+     * @param searchProdListQo
+     */
+    @ResponseBody
+    @RequestMapping("/searchProdListByQo")
+    public APIRespJson searchProdListByQo(SearchProdListQo searchProdListQo) {
+        List<ProductDo> productList = null;
+        try {
+            productList = productService.searchProdListQo(searchProdListQo);
+        } catch (IllegalArgumentException e) {
+            return this.handleIllegalArgumentException(e);
+        }
+        return this.responseList(productList);
     }
 }

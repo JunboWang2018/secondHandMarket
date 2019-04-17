@@ -13,6 +13,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author Junbo Wang
  * @description
@@ -37,7 +39,7 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public Message userLogin(UserDo userDo) throws IllegalArgumentException {
+    public Message userLogin(UserDo userDo) {
         log.info("username = " + userDo.getUserName() + ", password = " + userDo.getPassword());
         validateService.validateUser(userDo);
         UserDo result = userDao.searchUser(userDo.getUserName());
@@ -64,7 +66,7 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public Message userRegister(UserDo userDo) throws IllegalArgumentException {
+    public Message userRegister(UserDo userDo) {
         log.info("username = " + userDo.getUserName() + ", password = " + userDo.getPassword());
         validateService.validateUser(userDo);
         //查询用户是否存在
@@ -81,6 +83,24 @@ public class UserServiceImpl implements UserService {
         } else {
             log.info("count = " + count + ", register failed");
             return Message.REGISTER_FAILED;
+        }
+    }
+
+    @Override
+    public List<UserDo> searchUserList(UserDo userDo) {
+        return userDao.searchUserListByCol(userDo);
+    }
+
+    @Override
+    public UserDo searchUser(UserDo userDo) {
+        if (!validateService.validateUserSearch(userDo)) {
+            return null;
+        }
+        List<UserDo> list = this.searchUserList(userDo);
+        if (list.size() >= 0) {
+            return list.get(0);
+        } else {
+            throw new BusinessException(Message.USER_NOT_EXIST.getCode(), Message.USER_NOT_EXIST.getMessage());
         }
     }
 }

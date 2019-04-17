@@ -1,0 +1,60 @@
+package cn.showclear.www.controller.data;
+
+import cn.com.scooper.common.exception.BusinessException;
+import cn.showclear.www.common.constant.Message;
+import cn.showclear.www.pojo.base.OrderDo;
+import cn.showclear.www.service.order.OrderService;
+import com.alibaba.fastjson.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+/**
+ * @author Wang Junbo
+ * @description
+ * @date 2019/4/16
+ */
+@Controller
+@RequestMapping("/data/order")
+public class OrderDataController extends BaseDataController {
+    private static final Logger log = LoggerFactory.getLogger(OrderDataController.class);
+
+    @Autowired
+    private OrderService orderService;
+
+    /**
+     * 生成订单
+     * @param productNumber
+     * @param response
+     * @param session
+     */
+    @RequestMapping("/generateOrder")
+    public void generateOrder(String productNumber, HttpServletResponse response, HttpSession session) {
+        PrintWriter writer = null;
+        Message message = null;
+        try {
+            writer = response.getWriter();
+            String username = (String) session.getAttribute("user");
+            message = orderService.generateOrder(productNumber, username);
+        } catch (IOException e) {
+            log.error("获取response.writer失败", e);
+        } catch (IllegalArgumentException e) {
+            writer.write(JSONObject.toJSONString(this.handleIllegalArgumentException(e)));
+        } catch (BusinessException e) {
+            log.error("the same sale user and buy user");
+            writer.write(JSONObject.toJSONString(this.response(e.getCode(), e.getMessage())));
+        }
+        if (message != null) {
+            writer.write(JSONObject.toJSONString(this.response(message.getCode(), message.getMessage())));
+        }
+
+    }
+
+}

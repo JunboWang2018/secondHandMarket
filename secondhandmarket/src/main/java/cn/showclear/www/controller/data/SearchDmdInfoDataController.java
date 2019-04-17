@@ -1,17 +1,18 @@
 package cn.showclear.www.controller.data;
 
+import cn.com.scooper.common.exception.BusinessException;
+import cn.com.scooper.common.resp.APIRespJson;
 import cn.showclear.www.pojo.base.DemandInfoDo;
+import cn.showclear.www.pojo.base.SearchDemdInfoQo;
+import cn.showclear.www.pojo.base.SearchProdListQo;
 import cn.showclear.www.service.demandInfo.DemandInfoService;
-import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 /**
@@ -27,34 +28,47 @@ public class SearchDmdInfoDataController extends BaseDataController {
     @Autowired
     private DemandInfoService demandInfoService;
 
-
+    /**
+     * 根据编号查询求购信息的详情
+     * @param demandInfoNumber
+     */
+    @ResponseBody
     @RequestMapping("/searchDemandInfo")
-    public void searchDemandInfo(String demandInfoNumber, HttpServletResponse response) {
+    public APIRespJson searchDemandInfo(String demandInfoNumber) {
         log.info("demandInfoNumber = " + demandInfoNumber);
-        PrintWriter writer = null;
+        SearchDemdInfoQo searchDemdInfoQo = null;
         try {
-            writer = response.getWriter();
-            demandInfoService.searchDemandInfo(demandInfoNumber);
-        } catch (IOException e) {
-            log.error("获取response.writer失败", e);
-        } catch (IllegalArgumentException e) {
-            writer.write(JSONObject.toJSONString(this.handleIllegalArgumentException(e)));
+            searchDemdInfoQo = demandInfoService.searchDemdInfoQo(demandInfoNumber);
+            log.info("searchNumber " + demandInfoNumber + " result is " + searchDemdInfoQo.toString());
+        } catch (BusinessException e) {
+            return this.response(e.getCode(), e.getMessage());
         }
+        return this.responseData(searchDemdInfoQo);
     }
 
+    /**
+     * 查询求购信息列表（指定求购信息属性）
+     * @param demandInfoDo
+     */
+    @ResponseBody
     @RequestMapping("/searchDemandInfoList")
-    public void searchDemandInfoList(DemandInfoDo demandInfoDo, HttpServletResponse response) {
+    public APIRespJson searchDemandInfoList(DemandInfoDo demandInfoDo) {
         log.info(demandInfoDo.toString());
-        PrintWriter writer = null;
         List<DemandInfoDo> demandInfoList = null;
         try {
-            writer = response.getWriter();
             demandInfoList = demandInfoService.searchDemandInfoList(demandInfoDo);
-        } catch (IOException e) {
-            log.error("获取response.writer失败", e);
         } catch (IllegalArgumentException e) {
-            writer.write(JSONObject.toJSONString(this.handleIllegalArgumentException(e)));
+            return this.handleIllegalArgumentException(e);
         }
-        writer.write(JSONObject.toJSONString(this.responseList(demandInfoList)));
+        return this.responseList(demandInfoList);
+    }
+
+    @ResponseBody
+    @RequestMapping("/searchDemdInfoListByQo")
+    public APIRespJson searchDemdInofListByQo(SearchProdListQo searchProdListQo) {
+        log.info("search demandInfo list by condition : " + searchProdListQo.toString());
+        List<DemandInfoDo> demandInfoList = null;
+        demandInfoList = demandInfoService.searchDemdInfoListByQo(searchProdListQo);
+        return this.responseList(demandInfoList);
     }
 }

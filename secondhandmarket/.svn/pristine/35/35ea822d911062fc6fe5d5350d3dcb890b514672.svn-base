@@ -1,0 +1,31 @@
+function loadIndexData() {
+    $.ajax({
+        type : "get",
+        url : "/secondhandmarket/data/index/search",
+        async : true,
+        dataType : 'json',
+        success: function(result) {
+            if (result.code == 0) {
+
+                var productList = result.data.productList;
+                var demandInfoList = result.data.demandInfoList;
+                if (productList != null) {
+                    var productListString = initProdHTML(productList);
+                    document.getElementById("product_list").innerHTML = productListString;
+                }
+                if (demandInfoList != null) {
+                    var demandInfoString = initDemandInfoHTML(demandInfoList);
+                    document.getElementById("requirementList").innerHTML = demandInfoString;
+                }
+
+            } else {
+                alert(result.message);
+            }
+        },
+        error: function () {
+            alert("请求失败");
+        }
+    });
+}
+
+

@@ -23,21 +23,24 @@
         WHERE user_name = #{userName}
     </select>
 
-    <select id="searchUserByCol" resultMap="Base_Col_ResultMap" parameterType="cn.showclear.www.pojo.base.UserDo">
+    <select id="searchUserListByCol" resultMap="Base_Col_ResultMap" parameterType="cn.showclear.www.pojo.base.UserDo">
         SELECT
         <include refid="Base_Col_List"/>
         FROM T_USER
         <where>
-            <if test="userName != null">
-                user_name = #{userName}
+            <if test="userId != null and userId != ''">
+                user_id = #{userId}
             </if>
-            <if test="password != null">
+            <if test="userName != null and userName != ''">
+                AND user_name = #{userName}
+            </if>
+            <if test="password != null and password != ''">
                 AND password = #{password}
             </if>
-            <if test="createDate != null">
+            <if test="createDate != null and createDate != ''">
                 AND  create_date = #{createDate}
             </if>
-            <if test="modifyDate != null">
+            <if test="modifyDate != null and modifyDate != ''">
                 AND  modify_date = #{modifyDate}
             </if>
         </where>
