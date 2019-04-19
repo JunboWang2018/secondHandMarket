@@ -5,7 +5,7 @@
 
 <mapper namespace="cn.showclear.www.dao.base.product.ProductDao">
     <sql id="Base_Col_List">
-        product_number, name, description, image, depreciation_rate, quantity, price, is_sold, type_code, sale_way_code, time_limit, add_price_limit, user_id, create_date
+        product_number, name, description, image, depreciation_rate, quantity, price, is_sold, is_selling, type_code, sale_way_code, time_limit, add_price_limit, user_id, create_date, is_active
     </sql>
 
     <resultMap id="Base_Col_ResultMap" type="cn.showclear.www.pojo.base.ProductDo">
@@ -18,6 +18,7 @@
         <result property="quantity" column="quantity"/>
         <result property="price" column="price"/>
         <result property="isSold" column="is_sold"/>
+        <result property="isSelling" column="is_selling"/>
         <result property="typeCode" column="type_code"/>
         <result property="saleWayCode" column="sale_way_code"/>
         <result property="timeLimit" column="time_limit"/>
@@ -25,6 +26,7 @@
         <result property="userId" column="user_id"/>
         <result property="createDate" column="create_date"/>
         <result property="modifyDate" column="modify_date"/>
+        <result property="isActive" column="is_active"/>
     </resultMap>
 
     <select id="searchProdByCol" parameterType="cn.showclear.www.pojo.base.ProductDo" resultMap="Base_Col_ResultMap" >
@@ -56,6 +58,9 @@
             <if test="isSold != null">
                 AND is_sold = #{isSold}
             </if>
+            <if test="isSelling != null">
+                AND is_selling = #{isSelling}
+            </if>
             <if test="typeCode != null and typeCode != ''">
                 AND type_code = #{typeCode}
             </if>
@@ -71,13 +76,16 @@
             <if test="createDate != null and createDate != ''">
                 AND create_date = #{create_date}
             </if>
+            <if test="isActive != null">
+                AND is_active = #{isActive}
+            </if>
         </where>
     </select>
 
     <insert id="releaseProduct" parameterType="cn.showclear.www.pojo.base.ProductDo">
         INSERT
         INTO T_PRODUCT(<include refid="Base_Col_List"/>)
-        VALUES(#{productNumber}, #{name}, #{description}, #{image}, #{depreciationRate}, #{quantity}, #{price}, #{isSold}, #{typeCode}, #{saleWayCode}, #{timeLimit}, #{addPriceLimit},#{userId}, CURRENT_TIMESTAMP);
+        VALUES(#{productNumber}, #{name}, #{description}, #{image}, #{depreciationRate}, #{quantity}, #{price}, #{isSold}, #{isSelling}, #{typeCode}, #{saleWayCode}, #{timeLimit}, #{addPriceLimit},#{userId}, CURRENT_TIMESTAMP, #{isActive});
     </insert>
 
     <select id="searchProdListByQo" parameterType="cn.showclear.www.pojo.base.SearchProdListQo" resultMap="Base_Col_ResultMap">
@@ -94,19 +102,30 @@
             <if test="isSold != null">
                 AND is_sold = #{isSold}
             </if>
+            <if test="isSelling != null">
+                AND is_selling = #{isSelling}
+            </if>
             <if test="minPrice != null">
                 AND price &gt;= #{minPrice}
             </if>
             <if test="maxPrice != null">
                 AND price &lt;= #{maxPrice}
             </if>
+            <if test="isActive != null">
+                AND is_active = #{isActive}
+            </if>
         </where>
     </select>
 
-
-    <update id="saleProduct" parameterType="cn.showclear.www.pojo.base.ProductDo">
+    <update id="saleProduct" parameterType="java.lang.String">
         UPDATE T_PRODUCT
-        SET is_sold = 1
+        SET is_sold = 1, is_selling = 0
         WHERE product_number = #{productNumber}
+    </update>
+
+    <update id="takeUpOrDownProd" parameterType="java.lang.Integer">
+        UPDATE T_PRODUCT
+        SET is_selling = #{isSelling}
+        WHERE product_id = #{productId}
     </update>
 </mapper>

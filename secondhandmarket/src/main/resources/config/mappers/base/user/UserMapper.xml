@@ -5,27 +5,28 @@
 
 <mapper namespace="cn.showclear.www.dao.base.user.UserDao">
     <sql id="Base_Col_List">
-            user_id, user_name, password, create_date, modify_date
+            user_name, password, tel, create_date
     </sql>
 
     <resultMap id="Base_Col_ResultMap" type="cn.showclear.www.pojo.base.UserDo">
         <result property="userId" column="user_id"/>
         <result property="userName" column="user_name"/>
         <result property="password" column="password"/>
+        <result property="tel" column="tel"/>
         <result property="create_date" column="createDate"/>
         <result property="modify_date" column="modifyDate"/>
     </resultMap>
 
     <select id="searchUser" resultMap="Base_Col_ResultMap" parameterType="java.lang.String">
         SELECT
-        <include refid="Base_Col_List"/>
+        user_id, <include refid="Base_Col_List"/>, modify_date
         FROM T_USER
         WHERE user_name = #{userName}
     </select>
 
     <select id="searchUserListByCol" resultMap="Base_Col_ResultMap" parameterType="cn.showclear.www.pojo.base.UserDo">
         SELECT
-        <include refid="Base_Col_List"/>
+        user_id, <include refid="Base_Col_List"/>, modify_date
         FROM T_USER
         <where>
             <if test="userId != null and userId != ''">
@@ -47,7 +48,7 @@
     </select>
 
     <insert id="register" parameterType="cn.showclear.www.pojo.base.UserDo">
-        INSERT INTO T_USER(user_name, password, create_date) VALUES(#{userName}, #{password}, CURRENT_TIMESTAMP)
+        INSERT INTO T_USER(<include refid="Base_Col_List"></include>) VALUES(#{userName}, #{password}, #{tel}, CURRENT_TIMESTAMP)
     </insert>
 
 

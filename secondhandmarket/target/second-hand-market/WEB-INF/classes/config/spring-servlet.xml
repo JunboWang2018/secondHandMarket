@@ -38,39 +38,33 @@
     
     <!-- 拦截器     --> 
 	<mvc:interceptors>
+
 		<!-- 视图拦截器 -->
 	    <mvc:interceptor>
 			<mvc:mapping path="/view/**"/>
 		    <bean class="cn.com.scooper.common.spring.interceptor.ViewConfigInterceptor"/>
 	    </mvc:interceptor>
+
 	    
 	    <!-- 权限拦截器 -->
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/>
-			
+
 			<!-- 忽略掉首页和登录页 -->
 			<mvc:exclude-mapping path="/" />
 			<mvc:exclude-mapping path="/view/login" />
 			<mvc:exclude-mapping path="/view/loginTo" />
-			
+
 			<!-- 忽略掉静态资源 -->
 			<mvc:exclude-mapping path="/js/**" />
-		    <mvc:exclude-mapping path="/css/**" />
-		    <mvc:exclude-mapping path="/plugin/**" />
-		    <mvc:exclude-mapping path="/images/**" />
-		    <mvc:exclude-mapping path="/resource/**" />
-		    
-		    <bean class="cn.showclear.www.interceptor.AuthInterceptor"/>
-	    </mvc:interceptor>
-		<!-- 登录信息拦截器-->
-		<!--<mvc:interceptor>
-			<mvc:mapping path="/**"/>
+			<mvc:exclude-mapping path="/css/**" />
+			<mvc:exclude-mapping path="/plugin/**" />
+			<mvc:exclude-mapping path="/images/**" />
+			<mvc:exclude-mapping path="/resource/**" />
 
-			&lt;!&ndash; 忽略掉首页和登录页 &ndash;&gt;
-			<mvc:exclude-mapping path="/"/>
-			<mvc:exclude-mapping path="/toLogin"/>
-			<bean class="cn.showclear.www.interceptor.UserInterceptor"/>
-		</mvc:interceptor>-->
+			<bean class="cn.showclear.www.interceptor.AuthInterceptor"/>
+		</mvc:interceptor>
+
 	</mvc:interceptors>
 	
 	<!-- JSON对象转换格式定义 -->

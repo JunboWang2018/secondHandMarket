@@ -11,7 +11,8 @@
     <script type="text/javascript" src="/secondhandmarket/js/common.js" ></script>
     <script>
         window.onload = function () {
-            loadIndexData();
+            var typeCode = "${typeCode}";
+            loadIndexData(typeCode);
         }
     </script>
     <style type="text/css">

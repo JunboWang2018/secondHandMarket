@@ -6,58 +6,13 @@
     </artifacts-to-build>
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/OrderServiceImpl.java" line="106" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/OrderServiceImpl.java" line="308" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/OrderServiceImpl.java" line="117" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/OrderServiceImpl.java" line="331" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/js/common.js" line="559" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/js/common.js" line="152" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0f2e265-2be9-4769-954e-6909e9028344" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/sql/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sql/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/utils/FilterByConditionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/utils/FilterByConditionUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/IndexDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/IndexDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/OrderDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/OrderDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/ReleaseDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/ReleaseDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/SearchDmdInfoDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/SearchDmdInfoDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/SearchProdDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/SearchProdDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/UserDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/UserDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/view/SearchDemdInfoViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/view/SearchDemdInfoViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/view/SearchProdViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/view/SearchProdViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/dao/base/bargainRecord/BargainRecordDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/dao/base/order/BargainRecordDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/dao/base/biddingRecord/BiddingRecordDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/dao/base/order/BiddingRecordDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/dao/base/prodType/ProdTypeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/dao/base/product/ProdTypeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/dao/base/saleWay/SaleWayDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/dao/base/product/SaleWayDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/BargainingRecordDo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/BargainingRecordDo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/ProductDo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/ProductDo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/SearchOrderQo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/SearchOrderQo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/bargainRercod/BargRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/BargRecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/bargainRercod/impl/BargRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/BargRecordServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/biddingRecord/BiddingRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/BiddRecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/biddingRecord/impl/BiddingRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/BiddRecordServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/demandInfo/impl/DemandInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/demandInfo/impl/DemandInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/prodType/ProdTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/product/ProdTypeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/prodType/impl/ProdTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/product/impl/ProdTypeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/product/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/product/impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/saleWay/SaleWayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/product/SaleWayService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/saleWay/impl/SaleWayServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/product/impl/SaleWayServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/user/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/user/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/validate/ValidateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/validate/ValidateService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/validate/impl/ValidateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/validate/impl/ValidateServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/mappers/base/baddingRecord" beforeDir="true" afterPath="$PROJECT_DIR$/src/main/resources/config/mappers/base/biddingRecord" afterDir="true" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/mappers/base/baddingRecord/BiddingRecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mappers/base/biddingRecord/BiddingRecordMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/mappers/base/bargainRecord/BiddingRecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mappers/base/bargainRecord/BargainingRecordMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/mappers/base/prodType/ProdTypeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mappers/base/prodType/ProdTypeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/mappers/base/product/ProductMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mappers/base/product/ProductMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/mappers/base/saleWay/SaleWayMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/mappers/base/saleWay/SaleWayMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/release.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/release.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/my_order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/my_order.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/product_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/product_list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/release_product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/release_product.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="d0f2e265-2be9-4769-954e-6909e9028344" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,103 +42,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/common.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-698">
-              <caret line="370" column="96" selection-start-line="370" selection-start-column="96" selection-end-line="370" selection-end-column="96" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#h4#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#499#505#0" expanded="true" />
-                <element signature="e#517#523#0" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#strong#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#87#93#0" expanded="true" />
-                <element signature="e#112#118#0" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#div#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#strong#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#4;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#0;n#tr#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#1;n#tr#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#2;n#tr#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#0;n#tr#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#1;n#tr#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#2;n#tr#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#2;n#tr#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/OrderDataController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="101" column="62" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/OrderServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="245" column="47" selection-start-line="245" selection-start-column="37" selection-end-line="245" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#6023#6039#0" expanded="true" />
-                <element signature="e#6083#6093#0" expanded="true" />
-                <element signature="e#8757#8773#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/OrderService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="65" column="22" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/my_order.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="80" column="79" selection-start-line="80" selection-start-column="79" selection-end-line="80" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -207,6 +66,13 @@
       <find>searchProdList</find>
       <find>searchUser</find>
       <find>&lt;&gt;</find>
+      <find>searchProductList</find>
+      <find>checkProdPagePriceRecord</find>
+      <find>buyBIDDProd</find>
+      <find>InstantiationTracingBeanPostProcessor</find>
+      <find>generateOrder</find>
+      <find>searchProductQo</find>
+      <find>handleBusinessException</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Project\secondHandMarket\secondhandmarket\src\main\java\cn\showclear\www\controller</dir>
@@ -218,57 +84,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/SearchDemdInfoQo.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/demandInfo/impl/DemandInfoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/requirement_info.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/dao/base/order/OrderDao.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/config/mappers/base/order/OrderMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/dao/base/product/ProductDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/product/ProductService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/product_info.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/validate/ValidateService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/user/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/validate/impl/ValidateServiceImpl.java" />
-        <option value="$PROJECT_DIR$/resources/conf_template/config.properties" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/product_list.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/view/SearchDemdInfoViewController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/utils/FilterByConditionUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/ReleaseDataController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/IndexDataController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/SearchDmdInfoDataController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/SearchProdDataController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/UserDataController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/index.js" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/product/impl/ProductServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/release.js" />
-        <option value="$PROJECT_DIR$/resources/sql/init.sql" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/release_product.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/BiddingRecordService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/BiddingRecordServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/BiddRecordService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/BargRecordService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/BiddRecordServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/config/mappers/base/biddingRecord/BiddingRecordMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/BiddRecordDataController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/config/mappers/base/bargainRecord/BiddingRecordMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/common/constant/Message.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/ProductDo.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/config/mappers/base/product/ProductMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/BargainingRecordDo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/BargRecordServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/view/OrderViewController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/jsp/header.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/SearchOrderQo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/PriceRecordDataController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/view/SearchProdViewController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/BiddRecordQo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/RecordQo.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/config/mappers/base/bargainRecord/BargainingRecordMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/OrderService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/OrderDataController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/OrderServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/common.js" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/view/IndexViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/BargainingRecordDo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/ProductDo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/release/impl/ReleaseServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/IndexDataController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/SearchProdListQo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/SearchProductQo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/SearchProdDataController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/view/SearchProdViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/jsp/my_order.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/my_product.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/product/ProductService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/dao/base/order/BargainRecordDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config/mappers/base/bargainRecord/BargainingRecordMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/BargRecordService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/OrderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/OrderDo.java" />
+        <option value="$PROJECT_DIR$/resources/sql/init.sql" />
+        <option value="$PROJECT_DIR$/src/main/resources/config/mappers/base/order/OrderMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/common/constant/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/BargRecordServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/RecordQo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/OrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/interceptor/UserInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/view/UserViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/login.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/index.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/register.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/interceptor/UserLoginInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/release.js" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/view/ReleaseViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config/spring-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/config/mappers/base/product/ProductMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/dao/base/product/ProductDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/utils/SpringContextUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/product/impl/ProductServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/utils/BeanContext.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/config/InstantiationTracingBeanPostProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/product_info.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/utils/BiddOrderThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/BiddRecordServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/ProdDataController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/OrderDataController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/PriceRecordDataController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/common.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/release_product.jsp" />
       </list>
     </option>
   </component>
@@ -288,6 +154,7 @@
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
       </MavenImportingSettings>
     </option>
   </component>
@@ -311,9 +178,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="21" />
-    <option name="y" value="3" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="337" />
+    <option name="y" value="116" />
     <option name="width" value="1563" />
     <option name="height" value="879" />
   </component>
@@ -327,6 +194,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -344,224 +212,10 @@
               <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="product" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="product" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -570,29 +224,29 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554466251298" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/config/mappers/base/order" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/jsp" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\order" />
-      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\bargainRecord" />
-      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\baddingRecord" />
-      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\saleWay" />
-      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\prodType" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\demandInfo" />
+      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\product" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cn.showclear.www.service.demandInfo" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\demandInfo" />
-      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\product" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\secondhandmarket\src\main\webapp\jsp" />
+      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\order" />
+      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\bargainRecord" />
+      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\baddingRecord" />
+      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\saleWay" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -733,7 +387,9 @@
       <workItem from="1555031019624" duration="37961000" />
       <workItem from="1555289752071" duration="37923000" />
       <workItem from="1555376435025" duration="34364000" />
-      <workItem from="1555463200285" duration="31766000" />
+      <workItem from="1555463200285" duration="32053000" />
+      <workItem from="1555549285982" duration="35784000" />
+      <workItem from="1555635506165" duration="20977000" />
     </task>
     <task id="LOCAL-00001">
       <created>1554364393439</created>
@@ -826,11 +482,32 @@
       <option name="project" value="LOCAL" />
       <updated>1555416114659</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update record">
+      <created>1555500539837</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1555500539837</updated>
+    </task>
+    <task id="LOCAL-00015" summary="update record">
+      <created>1555591662762</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1555591662762</updated>
+    </task>
+    <task id="LOCAL-00016" summary="update thread， auto generate order">
+      <created>1555661894240</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1555661894240</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="304572000" />
+    <option name="totallyTimeSpent" value="361620000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -843,9 +520,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25373134" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20628998" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -856,7 +532,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.17643923" weight="0.4121475" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6348614" weight="0.45444685" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.9093817" visible="true" weight="0.35683298" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.9093817" visible="true" weight="0.5368764" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49733475" weight="0.329718" />
@@ -874,13 +550,13 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.14232409" />
+      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.14232409" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" weight="0.32995737" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Bean Validation" order="9" visible="true" weight="0.071428575" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.071428575" />
       <window_info anchor="right" id="Maven Projects" order="10" />
     </layout>
   </component>
@@ -893,518 +569,388 @@
     <MESSAGE value="db.properties" />
     <MESSAGE value="update" />
     <MESSAGE value="update order" />
-    <option name="LAST_COMMIT_MESSAGE" value="update order" />
+    <MESSAGE value="update record" />
+    <MESSAGE value="update thread， auto generate order" />
+    <option name="LAST_COMMIT_MESSAGE" value="update thread， auto generate order" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/BaseController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/my_order.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        <state relative-caret-position="410">
+          <caret line="88" column="126" selection-start-line="88" selection-start-column="126" selection-end-line="88" selection-end-column="126" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/product/impl/ProdTypeServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/my_product.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="289">
+          <caret line="62" column="58" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/utils/FilterByConditionUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/dao/base/order/BargainRecordDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
-          <folding>
-            <element signature="e#535#546#0" expanded="true" />
-            <element signature="e#2342#2356#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/cn/com/scooper/common/scooper-common/1.0.24/scooper-common-1.0.24.jar!/cn/com/scooper/common/resp/APIRespJson.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/demandInfo/DemandInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/release/ReleaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/ConfigController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="44" column="24" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/demandInfo/impl/DemandInfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1004">
-          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/BaseDataController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="63" column="26" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
-          <folding>
-            <element signature="e#1698#1699#0" expanded="true" />
-            <element signature="e#1751#1752#0" expanded="true" />
-            <element signature="e#1868#1869#0" expanded="true" />
-            <element signature="e#1922#1923#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/IndexDataController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/ReleaseDataController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/SearchDmdInfoDataController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="66" column="44" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/UserDataController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="55" column="29" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/second-hand-market/js/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sql/init.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/release_product.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="92" column="108" selection-start-line="92" selection-start-column="108" selection-end-line="92" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/SearchProdDataController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="37" column="31" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/product/ProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config/mappers/base/biddingRecord/BiddingRecordMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="43" column="144" selection-start-line="43" selection-start-column="144" selection-end-line="43" selection-end-column="144" />
+        <state relative-caret-position="212">
+          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/BargRecordService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="25" />
+        <state relative-caret-position="119">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config/mappers/base/product/ProductMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/mappers/base/bargainRecord/BargainingRecordMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-952">
-          <caret line="7" column="133" selection-start-line="7" selection-start-column="133" selection-end-line="7" selection-end-column="133" />
+        <state relative-caret-position="459">
+          <caret line="57" column="79" selection-start-line="57" selection-start-column="79" selection-end-line="57" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/BargRecordServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/ProdDataController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="84" column="47" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/common/constant/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/BiddingRecordDo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/BargainingRecordDo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="34" />
-          <folding>
-            <element signature="e#404#405#0" expanded="true" />
-            <element signature="e#445#446#0" expanded="true" />
-            <element signature="e#514#515#0" expanded="true" />
-            <element signature="e#574#575#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-            <element signature="e#643#644#0" expanded="true" />
-            <element signature="e#694#695#0" expanded="true" />
-            <element signature="e#736#737#0" expanded="true" />
-            <element signature="e#778#779#0" expanded="true" />
-            <element signature="e#816#817#0" expanded="true" />
-            <element signature="e#878#879#0" expanded="true" />
-            <element signature="e#932#933#0" expanded="true" />
-            <element signature="e#970#971#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1058#1059#0" expanded="true" />
-            <element signature="e#1104#1105#0" expanded="true" />
-            <element signature="e#1138#1139#0" expanded="true" />
-            <element signature="e#1167#1168#0" expanded="true" />
-            <element signature="e#1212#1213#0" expanded="true" />
-            <element signature="e#1248#1249#0" expanded="true" />
-            <element signature="e#1288#1289#0" expanded="true" />
-            <element signature="e#1321#1322#0" expanded="true" />
-            <element signature="e#1376#1377#0" expanded="true" />
-            <element signature="e#1420#1421#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/release.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="3" column="50" lean-forward="true" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/view/IndexViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/view/OrderViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#363#364#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="215">
+          <caret line="106" column="21" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/OrderDo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/SearchOrderQo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="30" />
+        <state relative-caret-position="156">
+          <caret line="93" column="18" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
           <folding>
-            <element signature="e#450#451#0" expanded="true" />
-            <element signature="e#480#481#0" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
-            <element signature="e#565#566#0" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#631#632#0" expanded="true" />
-            <element signature="e#679#680#0" expanded="true" />
-            <element signature="e#719#720#0" expanded="true" />
-            <element signature="e#755#756#0" expanded="true" />
-            <element signature="e#787#788#0" expanded="true" />
-            <element signature="e#837#838#0" expanded="true" />
-            <element signature="e#879#880#0" expanded="true" />
-            <element signature="e#919#920#0" expanded="true" />
-            <element signature="e#954#955#0" expanded="true" />
-            <element signature="e#1011#1012#0" expanded="true" />
-            <element signature="e#1059#1060#0" expanded="true" />
-            <element signature="e#1094#1095#0" expanded="true" />
-            <element signature="e#1125#1126#0" expanded="true" />
-            <element signature="e#1173#1174#0" expanded="true" />
-            <element signature="e#1213#1214#0" expanded="true" />
-            <element signature="e#1251#1252#0" expanded="true" />
-            <element signature="e#1285#1286#0" expanded="true" />
-            <element signature="e#1339#1340#0" expanded="true" />
-            <element signature="e#1385#1386#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-            <element signature="e#1459#1460#0" expanded="true" />
-            <element signature="e#1515#1516#0" expanded="true" />
-            <element signature="e#1563#1564#0" expanded="true" />
-            <element signature="e#1601#1602#0" expanded="true" />
-            <element signature="e#1635#1636#0" expanded="true" />
-            <element signature="e#1689#1690#0" expanded="true" />
-            <element signature="e#1735#1736#0" expanded="true" />
-            <element signature="e#1773#1774#0" expanded="true" />
-            <element signature="e#1807#1808#0" expanded="true" />
-            <element signature="e#1861#1862#0" expanded="true" />
-            <element signature="e#1907#1908#0" expanded="true" />
+            <element signature="e#939#940#0" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#1009#1010#0" expanded="true" />
+            <element signature="e#1043#1044#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/config/mappers/base/order/OrderMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-586" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-205">
-          <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
+        <state relative-caret-position="302">
+          <caret line="58" column="120" selection-start-line="58" selection-start-column="120" selection-end-line="58" selection-end-column="120" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/PriceRecordDataController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/common/constant/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+        <state relative-caret-position="136">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/BiddingRecordDo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/RecordQo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#527#528#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#620#621#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/ProductDo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/OrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="67" column="45" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/cn/com/scooper/common/scooper-common/1.0.24/scooper-common-1.0.24.jar!/cn/com/scooper/common/spring/interceptor/ViewConfigInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/UserDataController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="42" column="27" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="30" />
-          <folding>
-            <element signature="e#745#746#0" expanded="true" />
-            <element signature="e#777#778#0" expanded="true" />
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1054#1055#0" expanded="true" />
-            <element signature="e#1085#1086#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
-            <element signature="e#1152#1153#0" expanded="true" />
-            <element signature="e#1184#1185#0" expanded="true" />
-            <element signature="e#1222#1223#0" expanded="true" />
-            <element signature="e#1256#1257#0" expanded="true" />
-            <element signature="e#1310#1311#0" expanded="true" />
-            <element signature="e#1356#1357#0" expanded="true" />
-            <element signature="e#1399#1400#0" expanded="true" />
-            <element signature="e#1438#1439#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1594#1595#0" expanded="true" />
-            <element signature="e#1625#1626#0" expanded="true" />
-            <element signature="e#1674#1675#0" expanded="true" />
-            <element signature="e#1714#1715#0" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
-            <element signature="e#1816#1817#0" expanded="true" />
-            <element signature="e#1850#1851#0" expanded="true" />
-            <element signature="e#1882#1883#0" expanded="true" />
-            <element signature="e#1910#1911#0" expanded="true" />
-            <element signature="e#1952#1953#0" expanded="true" />
-            <element signature="e#1986#1987#0" expanded="true" />
-            <element signature="e#2020#2021#0" expanded="true" />
-            <element signature="e#2049#2050#0" expanded="true" />
-            <element signature="e#2094#2095#0" expanded="true" />
-            <element signature="e#2130#2131#0" expanded="true" />
-            <element signature="e#2165#2166#0" expanded="true" />
-            <element signature="e#2196#2197#0" expanded="true" />
-            <element signature="e#2244#2245#0" expanded="true" />
-            <element signature="e#2284#2285#0" expanded="true" />
-            <element signature="e#2322#2323#0" expanded="true" />
-            <element signature="e#2356#2357#0" expanded="true" />
-            <element signature="e#2410#2411#0" expanded="true" />
-            <element signature="e#2456#2457#0" expanded="true" />
-            <element signature="e#2493#2494#0" expanded="true" />
-            <element signature="e#2525#2526#0" expanded="true" />
-            <element signature="e#2576#2577#0" expanded="true" />
-            <element signature="e#2618#2619#0" expanded="true" />
-            <element signature="e#2659#2660#0" expanded="true" />
-            <element signature="e#2695#2696#0" expanded="true" />
-            <element signature="e#2754#2755#0" expanded="true" />
-            <element signature="e#2804#2805#0" expanded="true" />
-            <element signature="e#2838#2839#0" expanded="true" />
-            <element signature="e#2867#2868#0" expanded="true" />
-            <element signature="e#2912#2913#0" expanded="true" />
-            <element signature="e#2948#2949#0" expanded="true" />
-            <element signature="e#2988#2989#0" expanded="true" />
-            <element signature="e#3021#3022#0" expanded="true" />
-            <element signature="e#3076#3077#0" expanded="true" />
-            <element signature="e#3120#3121#0" expanded="true" />
-            <element signature="e#3160#3161#0" expanded="true" />
-            <element signature="e#3193#3194#0" expanded="true" />
-            <element signature="e#3248#3249#0" expanded="true" />
-            <element signature="e#3292#3293#0" expanded="true" />
-          </folding>
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/view/SearchProdViewController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="33" column="52" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/login.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="100" column="43" selection-start-line="100" selection-start-column="43" selection-end-line="100" selection-end-column="43" />
-          <folding>
-            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="14" column="59" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="17" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="20" selection-end-column="17" />
+          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/BiddRecordServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="49" column="47" lean-forward="true" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/RecordQo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="52" column="85" selection-start-line="52" selection-start-column="85" selection-end-line="52" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/interceptor/AuthInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1295">
+          <caret line="120" column="68" selection-start-line="120" selection-start-column="64" selection-end-line="120" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/view/UserViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/release.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/interceptor/UserLoginInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="37" lean-forward="true" selection-start-column="37" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/spring-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/view/ReleaseViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/common/PageBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/thirdpart/package-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#338#339#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-            <element signature="e#487#488#0" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-            <element signature="e#629#630#0" expanded="true" />
-            <element signature="e#677#678#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
-            <element signature="e#751#752#0" expanded="true" />
-            <element signature="e#778#779#0" expanded="true" />
-            <element signature="e#821#822#0" expanded="true" />
-            <element signature="e#853#854#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/BiddRecordService.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="27" column="130" lean-forward="true" selection-start-line="27" selection-start-column="130" selection-end-line="27" selection-end-column="130" />
+        <state relative-caret-position="122">
+          <caret line="446" column="11" selection-start-line="446" selection-start-column="11" selection-end-line="446" selection-end-column="11" />
+          <folding>
+            <element signature="e#15020#15021#0" expanded="true" />
+            <element signature="e#15084#15085#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config/mappers/base/bargainRecord/BargainingRecordMapper.xml">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.10.RELEASE/spring-web-4.3.10.RELEASE.jar!/org/springframework/web/context/ContextLoaderListener.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        <state relative-caret-position="221">
+          <caret line="19" column="66" lean-forward="true" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/dao/base/order/BargainRecordDao.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.10.RELEASE/spring-web-4.3.10.RELEASE.jar!/org/springframework/web/context/ContextLoader.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="52" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="52" />
+        <state relative-caret-position="309">
+          <caret line="86" column="67" selection-start-line="86" selection-start-column="40" selection-end-line="86" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/product_info.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/pojo/base/ProductDo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="11" column="67" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="67" />
+        <state relative-caret-position="425">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/product_list.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/BargRecordServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="44" />
+        <state relative-caret-position="37">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/product/impl/ProductServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/product/ProductService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="101" column="81" selection-start-line="101" selection-start-column="81" selection-end-line="101" selection-end-column="81" />
+        <state relative-caret-position="384">
+          <caret line="74" column="28" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/OrderService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/dao/base/product/ProductDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="65" column="22" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
+        <state relative-caret-position="309">
+          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/mappers/base/product/ProductMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="125" column="66" selection-start-line="125" selection-start-column="59" selection-end-line="125" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.3.10.RELEASE/spring-context-4.3.10.RELEASE.jar!/org/springframework/context/ApplicationListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/utils/SpringContextUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="58" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#1430#1431#0" expanded="true" />
+            <element signature="e#1490#1491#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="61" column="51" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="31" column="77" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="77" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/OrderServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="245" column="47" selection-start-line="245" selection-start-column="37" selection-end-line="245" selection-end-column="47" />
+        <state relative-caret-position="44">
+          <caret line="59" column="96" selection-start-line="59" selection-start-column="96" selection-end-line="59" selection-end-column="96" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6023#6039#0" expanded="true" />
-            <element signature="e#6083#6093#0" expanded="true" />
-            <element signature="e#8757#8773#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/utils/BeanContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#609#610#0" expanded="true" />
+            <element signature="e#650#651#0" expanded="true" />
+            <element signature="e#657#687#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/config/InstantiationTracingBeanPostProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/product/impl/ProductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="96" column="13" lean-forward="true" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/product_info.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/utils/BiddOrderThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/BiddRecordServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="86" column="53" selection-start-line="86" selection-start-column="53" selection-end-line="86" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/OrderDataController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="88" column="44" lean-forward="true" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-698">
-          <caret line="370" column="96" selection-start-line="370" selection-start-column="96" selection-end-line="370" selection-end-column="96" />
+        <state relative-caret-position="229">
+          <caret line="100" column="111" lean-forward="true" selection-start-line="100" selection-start-column="111" selection-end-line="100" selection-end-column="111" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#!!top" expanded="true" />
@@ -1417,6 +963,8 @@
             <element signature="e#112#118#0" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="e#248#254#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#3;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#3;n#!!top" expanded="true" />
@@ -1431,38 +979,61 @@
             <element signature="n#style#0;n#strong#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#3;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#4;n#!!top" expanded="true" />
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="e#4#10#1" expanded="true" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#1;n#tr#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#2;n#tr#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#1;n#tr#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#2;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#!!top" expanded="true" />
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#2;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#4;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/OrderDataController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/release_product.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="101" column="62" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="62" />
+        <state relative-caret-position="238">
+          <caret line="98" column="98" selection-start-line="98" selection-start-column="98" selection-end-line="98" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/controller/data/PriceRecordDataController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="47" column="70" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/my_order.jsp">
+    <entry file="file://$PROJECT_DIR$/resources/sql/init.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="80" column="79" selection-start-line="80" selection-start-column="79" selection-end-line="80" selection-end-column="79" />
+        <state relative-caret-position="119">
+          <caret line="85" column="16" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1519,11 +1090,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Web|secondhandmarket</last-edited>
+          <last-edited>secondhandmarket</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

@@ -7,7 +7,8 @@ $(document).ready(function () {
             dataType : 'json',
             data : {
                 userName : $("#username").val(),
-                password : $("#password").val()
+                password : $("#password").val(),
+                tel : $("#tel").val()
             },
             success: function(data) {
                 if (data.code == 103) {

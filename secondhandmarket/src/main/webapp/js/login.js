@@ -12,6 +12,7 @@ $(document).ready(function(){
             success: function(data) {
                 if (data.code == 102) {
                     alert(data.message);
+                    window.sessionStorage.setItem("is_login", "true");
                     window.location.href = getRootPath() + "/";
                 } else {
                     alert(data.message);

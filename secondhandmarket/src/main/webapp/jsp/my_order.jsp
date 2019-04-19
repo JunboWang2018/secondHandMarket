@@ -36,7 +36,7 @@
         <thead>
             <tr>
                 <th width="20%" style="text-align: center;">订单编号</th>
-                <th width="30%" style="text-align: center;">商品名称</th>
+                <th width="30%" style="text-align: center;">物品名称</th>
                 <th width="10%" style="text-align: center;">卖家</th>
                 <th width="10%" style="text-align: center;">单价</th>
                 <th width="10%" style="text-align: center;">数量</th>
@@ -52,7 +52,7 @@
         <thead>
             <tr>
                 <th width="20%" style="text-align: center;">订单编号</th>
-                <th width="30%" style="text-align: center;">商品名称</th>
+                <th width="30%" style="text-align: center;">物品名称</th>
                 <th width="10%" style="text-align: center;">买家</th>
                 <th width="10%" style="text-align: center;">单价</th>
                 <th width="10%" style="text-align: center;">数量</th>
@@ -78,35 +78,15 @@
             </div>
             <div class="modal-body">
                 <table class="table table-striped table-hover">
-                    <h4><span id="record_name" class="label label-info"></span></h4>
-                    <thead id="price_record_head">
-                    <tr>
-                        <th width="40%" style="text-align: center;">出价人</th>
-                        <th width="20%" style="text-align: center;">出价</th>
-                        <th width="40%" style="text-align: center;">出价时间</th>
-                    </tr>
+                    <h4><span id="order_page_price_record_name" class="label label-info"></span></h4>
+                    <thead id="order_page_price_record_head">
                     </thead>
-                    <tbody id="price_record_body">
-                        <tr>
-                            <td>Tanmay</td>
-                            <td>Bangalore</td>
-                            <td>560001</td>
-                        </tr>
-                    <tr>
-                        <td>Sachin</td>
-                        <td>Mumbai</td>
-                        <td>400003</td>
-                    </tr>
-                    <tr>
-                        <td>Uma</td>
-                        <td>Pune</td>
-                        <td>411027</td>
-                    </tr>
+                    <tbody id="order_page_price_record_body">
                     </tbody>
                 </table>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal"  onclick="removeOrderPagePriceRecordHTML()"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭</button>
             </div>
         </div>
     </div>

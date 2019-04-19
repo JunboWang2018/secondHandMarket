@@ -1,9 +1,12 @@
-function loadIndexData() {
+function loadIndexData(typeCode) {
     $.ajax({
         type : "get",
         url : "/secondhandmarket/data/index/search",
         async : true,
         dataType : 'json',
+        data : {
+            typeCode : typeCode
+        },
         success: function(result) {
             if (result.code == 0) {
                 var productListString = "";
@@ -25,6 +28,11 @@ function loadIndexData() {
                 document.getElementById("requirementList").innerHTML = demandInfoString;
             } else {
                 alert(result.message);
+            }
+            if (typeCode == null || typeCode == "") {
+                $("#INDEX").addClass('active');
+            } else {
+                document.getElementById(typeCode).className = 'active';
             }
         },
         error: function () {

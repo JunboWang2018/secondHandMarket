@@ -5,7 +5,7 @@
 
 <mapper namespace="cn.showclear.www.dao.base.order.BargainRecordDao">
     <sql id="Base_Col_List">
-            product_id, bargaining_price, description, user_id, create_date
+            product_id, bargaining_price, description, user_id, create_date, is_active
     </sql>
 
     <resultMap id="Base_Col_ResultMap" type="cn.showclear.www.pojo.base.BargainingRecordDo">
@@ -15,6 +15,7 @@
         <result property="description" column="description"/>
         <result property="userId" column="user_id"/>
         <result property="createDate" column="create_date"/>
+        <result property="isActive" column="is_active"/>
     </resultMap>
 
     <select id="searchBargainRecordList" resultMap="Base_Col_ResultMap" parameterType="cn.showclear.www.pojo.base.BargainingRecordDo">
@@ -22,24 +23,41 @@
         bargaining_record_id, <include refid="Base_Col_List"/>
         FROM T_BARGAINING_RECORD
         <where>
-            <if test="bargainingRecordId != null and bargainingRecordId != ''">
+            <if test="bargainingRecordId != null">
                 bargaining_record_id = #{bargainingRecordId}
             </if>
-            <if test="productId != null and productId != ''">
+            <if test="productId != null">
                 AND product_id = #{productId}
             </if>
-            <if test="userId != null and userId != ''">
+            <if test="userId != null">
                 AND user_id = #{userId}
             </if>
             <if test="createDate != null and createDate != ''">
                 AND create_date = #{createDate}
             </if>
+            <if test="isActive != null">
+                AND is_active = #{isActive}
+            </if>
         </where>
     </select>
 
     <insert id="addRecord" parameterType="cn.showclear.www.pojo.base.BargainingRecordDo">
-        INSERT INTO T_BARGAINING_RECORD(<include refid="Base_Col_List"></include>) VALUES(#{productId}, #{bargainingPrice}, #{description}, #{userId}, CURRENT_TIMESTAMP)
+        INSERT INTO T_BARGAINING_RECORD(<include refid="Base_Col_List"></include>) VALUES(#{productId}, #{bargainingPrice}, #{description}, #{userId}, CURRENT_TIMESTAMP, #{isActive})
     </insert>
 
-
+    <update id="deleteRecordByProdId" parameterType="java.lang.Integer">
+        UPDATE T_BARGAINING_RECORD
+        SET is_active = 0
+        WHERE product_id = #{productId}
+    </update>
+    <update id="deleteRecordByUserId" parameterType="java.lang.Integer">
+        UPDATE T_BARGAINING_RECORD
+        SET is_active = 0
+        WHERE user_id = #{userId}
+    </update>
+    <update id="deleteRecordByProdIdAndUserId" parameterType="java.lang.Integer">
+        UPDATE T_BARGAINING_RECORD
+        SET is_active = 0
+        WHERE product_id = #{productId} AND user_id = #{userId}
+    </update>
 </mapper>

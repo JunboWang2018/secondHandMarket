@@ -5,13 +5,14 @@
 
 <mapper namespace="cn.showclear.www.dao.base.order.OrderDao">
     <sql id="Base_Col_List">
-        order_number, deal_date, product_id, buy_user_id, sale_user_id, create_date, modify_date
+        order_number, deal_date, price, product_id, buy_user_id, sale_user_id, create_date, modify_date
     </sql>
 
     <resultMap id="Base_Col_ResultMap" type="cn.showclear.www.pojo.base.OrderDo">
         <result property="orderId" column="order_id"/>
         <result property="orderNumber" column="order_number"/>
         <result property="dealDate" column="deal_date"/>
+        <result property="price" column="price"/>
         <result property="productId" column="product_id"/>
         <result property="buyUserId" column="buy_user_id"/>
         <result property="saleUserId" column="sale_user_id"/>
@@ -24,7 +25,7 @@
         order_id, <include refid="Base_Col_List"/>
         FROM T_ORDER
         <where>
-            <if test="orderId != null and orderId != ''">
+            <if test="orderId != null">
                 order_id = #{orderId}
             </if>
             <if test="orderNumber != null and orderNumber != ''">
@@ -33,13 +34,16 @@
             <if test="dealDate != null and dealDate != ''">
                 AND deal_date = #{dealDate}
             </if>
-            <if test="productId != null and productId != ''">
+            <if test="price != null">
+                AND price = #{price}
+            </if>
+            <if test="productId != null">
                 AND product_id = #{productId}
             </if>
-            <if test="buyUserId != null and buyUserId != ''">
+            <if test="buyUserId != null">
                 AND buy_user_id = #{buyUserId}
             </if>
-            <if test="saleUserId != null and saleUserId != ''">
+            <if test="saleUserId != null">
                 AND sale_user_id = #{saleUserId}
             </if>
             <if test="createDate != null and createDate != ''">
@@ -52,7 +56,7 @@
     </select>
 
     <insert id="generateOrder" parameterType="cn.showclear.www.pojo.base.OrderDo">
-        INSERT INTO T_ORDER(<include refid="Base_Col_List"></include>) VALUES(#{orderNumber}, CURRENT_TIMESTAMP, #{productId}, #{buyUserId}, #{saleUserId}, CURRENT_TIMESTAMP, #{modifyDate})
+        INSERT INTO T_ORDER(<include refid="Base_Col_List"></include>) VALUES(#{orderNumber}, CURRENT_TIMESTAMP, #{price}, #{productId}, #{buyUserId}, #{saleUserId}, CURRENT_TIMESTAMP, #{modifyDate})
     </insert>
 
 </mapper>

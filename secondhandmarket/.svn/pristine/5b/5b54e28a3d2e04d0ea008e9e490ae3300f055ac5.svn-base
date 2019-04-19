@@ -1,0 +1,170 @@
+package cn.showclear.www.service.product.impl;
+
+import cn.com.scooper.common.exception.BusinessException;
+import cn.showclear.utils.FilterByConditionUtil;
+import cn.showclear.www.common.constant.Message;
+import cn.showclear.www.dao.base.product.ProductDao;
+import cn.showclear.www.pojo.base.*;
+import cn.showclear.www.service.order.BiddRecordService;
+import cn.showclear.www.service.product.ProdTypeService;
+import cn.showclear.www.service.product.ProductService;
+import cn.showclear.www.service.product.SaleWayService;
+import cn.showclear.www.service.user.UserService;
+import cn.showclear.www.service.validate.ValidateService;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * @author Wang Junbo
+ * @description  物品查询
+ * @date 2019/4/11
+ */
+@Service
+public class ProductServiceImpl implements ProductService {
+    private static final Logger log = LoggerFactory.getLogger(ProductServiceImpl.class);
+
+    @Autowired
+    private ProductDao productDao;
+
+    @Autowired
+    private ValidateService validateService;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private SaleWayService saleWayService;
+
+    @Autowired
+    private ProdTypeService prodTypeService;
+
+    @Autowired
+    private BiddRecordService biddingRecordService;
+
+    /**
+     * 通过商品编号查询物品
+     * @param productDo
+     * @return 物品对象
+     */
+    @Override
+    public ProductDo searchProduct(ProductDo productDo) {
+        log.info("search product, which number is " + productDo.getProductNumber());
+        List<ProductDo> list = null;
+        list = this.searchProductList(productDo);
+        if (list == null || list.size() == 0) {
+            return null;
+        }
+        return list.get(0);
+    }
+
+    /**
+     * 通过编号查找某个物品，并查找其它需要的参数
+     * @param prodDo
+     * @return
+     */
+    @Override
+    public SearchProductQo searchProductQo(ProductDo prodDo) {
+        log.info("search productQo, which number is " + prodDo.getProductNumber());
+        SearchProductQo searchProductQo = new SearchProductQo();
+        //查询物品
+        ProductDo productDo = this.searchProduct(prodDo);
+        if (productDo == null) {
+            throw new BusinessException(Message.PRODUCT_NOT_EXIST.getCode(), Message.PRODUCT_NOT_EXIST.getMessage());
+        }
+        searchProductQo.setProductDo(productDo);
+        //查询用户名
+        UserDo userDoQuery = new UserDo();
+        userDoQuery.setUserId(productDo.getUserId());
+        UserDo userDo = userService.searchUser(userDoQuery);
+        searchProductQo.setUserName(userDo.getUserName());
+        //查询出售方式
+        SaleWayDo saleWayDoQuery = new SaleWayDo();
+        saleWayDoQuery.setCode(productDo.getSaleWayCode());
+        SaleWayDo saleWayDo = saleWayService.searchSaleWay(saleWayDoQuery);
+        searchProductQo.setSaleWayName(saleWayDo.getName());
+        //查询物品类型
+        ProductTypeDo prodTypeDoQuery = new ProductTypeDo();
+        prodTypeDoQuery.setCode(productDo.getTypeCode());
+        ProductTypeDo prodTypeDo = prodTypeService.searchProdType(prodTypeDoQuery);
+        searchProductQo.setTypeName(prodTypeDo.getName());
+        //如果是竞价类型，查询当前最高价并设置,若没有记录，设置初始价格
+        if (searchProductQo.getProductDo().getSaleWayCode().equals("BIDD")) {
+            log.info("this is bidding product");
+            BiddingRecordDo biddingRecordDoQuery = new BiddingRecordDo();
+            biddingRecordDoQuery.setProductId(searchProductQo.getProductDo().getProductId());
+            BiddingRecordDo biddingRecordDo = biddingRecordService.searchMaxPriceRecord(biddingRecordDoQuery);
+            if (biddingRecordDo != null) {
+                searchProductQo.setBiddMaxPrice(biddingRecordDo.getBiddingPrice());
+            } else {
+                searchProductQo.setBiddMaxPrice(productDo.getPrice());
+            }
+        }
+        return searchProductQo;
+    }
+
+
+    /**
+     * 通过指定条件查询物品
+     * @param productDo
+     * @return 物品对象集合
+     */
+    @Override
+    public List<ProductDo> searchProductList(ProductDo productDo) {
+        log.info("search product List " + productDo.toString());
+        //默认查找未出售的物品
+        if (productDo.getIsSold() == null) {
+            productDo.setIsSold(0);
+        }
+        log.info("is sold = " + productDo.getIsSold());
+        //输入参数校验
+        validateService.validateProductSearch(productDo);
+        return productDao.searchProdByCol(productDo);
+    }
+
+    @Override
+    public List<ProductDo> searchProdListQo(SearchProdListQo searchProdListQo) {
+        log.info("Search product list by condition : " + searchProdListQo.toString());
+        if (searchProdListQo.getIsSold() == null) {
+            searchProdListQo.setIsSold(0);
+        }
+        this.correctCondition(searchProdListQo);
+        log.info("After correcting, search product list by condition : " + searchProdListQo.toString());
+        List<ProductDo> list = productDao.searchProdListByQo(searchProdListQo);
+        //按折旧率条件筛选
+        if (list != null && !StringUtils.isEmpty(searchProdListQo.getDepRateSymbol()) && searchProdListQo.getDepreciationRate() != null) {
+            log.info("Filter by rate");
+            list = FilterByConditionUtil.filterProdListByRate(list, searchProdListQo.getDepRateSymbol(), searchProdListQo.getDepreciationRate());
+        }
+        return list;
+    }
+
+    @Override
+    public Integer saleProduct(String productNumber) {
+        log.info("update product is_sold to 1");
+        return productDao.saleProduct(productNumber);
+    }
+
+    /**
+     * 更正条件，将属性值为''改成null，以免不必要的异常
+     * @param searchProdListQo
+     */
+    private void correctCondition(SearchProdListQo searchProdListQo) {
+        if (searchProdListQo.getDepRateSymbol() != null && searchProdListQo.getDepRateSymbol().equals("")) {
+            searchProdListQo.setDepRateSymbol(null);
+        }
+        if (searchProdListQo.getDepreciationRate() != null && searchProdListQo.getDepreciationRate().equals("")) {
+            searchProdListQo.setDepreciationRate(null);
+        }
+        if (searchProdListQo.getTypeCode() != null && searchProdListQo.getTypeCode().equals("")) {
+            searchProdListQo.setTypeCode(null);
+        }
+        if (searchProdListQo.getSaleWayCode() != null && searchProdListQo.getSaleWayCode().equals("")) {
+            searchProdListQo.setSaleWayCode(null);
+        }
+    }
+}

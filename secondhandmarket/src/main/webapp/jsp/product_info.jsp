@@ -15,6 +15,7 @@
             var productNumber = "${productNumber}";
             prodNumberSearch(productNumber);
         }
+
     </script>
 </head>
 <body>

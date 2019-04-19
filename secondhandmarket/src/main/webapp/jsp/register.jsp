@@ -48,6 +48,11 @@
                 <input id="password" type="password" class="form-control" placeholder="请输入密码">
             </div>
             <br>
+            <div class="input-group">
+                <span class="input-group-addon">联系方式</span>
+                <input id="tel" type="text" class="form-control" placeholder="请输入联系方式">
+            </div>
+            <br>
             <div style="margin-left: 160px;">
                 <button id="register" type="button" class="btn btn-primary" >注册</button>
             </div>

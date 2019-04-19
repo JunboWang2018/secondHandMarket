@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/secondhandmarket/css/bootstrap.min.css" />
     <script type="text/javascript" src="/secondhandmarket/js/bootstrap.min.js" ></script>
     <script type="text/javascript" src="/secondhandmarket/js/common.js" ></script>
+    <script type="text/javascript" src="/secondhandmarket/js/index.js" ></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -24,6 +25,7 @@
                     <li>你好，${sessionScope.user}</li>
                     <li><a href="/secondhandmarket/data/user/logout">退出</a></li>
                     <li><a href="/secondhandmarket/view/order/toMyOrder">我的订单</a></li>
+                    <li><a href="/secondhandmarket/view/search/toMyProducts">我的物品</a></li>
                 </c:if>
 
                 <li><a href="/secondhandmarket/view/release/toReleaseProduct">发布物品</a></li>
@@ -34,18 +36,18 @@
     <div class="container-fluid" style="height: 60px">
         <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
-                <div>
+                <div id="nav_li">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">主页</a></li>
-                        <li><a href="/secondhandmarket/?typeCode=FURN">家具</a></li>
-                        <li><a href="/secondhandmarket/data/index/search?typeCode=ELAP">电器</a></li>
-                        <li><a href="/secondhandmarket/data/index/search?typeCode=DGTL">数码</a></li>
-                        <li><a href="/secondhandmarket/data/index/search?typeCode=TSPT">交通工具</a></li>
-                        <li><a href="/secondhandmarket/data/index/search?typeCode=HDWR">五金器具</a></li>
-                        <li><a href="/secondhandmarket/data/index/search?typeCode=DCRT">装饰摆件</a></li>
-                        <li><a href="/secondhandmarket/data/index/search?typeCode=CLTB">服饰包具</a></li>
-                        <li><a href="/secondhandmarket/data/index/search?typeCode=TCKT">点券</a></li>
-                        <li><a href="/secondhandmarket/data/index/search?typeCode=DGTP">数字商品</a></li>
+                        <li id="INDEX"><a href="/secondhandmarket/">主页</a></li>
+                        <li id="FURN"><a href="/secondhandmarket/?typeCode=FURN">家具</a></li>
+                        <li id="ELAP"><a href="/secondhandmarket/?typeCode=ELAP">电器</a></li>
+                        <li id="DGTL"><a href="/secondhandmarket/?typeCode=DGTL">数码</a></li>
+                        <li id="TSPT"><a href="/secondhandmarket/?typeCode=TSPT">交通工具</a></li>
+                        <li id="HDWR"><a href="/secondhandmarket/?typeCode=HDWR">五金器具</a></li>
+                        <li id="DCRT"><a href="/secondhandmarket/?typeCode=DCRT">装饰摆件</a></li>
+                        <li id="CLTB"><a href="/secondhandmarket/?typeCode=CLTB">服饰包具</a></li>
+                        <li id="TCKT"><a href="/secondhandmarket/?typeCode=TCKT">点券</a></li>
+                        <li id="DGTP"><a href="/secondhandmarket/?typeCode=DGTP">数字商品</a></li>
                     </ul>
                 </div>
                 <form class="navbar-form navbar-right" role="search" >
