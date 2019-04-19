@@ -41,8 +41,8 @@ public interface ProductDao {
 
     /**
      * 物品上/下架（is_selling设为1/0）
-     * @param productId
+     * @param productDo
      * @return
      */
-    Integer takeUpOrDownProd(Integer productId);
+    Integer takeUpOrDownProd(ProductDo productDo);
 }

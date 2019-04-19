@@ -2,10 +2,8 @@ package cn.showclear.www.service.order.impl;
 
 import cn.com.scooper.common.exception.BusinessException;
 import cn.showclear.utils.AutoGenerateNumberUtil;
-import cn.showclear.utils.BiddOrderThread;
 import cn.showclear.www.common.constant.Message;
 import cn.showclear.www.dao.base.order.OrderDao;
-import cn.showclear.www.dao.base.product.ProductDao;
 import cn.showclear.www.pojo.base.*;
 import cn.showclear.www.service.order.BargRecordService;
 import cn.showclear.www.service.order.BiddRecordService;
@@ -20,7 +18,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Wang Junbo
@@ -54,9 +55,6 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private BargRecordService bargRecordService;
-
-    @Autowired
-    private ProductDao productDao;
 
     @Override
     public List<OrderDo> searchOrderListByCol(OrderDo orderDo) throws IllegalArgumentException {
@@ -133,9 +131,6 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Map<String, Object> searchBuyAndSaleOrder(String username) {
-        BiddOrderThread timerTask = new BiddOrderThread(productService, productDao, biddRecordService, this, userService);
-        Timer timer = new Timer();
-        timer.schedule(timerTask, 0);
         List<SearchOrderQo> searchBuyOrderList = null;
         List<SearchOrderQo> searchSaleOrderList = null;
         Map<String, Object> resultMap = new HashMap<String, Object>();

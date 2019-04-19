@@ -95,8 +95,8 @@
                     <br />
                 </div>
                 <div class="input-group">
-                    <span class="input-group-addon" style="width: 100px;">售价</span>
-                    <input id="product_price" type="text" class="form-control" placeholder="请输入售价">
+                    <span class="input-group-addon" style="width: 100px;">起拍价</span>
+                    <input id="product_price" type="text" class="form-control" placeholder="请输入起拍价">
                 </div>
                 <br>
                 <div style="margin-left: 160px;">

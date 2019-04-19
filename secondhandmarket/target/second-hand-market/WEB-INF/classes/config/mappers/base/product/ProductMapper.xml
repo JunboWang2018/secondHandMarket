@@ -123,7 +123,7 @@
         WHERE product_number = #{productNumber}
     </update>
 
-    <update id="takeUpOrDownProd" parameterType="java.lang.Integer">
+    <update id="takeUpOrDownProd" parameterType="cn.showclear.www.pojo.base.ProductDo">
         UPDATE T_PRODUCT
         SET is_selling = #{isSelling}
         WHERE product_id = #{productId}

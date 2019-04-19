@@ -41,6 +41,7 @@
                 <span class="input-group-addon">用户名</span>
                 <input id="username" type="text" class="form-control" placeholder="请输入用户名">
             </div>
+            <span id="login_username_check>" style="color: red"></span>
             <br>
             <div class="input-group">
                 <span class="input-group-addon">密码</span>

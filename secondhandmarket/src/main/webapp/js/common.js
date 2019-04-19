@@ -241,11 +241,11 @@ function demandInfoKeySearch(searchKey) {
 function initDemandInfoHTML(demandInfoList) {
     var demandInfoString = "";
     for (var i = 0; i < demandInfoList.length; i++) {
-        demandInfoString += "<td style='text-align: center'>"+ demandInfoList[i].demandInfoNumber +"</td>" +
+        demandInfoString += "<tr><td style='text-align: center'>"+ demandInfoList[i].demandInfoNumber +"</td>" +
             "<td style='text-align: center'><a href='/secondhandmarket/view/search/searchDemandInfo?demdInfoNumber=" + demandInfoList[i].demandInfoNumber +"'>" + demandInfoList[i].name + "</a></td>" +
             "<td style='text-align: center'>" + demandInfoList[i].depreciationRate + "</td>" +
             "<td style='text-align: center'>" + demandInfoList[i].quantity + "</td>" +
-            "<td style='text-align: center'>" + demandInfoList[i].price + "</td>"
+            "<td style='text-align: center'>" + demandInfoList[i].price + "</td></tr>"
     }
     return demandInfoString;
 }
@@ -564,7 +564,7 @@ function initMyProdsPage(result) {
             }
             myProdsHTML += "<td>" + myProdsList[i].sellStatus + "</td>";
             if (myProdsList[i].productDo.isSelling == "1" && myProdsList[i].productDo.isSold == "0") {
-                myProdsHTML += "<td><button onclick='prodTakeDown("+ myProdsList[i].productDo.productId + ")'>下架</button></td></tr>";
+                myProdsHTML += "<td><button onclick='prodTakeDown(" + myProdsList[i].productDo.productId + ")'>下架</button></td></tr>";
             } else if (myProdsList[i].productDo.isSelling == "0" && myProdsList[i].productDo.isSold == "0") {
                 myProdsHTML += "<td><button onclick='prodTakeUp("+ myProdsList[i].productDo.productId + ")'>上架</button></td></tr>";
             } else {
@@ -662,8 +662,8 @@ function prodTakeUp(productId) {
  * 物品下架
  * @param productId
  */
-function prodTakeDown(productId) {
-    var is_takeDown = confirm("议价物品下架会删除所有议价记录，是否下架？");
+function prodTakeDown(productId, saleWayCode) {
+    var is_takeDown = confirm("若是议价物品下架，则会删除所有议价记录，是否下架？");
     if (!is_takeDown) {
         return;
     }
