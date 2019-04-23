@@ -11,9 +11,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/js/common.js" line="152" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0f2e265-2be9-4769-954e-6909e9028344" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/OrderServiceImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="d0f2e265-2be9-4769-954e-6909e9028344" name="Default Changelist" comment="update thread， auto generate order" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,29 +41,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/OrderServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="137" column="37" selection-start-line="137" selection-start-column="37" selection-end-line="137" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/config/InstantiationTracingBeanPostProcessor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="80" column="134" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="134" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -221,7 +197,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -229,122 +204,11 @@
               <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
               <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="showclear" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="secondhandmarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="secondhandmarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -353,7 +217,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554466251298" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/jsp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -363,19 +227,19 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\demandInfo" />
-      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\product" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.showclear.www.service.demandInfo" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\secondhandmarket\docs" />
       <recent name="D:\IdeaProjects\secondhandmarket\src\main\webapp\jsp" />
       <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\order" />
       <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\bargainRecord" />
       <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\baddingRecord" />
-      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\saleWay" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.showclear.www.service.demandInfo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\demandInfo" />
+      <recent name="D:\IdeaProjects\secondhandmarket\src\main\resources\config\mappers\base\product" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -518,7 +382,10 @@
       <workItem from="1555376435025" duration="34364000" />
       <workItem from="1555463200285" duration="32053000" />
       <workItem from="1555549285982" duration="35784000" />
-      <workItem from="1555635506165" duration="34646000" />
+      <workItem from="1555635506165" duration="34935000" />
+      <workItem from="1555982659136" duration="544000" />
+      <workItem from="1555983235956" duration="738000" />
+      <workItem from="1556017397124" duration="238000" />
     </task>
     <task id="LOCAL-00001">
       <created>1554364393439</created>
@@ -639,11 +506,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555677556498</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="update thread， auto generate order">
+      <created>1555678116370</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1555678116370</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="375289000" />
+    <option name="totallyTimeSpent" value="376860000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -655,10 +529,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20628998" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21268657" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -684,6 +557,7 @@
       <window_info anchor="bottom" id="Application Servers" order="15" sideWeight="0.8086354" weight="0.3286334" />
       <window_info anchor="bottom" id="Messages" order="16" sideWeight="0.48827294" weight="0.3286334" />
       <window_info anchor="bottom" id="Problems" order="17" />
+      <window_info anchor="bottom" id="SVN Properties" order="18" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -715,19 +589,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/utils/BeanContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="20" column="33" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-            <element signature="e#650#651#0" expanded="true" />
-            <element signature="e#657#687#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/product_info.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -784,24 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/CHANGELOG.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="187">
-            <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1090,20 +933,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/OrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="129" column="9" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/config/InstantiationTracingBeanPostProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
+        <state relative-caret-position="850">
           <caret line="80" column="134" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="134" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/showclear/www/service/order/impl/OrderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="137" column="37" selection-start-line="137" selection-start-column="37" selection-end-line="137" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/docs/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="17">
+            <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/CHANGELOG.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="187">
+            <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/RESTAPI.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>

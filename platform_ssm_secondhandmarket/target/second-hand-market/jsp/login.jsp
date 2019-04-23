@@ -1,0 +1,61 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <script type="text/javascript" src="/secondhandmarket/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/secondhandmarket/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/secondhandmarket/js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="/secondhandmarket/js/login.js"></script>
+    <script type="text/javascript" src="/secondhandmarket/js/common.js"></script>
+    <style type="text/css">
+        .center-in-center{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        .input-group{
+            width: 378px;
+            margin-right: 30px;
+        }
+        .input-group-addon{
+            width: 67px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="center-in-center">
+    <div class="col-md-5">
+        <div
+                style="width: 440px; border: 1px solid #E7E7E7; padding: 20px 0 20px 30px; border-radius: 5px; margin-top:; background: #fff;">
+            <font style="margin-left: 170px;" size="4">登录</font>
+            <div>&nbsp;</div>
+            <div class="input-group">
+                <span class="input-group-addon">用户名</span>
+                <input id="username" type="text" class="form-control" placeholder="请输入用户名">
+            </div>
+            <span id="login_username_check>" style="color: red"></span>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon">密码</span>
+                <input id="password" type="password" class="form-control" placeholder="请输入密码">
+            </div>
+            <br>
+            <div style="margin-left: 140px;">
+                <button id="login" type="button" class="btn btn-primary">登录</button>
+                <!--<button id="gotoRegister" type="button" class="btn btn-primary" >注册</button>-->
+                &nbsp;<a href="toRegister">没有账号，去注册>>></a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
