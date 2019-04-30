@@ -1,0 +1,43 @@
+package cn.showclear.www.service.order;
+
+import cn.showclear.www.common.constant.Message;
+import cn.showclear.www.pojo.base.OrderDo;
+import cn.showclear.www.pojo.base.SearchOrderQo;
+
+import java.util.List;
+
+public interface OrderService {
+
+
+
+    /**
+     * 根据指定属性条件查询订单
+     * @param orderDo
+     * @return
+     */
+    List<OrderDo> searchOrderListByCol(OrderDo orderDo);
+
+    /**
+     * 插入一条订单
+     * @param productNumber
+     * @param username
+     * @return
+     * @throws IllegalArgumentException
+     */
+    Message generateOrder(String productNumber, String username) throws IllegalArgumentException;
+
+
+    /**
+     * 根据指定属性条件查询订单,并查询需要的额外属性
+     * @param orderDo
+     * @return
+     */
+    SearchOrderQo searchOrderQo(OrderDo orderDo);
+
+    /**
+     * 根据指定属性条件查询订单list,并查询需要的额外属性
+     * @param orderDo
+     * @return
+     */
+    List<SearchOrderQo> searchOrderQoList(OrderDo orderDo);
+}

@@ -1,0 +1,335 @@
+package cn.showclear.www.service.order.impl;
+
+import cn.com.scooper.common.exception.BusinessException;
+import cn.showclear.utils.AutoGenerateNumberUtil;
+import cn.showclear.www.common.constant.Message;
+import cn.showclear.www.dao.base.order.OrderDao;
+import cn.showclear.www.pojo.base.*;
+import cn.showclear.www.service.order.BargRecordService;
+import cn.showclear.www.service.order.BiddRecordService;
+import cn.showclear.www.service.order.OrderService;
+import cn.showclear.www.service.product.ProdTypeService;
+import cn.showclear.www.service.product.ProductService;
+import cn.showclear.www.service.product.SaleWayService;
+import cn.showclear.www.service.user.UserService;
+import cn.showclear.www.service.validate.ValidateService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author Wang Junbo
+ * @description
+ * @date 2019/4/16
+ */
+@Service
+public class OrderServiceImpl implements OrderService {
+    private static final Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
+
+    @Autowired
+    private OrderDao orderDao;
+
+    @Autowired
+    private ValidateService validateService;
+
+    @Autowired
+    private ProductService productService;
+
+    @Autowired
+    private ProdTypeService prodTypeService;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private SaleWayService saleWayService;
+
+    @Autowired
+    private BiddRecordService biddRecordService;
+
+    @Autowired
+    private BargRecordService bargRecordService;
+
+    @Override
+    public List<OrderDo> searchOrderListByCol(OrderDo orderDo) throws IllegalArgumentException {
+        validateService.validateOrderSearch(orderDo);
+        log.info("pass order validate before searching order list");
+        return orderDao.searchOrderListByCol(orderDo);
+    }
+
+    @Override
+    public Message generateOrder(String productNumber, Double price, String username) throws IllegalArgumentException, BusinessException {
+        log.info("Generate order, productNumber = " + productNumber + ", price is " + price + ", username is " + username);
+        OrderDo orderDo = new OrderDo();
+        //通过物品number查询物品信息
+        ProductDo queryPord = new ProductDo();
+        queryPord.setProductNumber(productNumber);
+        ProductDo resultProd = productService.searchProduct(queryPord);
+        if (resultProd == null) {
+            return Message.PRODUCT_NOT_EXIST;
+        }
+        //判断price是否为空，若为空，设置为商品价格*数量
+        if (price != null) {
+            orderDo.setPrice(price);
+        } else {
+            orderDo.setPrice(resultProd.getPrice() * resultProd.getQuantity());
+        }
+        //取出prodID、saleUserId，并设置
+        orderDo.setProductId(resultProd.getProductId());
+        orderDo.setSaleUserId(resultProd.getUserId());
+        //通过username查找buyUserId，并设置
+        UserDo queryUser = new UserDo();
+        queryUser.setUserName(username);
+        UserDo resultUser = userService.searchUser(queryUser);
+        log.info("sale user id is " + orderDo.getSaleUserId() + ", buy user id is " + resultUser.getUserId());
+        if (orderDo.getSaleUserId().equals(resultUser.getUserId())) {
+            throw new BusinessException(Message.SAME_SALE_AND_BUY_USER.getCode(), Message.SAME_SALE_AND_BUY_USER.getMessage());
+        }
+        orderDo.setBuyUserId(resultUser.getUserId());
+        //自动生成订单编号，前缀为'ORDER',并设置
+        String orderNumber = AutoGenerateNumberUtil.getAutoGenerateId("ORDER");
+        orderDo.setOrderNumber(orderNumber);
+        //设置对应物品的is_sold为1，is_selling置为0
+        Integer updateResult = productService.saleProduct(productNumber);
+        if (updateResult.intValue() == 1) {
+            log.info("update is_sold = 1, is_selling to 0 success");
+        } else {
+            log.info("update is_sold = 1, is_selling to 0 failed");
+        }
+        validateService.validateOrderInsert(orderDo);
+        log.info("pass order validate before insert order");
+        Integer result = orderDao.generateOrder(orderDo);
+        if (result == 1) {
+            return Message.ORDER_GEN_SUCCESS;
+        }
+        return Message.ORDER_GEN_FAILED;
+    }
+
+    @Override
+    public SearchOrderQo searchOrderQo(OrderDo orderDo) {
+        log.info("Enter OrderServiceImpl.searchOrderQo");
+        List<OrderDo> resultList = this.searchOrderListByCol(orderDo);
+        if (resultList == null || resultList.size() == 0) {
+            return null;
+        }
+        return this.queryOrderInfo(resultList.get(0));
+    }
+
+    @Override
+    public List<SearchOrderQo> searchOrderQoList(OrderDo orderDo) {
+        log.info("Enter OrderServiceImpl.searchOrderQoList");
+        List<SearchOrderQo> orderQoList = new ArrayList<SearchOrderQo>();
+        List<OrderDo> orderList = this.searchOrderListByCol(orderDo);
+        if (orderList == null || orderList.size() == 0) {
+            return null;
+        }
+        for (int i = 0; i < orderList.size(); i++) {
+            orderQoList.add(this.queryOrderInfo(orderList.get(i)));
+        }
+        return orderQoList;
+    }
+
+    @Override
+    public Map<String, Object> searchBuyAndSaleOrder(String username) {
+        List<SearchOrderQo> searchBuyOrderList = null;
+        List<SearchOrderQo> searchSaleOrderList = null;
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        OrderDo orderQuery = new OrderDo();
+        //根据用户名查找ID
+        UserDo userQuery = new UserDo();
+        userQuery.setUserName(username);
+        UserDo userResult = userService.searchUser(userQuery);
+        if (userResult == null) {
+            throw new BusinessException(Message.USER_NOT_EXIST.getCode(), Message.USER_NOT_EXIST.getMessage());
+        }
+        Integer userId = userResult.getUserId();
+        //购买记录（买家id匹配）
+        orderQuery.setBuyUserId(userId);
+        searchBuyOrderList = this.searchOrderQoList(orderQuery);
+        //出售记录（卖家id匹配）
+        orderQuery = new OrderDo();
+        orderQuery.setSaleUserId(userId);
+        searchSaleOrderList = this.searchOrderQoList(orderQuery);
+        //封装数据
+        resultMap.put("buyOrderList", searchBuyOrderList);
+        resultMap.put("saleOrderList", searchSaleOrderList);
+        return resultMap;
+    }
+
+    @Override
+    public Map<String, Object> searchBuyPriceRecord(Integer productId, String username) throws BusinessException {
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        List<RecordQo> recordQoList = new ArrayList<RecordQo>();
+        //查找用户ID
+        UserDo userQuery = new UserDo();
+        userQuery.setUserName(username);
+        UserDo userResult = userService.searchUser(userQuery);
+        if (userResult == null) {
+            throw new BusinessException(Message.USER_NOT_EXIST.getCode(), Message.USER_NOT_EXIST.getMessage());
+        }
+        Integer userId = userResult.getUserId();
+        //查找物品交易类型
+        ProductDo prodQuery = new ProductDo();
+        prodQuery.setProductId(productId);
+        SearchProductQo prodResult = productService.searchProductQo(prodQuery);
+        if (prodResult == null) {
+            throw new BusinessException(Message.PRODUCT_NOT_EXIST.getCode(), Message.PRODUCT_NOT_EXIST.getMessage());
+        }
+        resultMap.put("saleWayName", prodResult.getSaleWayName());
+        log.info("Sale way is " + prodResult.getSaleWayName());
+        if (prodResult != null && prodResult.getProductDo().getSaleWayCode().equals("BIDD")) {
+            //竞价类型
+            BiddingRecordDo biddQuery = new BiddingRecordDo();
+            biddQuery.setUserId(userId);
+            biddQuery.setProductId(productId);
+            List<BiddingRecordDo> recordList = biddRecordService.searchBiddRecordList(biddQuery);
+            if (recordList == null) {
+                return null;
+            }
+            for (int i = 0; i < recordList.size(); i++) {
+                RecordQo recordQo = new RecordQo();
+                recordQo.setRecordId(i + 1);
+                recordQo.setProductId(productId);
+                recordQo.setPrice(recordList.get(i).getBiddingPrice());
+                recordQo.setUsername(username);
+                recordQo.setTime(recordList.get(i).getCreateDate());
+                recordQoList.add(recordQo);
+            }
+        } else {
+            //议价类型
+            BargainingRecordDo bargQuery = new BargainingRecordDo();
+            bargQuery.setUserId(userId);
+            bargQuery.setProductId(productId);
+            bargQuery = bargRecordService.initSearchArguToDefault(bargQuery);
+            List<BargainingRecordDo> recordList = bargRecordService.searchBargRecordList(bargQuery);
+            if (recordList == null) {
+                return null;
+            }
+            for (int i = 0; i < recordList.size(); i++) {
+                RecordQo recordQo = new RecordQo();
+                recordQo.setRecordId(i + 1);
+                recordQo.setProductId(productId);
+                recordQo.setPrice(recordList.get(i).getBargainingPrice());
+                recordQo.setUsername(username);
+                recordQo.setTime(recordList.get(i).getCreateDate());
+                recordQoList.add(recordQo);
+            }
+        }
+        resultMap.put("list", recordQoList);
+        return resultMap;
+    }
+
+    @Override
+    public Map<String, Object> searchSalePriceRecord(Integer productId) {
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        List<RecordQo> recordQoList = new ArrayList<RecordQo>();
+        //查找物品交易类型
+        ProductDo prodQuery = new ProductDo();
+        prodQuery.setProductId(productId);
+        SearchProductQo prodResult = productService.searchProductQo(prodQuery);
+        log.info("Sale way is " + prodResult.getSaleWayName());
+        resultMap.put("saleWayName", prodResult.getSaleWayName());
+        if (prodResult == null) {
+            throw new BusinessException(Message.PRODUCT_NOT_EXIST.getCode(), Message.PRODUCT_NOT_EXIST.getMessage());
+        }
+        if (prodResult != null && prodResult.getProductDo().getSaleWayCode().equals("BIDD")) {
+            //竞价类型
+            BiddingRecordDo biddQuery = new BiddingRecordDo();
+            biddQuery.setProductId(productId);
+            List<BiddingRecordDo> recordList = biddRecordService.searchBiddRecordList(biddQuery);
+            if (recordList == null) {
+                return null;
+            }
+            for (int i = 0; i < recordList.size(); i++) {
+                RecordQo recordQo = new RecordQo();
+                recordQo.setRecordId(i + 1);
+                recordQo.setProductId(productId);
+                recordQo.setPrice(recordList.get(i).getBiddingPrice());
+                //查找username
+                UserDo userQuery = new UserDo();
+                userQuery.setUserId(recordList.get(i).getUserId());
+                UserDo userResult = userService.searchUser(userQuery);
+                if (userResult == null) {
+                    throw new BusinessException(Message.USER_NOT_EXIST.getCode(), Message.USER_NOT_EXIST.getMessage());
+                }
+                recordQo.setUsername(userResult.getUserName());
+                recordQo.setTime(recordList.get(i).getCreateDate());
+                recordQoList.add(recordQo);
+            }
+        } else {
+            //议价类型
+            BargainingRecordDo bargQuery = new BargainingRecordDo();
+            bargQuery.setProductId(productId);
+            bargQuery = bargRecordService.initSearchArguToDefault(bargQuery);
+            List<BargainingRecordDo> recordList = bargRecordService.searchBargRecordList(bargQuery);
+            if (recordList == null) {
+                return null;
+            }
+            for (int i = 0; i < recordList.size(); i++) {
+                RecordQo recordQo = new RecordQo();
+                recordQo.setRecordId(i + 1);
+                recordQo.setProductId(productId);
+                recordQo.setPrice(recordList.get(i).getBargainingPrice());
+                //查找username
+                UserDo userQuery = new UserDo();
+                userQuery.setUserId(recordList.get(i).getUserId());
+                UserDo userResult = userService.searchUser(userQuery);
+                if (userResult == null) {
+                    throw new BusinessException(Message.USER_NOT_EXIST.getCode(), Message.USER_NOT_EXIST.getMessage());
+                }
+                recordQo.setUsername(userResult.getUserName());
+                recordQo.setTime(recordList.get(i).getCreateDate());
+                recordQoList.add(recordQo);
+            }
+        }
+        resultMap.put("list", recordQoList);
+        return resultMap;
+    }
+
+    /**
+     *
+     * 查询某个订单相关的信息
+     * @param order
+     * @return
+     */
+    private SearchOrderQo queryOrderInfo(OrderDo order) {
+        SearchOrderQo orderQo = new SearchOrderQo();
+        orderQo.setOrderDo(order);
+        //查找订单对应物品,并取出所需信息
+        ProductDo queryProd = new ProductDo();
+        queryProd.setProductId(order.getProductId());
+        ProductDo productDo = productService.searchProduct(queryProd);
+        orderQo.setProdName(productDo.getName());
+        orderQo.setProdPrice(productDo.getPrice());
+        orderQo.setProdQuantity(productDo.getQuantity());
+        //根据物品种类编码，查询种类名称
+        ProductTypeDo queryProdType = new ProductTypeDo();
+        queryProdType.setCode(productDo.getTypeCode());
+        ProductTypeDo productTypeDo = prodTypeService.searchProdType(queryProdType);
+        orderQo.setTypeName(productTypeDo.getName());
+        //根据出售形式编码，查找出售形式名称和编码
+        SaleWayDo saleWayQuery = new SaleWayDo();
+        saleWayQuery.setCode(productDo.getSaleWayCode());
+        SaleWayDo saleWayResult = saleWayService.searchSaleWay(saleWayQuery);
+        orderQo.setSaleWayCode(productDo.getSaleWayCode());
+        orderQo.setSaleWayName(saleWayResult.getName());
+        //根据买家和卖家id查询用户名
+        UserDo queryUser = new UserDo();
+        queryUser.setUserId(orderQo.getOrderDo().getBuyUserId());
+        UserDo userDo = userService.searchUser(queryUser);
+        orderQo.setBuyUserName(userDo.getUserName());
+
+        queryUser.setUserId(orderQo.getOrderDo().getSaleUserId());
+        userDo = userService.searchUser(queryUser);
+        orderQo.setSaleUserName(userDo.getUserName());
+
+        log.info("OrderQo info success, result is" + orderQo.toString());
+        return orderQo;
+    }
+}

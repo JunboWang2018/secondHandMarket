@@ -1,0 +1,108 @@
+package cn.showclear.www.controller.data;
+
+import cn.com.scooper.common.resp.APIRespJson;
+import cn.showclear.www.common.constant.CommonConstant;
+import cn.showclear.www.pojo.base.UserDo;
+import cn.showclear.www.service.user.UserService;
+import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+/**
+ * @author Junbo Wang
+ * @description 登陆注册模块
+ * @date 2019/4/5
+ */
+@Controller
+@Scope("prototype")
+public class UserDataController extends BaseDataController{
+    private static final Logger log = LoggerFactory.getLogger(UserDataController.class);
+
+    @Autowired
+    private UserService userService;
+
+    /**
+     * 用户登录，登录成功跳转到首页
+     * @param username
+     * @param password
+     * @param session
+     * @param response
+     * @return
+     */
+    @RequestMapping(value = "/login")
+    public void login(String username, String password, HttpSession session, HttpServletResponse response) {
+        log.info("Enter UserController.login");
+        log.info("username = " + username + ", password = " + password);
+        try {
+            if (StringUtils.isEmpty(username)) {
+                response.getWriter().write(JSONObject.toJSONString(this.response(0, "用户名为空！")));
+            }
+            if (StringUtils.isEmpty(password)) {
+                response.getWriter().write(JSONObject.toJSONString(this.response(0, "密码为空")));
+            }
+            UserDo userDo = userService.userLogin(username);
+            //设置返回数据格式为json
+            response.setContentType("application/json");
+            if (userDo == null) {
+                log.info("username is not exist");
+                response.getWriter().write(JSONObject.toJSONString(this.response(0, "用户名不存在")));
+            } else if (userDo.getPassword().equals(password)) {
+                log.info("login success, put user to session");
+                response.getWriter().write(JSONObject.toJSONString(this.response(1, "登陆成功")));
+                session.setAttribute("user", username);
+            } else {
+                log.info("login failed, password is not right");
+                response.getWriter().write(JSONObject.toJSONString(this.response(0, "密码错误")));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        log.info("exit UserController.login");
+    }
+
+    /**
+     * 用户注册，注册成功跳转到首页
+     * @param username
+     * @param password
+     * @return
+     */
+    @RequestMapping("/register")
+    public void register(String username, String password, HttpSession session, HttpServletResponse response) {
+        log.info("enter UserController.register");
+        log.info("username = " + username + ", password = " + password);
+        try {
+            if (StringUtils.isEmpty(username)) {
+                response.getWriter().write(JSONObject.toJSONString(new APIRespJson(0, "用户名为空！")));
+            }
+            if (StringUtils.isEmpty(password)) {
+                response.getWriter().write(JSONObject.toJSONString(new APIRespJson(0, "密码为空！")));
+            }
+            //查询用户是否存在
+            UserDo userDo = userService.userLogin(username);
+            //设置返回数据格式为json
+            response.setContentType("application/json");
+            if (userDo != null) {
+                log.info("username is exist");
+                response.getWriter().write(JSONObject.toJSONString(new APIRespJson(0, "用户名已存在")));
+            } else {
+                String result = userService.userRegister(username,password);
+                if (result.equals(CommonConstant.SUCCESS)) {
+                    log.info("register success, put user to session");
+                    response.getWriter().write(JSONObject.toJSONString(new APIRespJson(1, "注册成功")));
+                    session.setAttribute("user", username);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        log.info("exit UserController.register");
+    }
+}

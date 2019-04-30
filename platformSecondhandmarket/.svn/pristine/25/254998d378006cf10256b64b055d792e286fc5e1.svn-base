@@ -1,0 +1,130 @@
+package cn.showclear.www.service.order.impl;
+
+import cn.com.scooper.common.exception.BusinessException;
+import cn.showclear.www.common.constant.Message;
+import cn.showclear.www.dao.base.order.BargainRecordDao;
+import cn.showclear.www.pojo.base.BargainingRecordDo;
+import cn.showclear.www.pojo.base.ProductDo;
+import cn.showclear.www.pojo.base.UserDo;
+import cn.showclear.www.service.order.BargRecordService;
+import cn.showclear.www.service.product.ProductService;
+import cn.showclear.www.service.user.UserService;
+import cn.showclear.www.service.validate.ValidateService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * @author Wang Junbo
+ * @description
+ * @date 2019/4/15
+ */
+@Service
+public class BargRecordServiceImpl implements BargRecordService {
+    private static final Logger log = LoggerFactory.getLogger(BiddRecordServiceImpl.class);
+
+    @Autowired
+    private BargainRecordDao bargainRecordDao;
+
+    @Autowired
+    private ValidateService validateService;
+
+    @Autowired
+    private ProductService productService;
+
+    @Autowired
+    private UserService userService;
+
+    @Override
+    public BargainingRecordDo initSearchArguToDefault(BargainingRecordDo bargainingRecordDo) {
+        bargainingRecordDo.setIsActive(1);
+        return bargainingRecordDo;
+    }
+
+    @Override
+    public List<BargainingRecordDo> searchBargRecordList(BargainingRecordDo bargainingRecordDo) throws IllegalArgumentException {
+        validateService.validateBargRecdSearch(bargainingRecordDo);
+        return bargainRecordDao.searchBargainRecordList(bargainingRecordDo);
+    }
+
+    @Override
+    public BargainingRecordDo searchMaxPriceRecord(BargainingRecordDo bargainingRecordDo) throws IllegalArgumentException {
+        List<BargainingRecordDo> list = this.searchBargRecordList(bargainingRecordDo);
+        if (list == null || list.size() == 0) {
+            log.debug("bargaining record is null");
+            return null;
+        }
+        BargainingRecordDo maxPriceRecord = list.get(0);
+        for (int i = 0; i < list.size(); i++) {
+            if (maxPriceRecord.getBargainingPrice() < list.get(i).getBargainingPrice()) {
+                maxPriceRecord = list.get(i);
+            }
+        }
+        return maxPriceRecord;
+    }
+
+    @Override
+    public Message addBargRecord(BargainingRecordDo bargainingRecordDo, String productNumber, String username) throws IllegalArgumentException {
+        if (productNumber == null) {
+            throw new IllegalArgumentException("Product number is null");
+        }
+        //根据物品编号查询ID
+        ProductDo prodQuery = new ProductDo();
+        prodQuery.setProductNumber(productNumber);
+        ProductDo prodResult = productService.searchProduct(prodQuery);
+        if (prodResult == null) {
+            return Message.PRODUCT_NOT_EXIST;
+        }
+        bargainingRecordDo.setProductId(prodResult.getProductId());
+        //根据用户名查找用户ID
+        UserDo userQuery = new UserDo();
+        userQuery.setUserName(username);
+        UserDo userResult = userService.searchUser(userQuery);
+        if (userResult == null) {
+            return Message.USER_NOT_EXIST;
+        }
+        //检查是否为相同用户
+        if (userResult.getUserId().equals(prodResult.getUserId())) {
+            throw new BusinessException(Message.SAME_SALE_AND_BUY_USER.getCode(), Message.SAME_SALE_AND_BUY_USER.getMessage());
+        }
+        bargainingRecordDo.setUserId(userResult.getUserId());
+        //设置is_active为1
+        bargainingRecordDo.setIsActive(1);
+        validateService.validateBargRecdInsert(bargainingRecordDo);
+        Integer result = bargainRecordDao.addRecord(bargainingRecordDo);
+        if (result == 1) {
+            return Message.BIDDING_SUCCESS;
+        } else {
+            return Message.BIDDING_FAILED;
+        }
+    }
+
+    @Override
+    public Message deleteBargRecord(Integer productId, Integer userId) {
+        //先查询是否存在，再执行删除
+        BargainingRecordDo bargQuery = new BargainingRecordDo();
+        bargQuery.setProductId(productId);
+        bargQuery.setUserId(userId);
+        List<BargainingRecordDo> reusltList = this.searchBargRecordList(bargQuery);
+        if (reusltList == null || reusltList.size() == 0) {
+            return Message.NO_BARG_RECORD;
+        }
+        Integer result = null;
+        if (productId != null && userId != null) {
+            result = bargainRecordDao.deleteRecordByProdIdAndUserId(productId, userId);
+        }
+        if (productId != null && userId == null) {
+            result = bargainRecordDao.deleteRecordByProdId(productId);
+        }
+        if (productId == null && userId != null) {
+            result = bargainRecordDao.deleteRecordByUserId(userId);
+        }
+        if (result == 0) {
+            return Message.DELETE_BARG_RECORD_FAILED;
+        }
+        return Message.DELETE_BARG_RECORD_SUCCESS;
+    }
+}

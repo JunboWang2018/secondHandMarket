@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.showclear.www.dao.base.product.ProductDao">
+    <sql id="Base_Col_List">
+        product_id, product_number, name, description, image, depreciation_rate, quantity, price, is_sold, type_code, sale_way_code, time_limit, user_id, create_date, modify_date
+    </sql>
+
+    <resultMap id="Base_Col_ResultMap" type="cn.showclear.www.pojo.base.ProductDo">
+        <result property="productId" column="product_id"/>
+        <result property="productNumber" column="product_number"/>
+        <result property="name" column="name"/>
+        <result property="description" column="description"/>
+        <result property="image" column="image"/>
+        <result property="depreciationRate" column="depreciation_rate"/>
+        <result property="quantity" column="quantity"/>
+        <result property="price" column="price"/>
+        <result property="isSold" column="is_sold"/>
+        <result property="typeCode" column="type_code"/>
+        <result property="saleWayCode" column="sale_way_code"/>
+        <result property="timeLimit" column="time_limit"/>
+        <result property="userId" column="user_id"/>
+        <result property="createDate" column="create_date"/>
+        <result property="modifyDate" column="modify_date"/>
+    </resultMap>
+
+    <select id="searchProdByCol" parameterType="cn.showclear.www.pojo.base.ProductDo" resultMap="Base_Col_ResultMap" >
+        SELECT
+        <include refid="Base_Col_List"/>
+        FROM T_PRODUCT
+        <where>
+            <if test="productId != null">
+                AND product_id=#{productId}
+            </if>
+            <if test="productNumber != null">
+                AND product_number=#{productNumber}
+            </if>
+            <if test="name != null">
+                AND name LIKE "%"#{name}"%"
+            </if>
+            <if test="description != null">
+                AND description LIKE "%"#{description}"%"
+            </if>
+            <if test="depreciationRate != null">
+                AND depreciation_rate = #{depreciationRate}
+            </if>
+            <if test="quantity != null">
+                AND quantity = #{quantity}
+            </if>
+            <if test="price != null">
+                AND price = #{price}
+            </if>
+            <if test="isSold != null">
+                AND is_sold = #{isSold}
+            </if>
+            <if test="typeCode != null">
+                AND type_code = #{typeCode}
+            </if>
+            <if test="saleWayCode != null">
+                AND sale_way_code = #{saleWayCode}
+            </if>
+            <if test="timeLimit != null">
+                AND time_limit = #{timeLimit}
+            </if>
+            <if test="userId != null">
+                AND user_id = #{userId}
+            </if>
+            <if test="createDate != null">
+                AND create_date = #{create_date}
+            </if>
+        </where>
+    </select>
+
+    <insert id="releaseProduct" parameterType="cn.showclear.www.pojo.base.ProductDo">
+        INSERT
+        INTO T_PRODUCT(<include refid="Base_Col_List"/>)
+        VALUES(#{productNumber}, #{name}, #{description}, #{image}, #{depreciationRate}, #{quantity}, #{price}, #{isSold}, #{typeCode}, #{saleWayCode}, #{timeLimit}, #{userId}, CURRENT_TIMESTAMP);
+    </insert>
+</mapper>

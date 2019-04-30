@@ -1,0 +1,105 @@
+package cn.showclear.www.pojo.base;
+
+/**
+ * @author Wang Junbo
+ * @description 订单查询类
+ * @date 2019/4/16
+ */
+public class SearchOrderQo {
+    private OrderDo orderDo;
+    private String prodName;
+    private Double prodPrice;
+    private Integer prodQuantity;
+    private String typeName;
+    private String buyUserName;
+    private String saleUserName;
+    private String saleWayCode;
+    private String saleWayName;
+
+    public OrderDo getOrderDo() {
+        return orderDo;
+    }
+
+    public void setOrderDo(OrderDo orderDo) {
+        this.orderDo = orderDo;
+    }
+
+    public String getProdName() {
+        return prodName;
+    }
+
+    public void setProdName(String prodName) {
+        this.prodName = prodName;
+    }
+
+    public Double getProdPrice() {
+        return prodPrice;
+    }
+
+    public void setProdPrice(Double prodPrice) {
+        this.prodPrice = prodPrice;
+    }
+
+    public Integer getProdQuantity() {
+        return prodQuantity;
+    }
+
+    public void setProdQuantity(Integer prodQuantity) {
+        this.prodQuantity = prodQuantity;
+    }
+
+    public String getTypeName() {
+        return typeName;
+    }
+
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
+    }
+
+    public String getBuyUserName() {
+        return buyUserName;
+    }
+
+    public void setBuyUserName(String buyUserName) {
+        this.buyUserName = buyUserName;
+    }
+
+    public String getSaleUserName() {
+        return saleUserName;
+    }
+
+    public void setSaleUserName(String saleUserName) {
+        this.saleUserName = saleUserName;
+    }
+
+    public String getSaleWayCode() {
+        return saleWayCode;
+    }
+
+    public void setSaleWayCode(String saleWayCode) {
+        this.saleWayCode = saleWayCode;
+    }
+
+    public String getSaleWayName() {
+        return saleWayName;
+    }
+
+    public void setSaleWayName(String saleWayName) {
+        this.saleWayName = saleWayName;
+    }
+
+    @Override
+    public String toString() {
+        return "SearchOrderQo{" +
+                "orderDo=" + orderDo +
+                ", prodName='" + prodName + '\'' +
+                ", prodPrice=" + prodPrice +
+                ", prodQuantity=" + prodQuantity +
+                ", typeName='" + typeName + '\'' +
+                ", buyUserName='" + buyUserName + '\'' +
+                ", saleUserName='" + saleUserName + '\'' +
+                ", saleWayCode='" + saleWayCode + '\'' +
+                ", saleWayName='" + saleWayName + '\'' +
+                '}';
+    }
+}

@@ -1,0 +1,57 @@
+package cn.showclear.www.controller.view;
+
+import cn.showclear.www.pojo.base.SearchProdListQo;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+/**
+ * @author Wang Junbo
+ * @description
+ * @date 2019/4/12
+ */
+@Controller
+@RequestMapping("/view/search")
+public class SearchProdViewController {
+    private static Logger log = LoggerFactory.getLogger(SearchProdViewController.class);
+
+    @RequestMapping("/searchProduct")
+    public String toProduct(Model model, String productNumber) {
+        log.info("productNumber = " + productNumber);
+        if (!StringUtils.isEmpty(productNumber)) {
+            model.addAttribute("productNumber", productNumber);
+            return "/jsp/product_info.jsp";
+        } else {
+            return "/jsp/index.jsp";
+        }
+    }
+
+    @RequestMapping("/searchProdList")
+    public String toProdList(Model model, String searchKey, String type) {
+        log.info("To view: searchKey = " + searchKey + ", type = " + type);
+        if (!StringUtils.isEmpty(searchKey)) {
+            model.addAttribute("searchKey", searchKey);
+            return "/jsp/product_list.jsp";
+        } else if (!StringUtils.isEmpty(type)) {
+            model.addAttribute("typeCode", type);
+            return "/jsp/product_list.jsp";
+        } else {
+            return "/jsp/index.jsp";
+        }
+    }
+
+    @RequestMapping("/searchProdListByQo")
+    public String toProdListByQo(Model model, SearchProdListQo searchProdListQo) {
+        log.info("To view: searchProdListQo = " + searchProdListQo.toString());
+        model.addAttribute("typeCode", searchProdListQo.getTypeCode());
+        model.addAttribute("depRateSymbol", searchProdListQo.getDepRateSymbol());
+        model.addAttribute("depreciationRate", searchProdListQo.getDepreciationRate());
+        model.addAttribute("maxPrice", searchProdListQo.getMaxPrice());
+        model.addAttribute("minPrice", searchProdListQo.getMinPrice());
+        model.addAttribute("saleWayCode", searchProdListQo.getSaleWayCode());
+        return "/jsp/product_list.jsp";
+    }
+}

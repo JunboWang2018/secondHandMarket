@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.showclear.www.dao.base.order.BargainRecordDao">
+    <sql id="Base_Col_List">
+            product_id, bargaining_price, description, user_id, create_date
+    </sql>
+
+    <resultMap id="Base_Col_ResultMap" type="cn.showclear.www.pojo.base.BargainingRecordDo">
+        <result property="bargainingRecordId" column="bargaining_record_id"/>
+        <result property="productId" column="product_id"/>
+        <result property="bargainingPrice" column="bargaining_price"/>
+        <result property="description" column="description"/>
+        <result property="userId" column="user_id"/>
+        <result property="createDate" column="create_date"/>
+    </resultMap>
+
+    <select id="searchBargainRecordList" resultMap="Base_Col_ResultMap" parameterType="cn.showclear.www.pojo.base.BargainingRecordDo">
+        SELECT
+        bargaining_record_id, <include refid="Base_Col_List"/>
+        FROM T_BARGAINING_RECORD
+        <where>
+            <if test="bargainingRecordId != null and bargainingRecordId != ''">
+                bargaining_record_id = #{bargainingRecordId}
+            </if>
+            <if test="productId != null and productId != ''">
+                AND product_id = #{productId}
+            </if>
+            <if test="userId != null and userId != ''">
+                AND user_id = #{userId}
+            </if>
+            <if test="createDate != null and createDate != ''">
+                AND create_date = #{createDate}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addRecord" parameterType="cn.showclear.www.pojo.base.BargainingRecordDo">
+        INSERT INTO T_BARGAINING_RECORD(<include refid="Base_Col_List"></include>) VALUES(#{productId}, #{bargainingPrice}, #{description}, #{userId}, CURRENT_TIMESTAMP)
+    </insert>
+
+
+</mapper>

@@ -1,0 +1,326 @@
+function getRootPath() {
+    //获取当前url
+    var curWwwPath = window.document.location.href;
+    //获取主机地址之后的目录
+    var pathName = window.document.location.pathname;
+    var position = curWwwPath.indexOf(pathName);
+    //截取主机地址
+    var localhostPath = curWwwPath.substring(0, position);
+    //截取项目名
+    var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+    return localhostPath + projectName;
+}
+
+function toProdKeySearch() {
+    var searchKey = $("#search_key").val();
+    window.location.href = getRootPath() + "/view/search/searchProdList?searchKey=" + searchKey;
+}
+
+function prodKeySearch(searchKey) {
+    $.ajax({
+        type : "get",
+        url : "/secondhandmarket/data/search/searchProdList",
+        dataType : 'json',
+        data : {
+            name : searchKey
+        },
+        success : function (result) {
+            if (result.code == 0) {
+                var productList = result.data.list;
+                if (productList != null) {
+                    var productListString = initProdHTML(productList);
+                    document.getElementById("product_list_page").innerHTML = productListString;
+                }
+            } else {
+                alert(result.message);
+            }
+        },
+        error : function () {
+            alert("请求失败")
+        }
+    });
+}
+
+function initProdHTML(productList) {
+    var productListString = "";
+    for (var i = 0; i < productList.length; i++) {
+        productListString += "<div class='col-md-2' style='height:250px; width: 250px; text-align: center'>\n" +
+            "            <a href=/secondhandmarket/view/search/searchProduct?productNumber=" + productList[i].productNumber + ">\n" +
+            "                <img src=/secondhandmarket/image/" + productList[i].image + " width='170px' height='170px' align='center' style='display: inline-block;'>\n" +
+            "            </a>\n" +
+            "            <p>\n" +
+            "                <a href=/secondhandmarket/view/search/searchProduct?productNumber=" + productList[i].productNumber + " style=''>" + productList[i].name + "</a>\n" +
+            "            </p>\n" +
+            "            <p align='center'><h4><span style='color: red'>售价：￥&nbsp;" + productList[i].price + "</span></h4></p>" +
+            "        </div>"
+    }
+    return productListString;
+}
+
+function prodNumberSearch(productNumber) {
+    $.ajax({
+        type : "get",
+        url : "/secondhandmarket/data/search/searchProductInfo",
+        dataType : "json",
+        data : {
+            productNumber : productNumber
+        },
+        success : function (result) {
+            if (result.code == 0) {
+                productInfo = result.data;
+                document.getElementById("navTypeName").innerHTML = productInfo.typeName;
+                document.getElementById("navProdName").innerHTML = productInfo.productDo.name;
+                document.getElementById("prodName").innerHTML = productInfo.productDo.name;
+                document.getElementById("prodNumber").innerHTML = productInfo.productDo.productNumber;
+                document.getElementById("prodImg").src = "/secondhandmarket/image/" + productInfo.productDo.image;
+                if (productInfo.saleWayCode == "BIDD") {
+                    document.getElementById("saleInfo").innerHTML = "<div style='margin: 10px 0 10px 0;'>"
+                        + "当前最高价: <strong style='color: #ef0101;'>￥：" + productInfo.biddMaxPrice + "元</strong> 原价：<span>￥" + productInfo.productDo.price + "元</span></div>"
+                        + "<div style='margin: 10px 0 10px 0;'>交易方式: <span>" + productInfo.saleWayName + "</span></div>"
+                        + "<div style='margin: 10px 0 10px 0;'>倒计时: <span>" + productInfo.productDo.timeLimit + "</span></div>"
+                        + "<div style='padding: 10px; border: 1px solid #e7dbb1; width: 330px; margin: 15px 0 10px 0;; background-color: #FFFFFF;'>"
+                        + "<div style='border-bottom: 1px solid #faeac7; margin-top: 20px; padding-left: 10px;'>"
+                        + "出价: <input id='quantity' value='1' type='text'></div>"
+                        + "<div style='margin: 20px 0 10px 0;; text-align: center;'>"
+                        + "<a href='cart.htm'> <input style='background: #BCE8F1; height: 36px; width: 127px;' value='出价' type='button'></a></div></div>"
+                } else if(productInfo.saleWayCode == "BARG") {
+                    document.getElementById("saleInfo").innerHTML = "<div style='margin: 10px 0 10px 0;'>"
+                        + "参考售价：<span>￥10.00元</span></div>"
+                        + "<div style='margin: 10px 0 10px 0;'>交易方式: <span>" + productInfo.saleWayName + "</span></div>"
+                        + "<div style='padding: 10px; border: 1px solid #e7dbb1; width: 330px; margin: 15px 0 10px 0;; background-color: #FFFFFF;'>"
+                        + "<div style='border-bottom: 1px solid #faeac7; margin-top: 20px; padding-left: 10px;'>"
+                        + "出价: <input id='quantity' value='1' type='text'></div>"
+                        + "<div style='margin: 20px 0 10px 0;; text-align: center;'>"
+                        + "<a href='cart.htm'> <input style='background: #BCE8F1; height: 36px; width: 127px;' value='出价' type='button'></a></div></div>"
+                } else {
+                    document.getElementById("saleInfo").innerHTML = "<div style='margin: 10px 0 10px 0;'>"
+                        + "一口价: <strong style='color: #ef0101;'>￥" + productInfo.productDo.price + "元</strong></div>"
+                        + "<div style='padding: 10px; border: 1px solid #e7dbb1; width: 330px; margin: 15px 0 10px 0;; background-color: #FFFFFF;'>"
+                        + "<div style='border-bottom: 1px solid #faeac7; margin-top: 20px; padding-left: 10px;'>"
+                        + "购买: <input id='quantity' value='1' type='text'></div>"
+                        + "<div style='margin: 20px 0 10px 0;; text-align: center;'>"
+                        + "<button id='BOUT_buy' type='button' class='btn btn-primary' style='width: 100px' onclick='buyBOUTProd()'>购买</button></div></div>"
+                }
+               document.getElementById("prodDesc").innerHTML = productInfo.productDo.description;
+            } else if (result.code == 10) {
+                alert(result.message);
+            }
+        },
+        error : function () {
+            alert("请求失败");
+        }
+    });
+}
+
+function toProdListCondSearch() {
+    var typeCode = $("#product_type option:selected").val();
+    var depRateSymbol = $("#product_dr_condition option:selected").val();
+    var depreciationRate = $("#product_depreciationRate").val();
+    var minPrice = $("#prod_min_price").val();
+    var maxPrice = $("#prod_max_price").val();
+    var saleWayCode = $("#product_saleWay option:selected").val();
+    var urlString = getRootPath() + "/view/search/searchProdListByQo?";
+    var value = "";
+    if (typeCode != null && typeCode.length > 0) {
+        value += "typeCode=" + typeCode;
+    }
+    if (depRateSymbol != null && depRateSymbol.length > 0) {
+        if (value.length > 0) {
+            value += "&";
+        }
+        value += "depRateSymbol=" + depRateSymbol;
+    }
+    if (depreciationRate != null && depreciationRate.length > 0) {
+        if (value.length > 0) {
+            value += "&";
+        }
+        value += "depreciationRate=" + depreciationRate;
+    }
+    if (minPrice != null && minPrice.length > 0) {
+        if (value.length > 0) {
+            value += "&";
+        }
+        value += "minPrice=" + minPrice;
+    }
+    if (maxPrice != null && maxPrice.length > 0) {
+        if (value.length > 0) {
+            value += "&";
+        }
+        value += "maxPrice=" + maxPrice;
+    }
+    if (saleWayCode != null && saleWayCode.length > 0) {
+        if (value.length > 0) {
+            value += "&";
+        }
+        value += "saleWayCode=" + saleWayCode;
+    }
+    window.location.href = urlString + value;
+}
+
+function prodListConditionSearch(typeCode, depRateSymbol, depreciationRate, maxPrice, minPrice, saleWayCode) {
+    $.ajax({
+        type : "get",
+        url : "/secondhandmarket/data/search/searchProdListByQo",
+        dataType : 'json',
+        data : {
+            typeCode : typeCode,
+            depRateSymbol : depRateSymbol,
+            depreciationRate : depreciationRate,
+            maxPrice : maxPrice,
+            minPrice : minPrice,
+            saleWayCode : saleWayCode
+        },
+        success : function (result) {
+            if (result.code == 0) {
+                var productList = result.data.list;
+                if (productList != null) {
+                    var productListString = initProdHTML(productList);
+                    document.getElementById("product_list_page").innerHTML = productListString;
+                }
+            } else {
+                alert(result.message);
+            }
+        },
+        error : function () {
+            alert("请求失败")
+        }
+    });
+}
+
+function toDemdInfoKeySearch() {
+    var searchKey = $("#search_key").val();
+    window.location.href = getRootPath() + "/view/search/searchDemandInfoList?searchKey=" + searchKey;
+}
+
+function demandInfoKeySearch(searchKey) {
+    $.ajax({
+        type : "get",
+        url : "/secondhandmarket/data/search/searchDemandInfoList",
+        dataType : 'json',
+        data : {
+            name : searchKey
+        },
+        success : function (result) {
+            if (result.code == 0) {
+                var demandInfoList = result.data.list;
+                if (demandInfoList != null) {
+                    var demandInfoString = initDemandInfoHTML(demandInfoList);
+                    document.getElementById("requirement_list_page").innerHTML = demandInfoString;
+                }
+            } else {
+                alert(result.message);
+            }
+        },
+        error : function () {
+            alert("请求失败")
+        }
+    });
+}
+
+function initDemandInfoHTML(demandInfoList) {
+    var demandInfoString = "";
+    for (var i = 0; i < demandInfoList.length; i++) {
+        demandInfoString += "<td style='text-align: center'>"+ demandInfoList[i].demandInfoNumber +"</td>" +
+            "<td style='text-align: center'>" + demandInfoList[i].name + "</td>" +
+            "<td style='text-align: center'>" + demandInfoList[i].depreciationRate + "</td>" +
+            "<td style='text-align: center'>" + demandInfoList[i].quantity + "</td>" +
+            "<td style='text-align: center'>" + demandInfoList[i].price + "</td>"
+    }
+    return demandInfoString;
+}
+
+function toDemdInfoCondSearch() {
+    var typeCode = $("#demandInfo_type").val();
+    var depRateSymbol = $("#demandInfo_dr_condition").val();
+    var depreciationRate = $("#demandInfo_depreciationRate").val();
+    var urlString = getRootPath() + "/view/search/searchDemdInfoListByQo?";
+    var value = "";
+    if (typeCode != null && typeCode.length > 0) {
+        value += "typeCode=" + typeCode;
+    }
+    if (depRateSymbol != null && depRateSymbol.length > 0) {
+        if (value.length > 0) {
+            value += "&";
+        }
+        value += "depRateSymbol=" + depRateSymbol;
+    }
+    if (depreciationRate != null && depreciationRate.length > 0) {
+        if (value.length > 0) {
+            value += "&";
+        }
+        value += "depreciationRate=" + depreciationRate;
+    }
+    window.location.href = urlString + value;
+}
+
+function DemdInfoListCondSearch(typeCode, depRateSymbol, depreciationRate) {
+    $.ajax({
+        type : "get",
+        url : "/secondhandmarket/data/search/searchDemdInfoListByQo",
+        dataType : 'json',
+        data : {
+            typeCode : typeCode,
+            depRateSymbol : depRateSymbol,
+            depreciationRate : depreciationRate
+        },
+        success : function (result) {
+            if (result.code == 0) {
+                var demdInfoList = result.data.list;
+                if (demdInfoList != null) {
+                    var DemdInfoListString = initDemandInfoHTML(demdInfoList);
+                    document.getElementById("requirement_list_page").innerHTML = DemdInfoListString;
+                }
+            } else {
+                alert(result.message);
+            }
+        },
+        error : function () {
+            alert("请求失败")
+        }
+    });
+}
+
+function demdInfoNumberSearch(demdInfoNumber) {
+    $.ajax({
+        type : "get",
+        url : "/secondhandmarket/data/search/searchDemandInfo",
+        dataType : "json",
+        data : {
+            demdInfoNumber : demdInfoNumber
+        },
+        success : function (result) {
+            if (result.code == 0) {
+                demandInfo = result.data;
+            } else if (result.code == 10) {
+                alert(result.message);
+            }
+        },
+        error : function () {
+            alert("请求失败");
+        }
+    });
+}
+
+
+function buyBOUTProd() {
+    var productNumber = document.getElementById("prodNumber").innerHTML;
+    $.ajax({
+        type : "get",
+        url : "/secondhandmarket/data/order/generateOrder",
+        dataType : "json",
+        data : {
+            productNumber : productNumber
+        },
+        success : function (result) {
+            if (result.code == 105) {
+                alert(result.message);
+                window.location.href = "/secondhandmarket/";
+            } else if (result.code == 10 || result.code == 14 || result.code == 15 || result.code == 1100) {
+                alert(result.message);
+            }
+        },
+        error : function () {
+            alert("请求失败");
+        }
+    });
+}

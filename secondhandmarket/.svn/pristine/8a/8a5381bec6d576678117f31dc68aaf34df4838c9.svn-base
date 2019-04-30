@@ -1,0 +1,101 @@
+package cn.showclear.www.service.order.impl;
+
+import cn.com.scooper.common.exception.BusinessException;
+import cn.showclear.www.common.constant.Message;
+import cn.showclear.www.dao.base.order.BiddingRecordDao;
+import cn.showclear.www.pojo.base.BiddingRecordDo;
+import cn.showclear.www.pojo.base.ProductDo;
+import cn.showclear.www.pojo.base.UserDo;
+import cn.showclear.www.service.order.BiddRecordService;
+import cn.showclear.www.service.product.ProductService;
+import cn.showclear.www.service.user.UserService;
+import cn.showclear.www.service.validate.ValidateService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * @author Wang Junbo
+ * @description
+ * @date 2019/4/15
+ */
+@Service
+public class BiddRecordServiceImpl implements BiddRecordService {
+    private static final Logger log = LoggerFactory.getLogger(BiddRecordServiceImpl.class);
+
+    @Autowired
+    private BiddingRecordDao biddingRecordDao;
+
+    @Autowired
+    private ValidateService validateService;
+
+    @Autowired
+    private ProductService productService;
+
+    @Autowired
+    private UserService userService;
+
+    @Override
+    public List<BiddingRecordDo> searchBiddRecordList(BiddingRecordDo biddingRecordDo) {
+        validateService.validateBiddRecdSearch(biddingRecordDo);
+        log.info("data validate pass before search bidding record list");
+        return biddingRecordDao.searchBiddRecdList(biddingRecordDo);
+    }
+
+    @Override
+    public BiddingRecordDo searchMaxPriceRecord(BiddingRecordDo biddingRecordDo) {
+        List<BiddingRecordDo> list = this.searchBiddRecordList(biddingRecordDo);
+        if (list == null || list.size() == 0) {
+            log.info("bidding record is null");
+            return null;
+        }
+        BiddingRecordDo maxPriceRecord = list.get(0);
+        for (int i = 0; i < list.size(); i++) {
+            if (maxPriceRecord.getBiddingPrice() < list.get(i).getBiddingPrice()) {
+                maxPriceRecord = list.get(i);
+            }
+        }
+        log.info("max price record is " + maxPriceRecord.toString());
+        return maxPriceRecord;
+    }
+
+    @Override
+    public Message addBiddRecord(BiddingRecordDo biddingRecordDo, String productNumber, String username) {
+        if (productNumber == null) {
+            throw new IllegalArgumentException("productNumber is null");
+        }
+        //通过编号查找物品ID
+        ProductDo prodQuery = new ProductDo();
+        prodQuery.setProductNumber(productNumber);
+        ProductDo prodResult = productService.searchProduct(prodQuery);
+        if (prodResult == null) {
+            return Message.PRODUCT_NOT_EXIST;
+        }
+        biddingRecordDo.setProductId(prodResult.getProductId());
+        //通过用户名查找ID
+        UserDo userQuery = new UserDo();
+        userQuery.setUserName(username);
+        UserDo userResult = userService.searchUser(userQuery);
+        if (userResult == null) {
+            return Message.USER_NOT_EXIST;
+        }
+        //检查是否为相同用户
+        if (userResult.getUserId().equals(prodResult.getUserId())) {
+            log.info("The same sale user and buy user");
+            throw new BusinessException(Message.SAME_SALE_AND_BUY_USER.getCode(), Message.SAME_SALE_AND_BUY_USER.getMessage());
+        }
+        biddingRecordDo.setUserId(userResult.getUserId());
+        log.info("Insert into bidding record table, value is " + biddingRecordDo.toString());
+        validateService.validateBiddRecdInsert(biddingRecordDo);
+        log.info("data validate pass before insert bidding record");
+        Integer result = biddingRecordDao.addRecord(biddingRecordDo);
+        if (result == 1) {
+            return Message.BIDDING_SUCCESS;
+        } else {
+            return Message.BIDDING_FAILED;
+        }
+    }
+}
