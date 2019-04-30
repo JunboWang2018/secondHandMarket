@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="testCometD:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/testCometD_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="testCometD" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="testCometD/web/Web" />
+    </root>
+  </artifact>
+</component>

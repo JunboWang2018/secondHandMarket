@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b9b4a31c-1823-41ce-8e89-4fa01d46468a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/META-INF/second-hand-market.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/utils/AutoGenerateNumberUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/utils/BiddOrderThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/utils/FilterByConditionUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/utils/PinyinUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/utils/PropertyConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/common/constant/CommonConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/common/constant/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/common/exception/BusinessException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/config/InstantiationTracingBeanPostProcessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/BaseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/ConfigController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/data/BaseDataController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/data/BaseDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/data/DmdInfoDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/data/IndexDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/data/OrderDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/data/PriceRecordDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/data/ProdDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/data/ReleaseDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/data/UsePlatUserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/data/UserDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/view/IndexViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/view/OrderViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/view/ReleaseViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/view/SearchDemdInfoViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/view/SearchProdViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/controller/view/UserViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/dao/base/ReleaseDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/dao/base/SearchDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/dao/base/demandInfo/DemandInfoDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/dao/base/order/BargainRecordDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/dao/base/order/BiddingRecordDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/dao/base/order/OrderDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/dao/base/product/ProdTypeDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/dao/base/product/ProductDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/dao/base/product/SaleWayDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/dao/base/user/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/interceptor/AuthInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/interceptor/UserLoginInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/interceptor/ViewConfigInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/pojo/base/BargainingRecordDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/pojo/base/BiddingRecordDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/pojo/base/DemandInfoDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/pojo/base/OrderDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/pojo/base/ProductDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/pojo/base/ProductTypeDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/pojo/base/RecordQo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/pojo/base/SaleWayDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/pojo/base/SearchDemandInfoConditionQo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/pojo/base/SearchDemdInfoListQo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/pojo/base/SearchDemdInfoQo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/pojo/base/SearchOrderQo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/pojo/base/SearchProdListQo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/pojo/base/SearchProductQo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/pojo/base/UserDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/pojo/common/PageBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/BaseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/IBaseManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/Managers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/demandInfo/DemandInfoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/demandInfo/impl/DemandInfoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/order/BargRecordService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/order/BiddRecordService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/order/OrderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/order/impl/BargRecordServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/order/impl/BiddRecordServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/order/impl/OrderServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/product/ProdTypeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/product/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/product/SaleWayService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/product/impl/ProdTypeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/product/impl/ProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/product/impl/SaleWayServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/release/ReleaseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/release/impl/ReleaseServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/user/UsePlatUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/user/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/user/impl/UsePlatUserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/user/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/validate/ValidateService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/cn/showclear/www/service/validate/impl/ValidateServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/app-service.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/default.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/ds/base/applicationContext-db.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/ds/base/sqlMapConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/dubboConsumer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/dubboProvider.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/mappers/base/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/mappers/base/SearchMapper/SearchMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/mappers/base/bargainRecord/BargainingRecordMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/mappers/base/biddingRecord/BiddingRecordMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/mappers/base/demandInfo/DemandInfoMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/mappers/base/order/OrderMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/mappers/base/prodType/ProdTypeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/mappers/base/product/ProductMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/mappers/base/release/ReleaseMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/mappers/base/saleWay/SaleWayMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/mappers/base/user/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/config/spring-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/i18n/message.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/classes/i18n/message_zh_CN.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/META-INF/second-hand-market.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/utils/AutoGenerateNumberUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/utils/BiddOrderThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/utils/FilterByConditionUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/utils/PinyinUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/utils/PropertyConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/common/constant/CommonConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/common/constant/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/common/exception/BusinessException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/config/InstantiationTracingBeanPostProcessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/BaseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/ConfigController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/data/BaseDataController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/data/BaseDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/data/DmdInfoDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/data/IndexDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/data/OrderDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/data/PriceRecordDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/data/ProdDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/data/ReleaseDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/data/UsePlatUserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/data/UserDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/view/IndexViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/view/OrderViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/view/ReleaseViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/view/SearchDemdInfoViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/view/SearchProdViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/controller/view/UserViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/dao/base/ReleaseDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/dao/base/SearchDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/dao/base/demandInfo/DemandInfoDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/dao/base/order/BargainRecordDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/dao/base/order/BiddingRecordDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/dao/base/order/OrderDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/dao/base/product/ProdTypeDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/dao/base/product/ProductDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/dao/base/product/SaleWayDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/dao/base/user/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/interceptor/AuthInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/interceptor/UserLoginInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/interceptor/ViewConfigInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/pojo/base/BargainingRecordDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/pojo/base/BiddingRecordDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/pojo/base/DemandInfoDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/pojo/base/OrderDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/pojo/base/ProductDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/pojo/base/ProductTypeDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/pojo/base/RecordQo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/pojo/base/SaleWayDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/pojo/base/SearchDemandInfoConditionQo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/pojo/base/SearchDemdInfoListQo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/pojo/base/SearchDemdInfoQo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/pojo/base/SearchOrderQo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/pojo/base/SearchProdListQo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/pojo/base/SearchProductQo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/pojo/base/UserDo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/pojo/common/PageBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/BaseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/IBaseManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/Managers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/demandInfo/DemandInfoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/demandInfo/impl/DemandInfoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/order/BargRecordService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/order/BiddRecordService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/order/OrderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/order/impl/BargRecordServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/order/impl/BiddRecordServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/order/impl/OrderServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/product/ProdTypeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/product/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/product/SaleWayService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/product/impl/ProdTypeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/product/impl/ProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/product/impl/SaleWayServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/release/ReleaseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/release/impl/ReleaseServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/user/UsePlatUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/user/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/user/impl/UsePlatUserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/user/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/validate/ValidateService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/cn/showclear/www/service/validate/impl/ValidateServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/app-service.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/default.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/ds/base/applicationContext-db.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/ds/base/sqlMapConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/dubboConsumer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/dubboProvider.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/mappers/base/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/mappers/base/SearchMapper/SearchMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/mappers/base/bargainRecord/BargainingRecordMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/mappers/base/biddingRecord/BiddingRecordMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/mappers/base/demandInfo/DemandInfoMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/mappers/base/order/OrderMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/mappers/base/prodType/ProdTypeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/mappers/base/product/ProductMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/mappers/base/release/ReleaseMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/mappers/base/saleWay/SaleWayMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/mappers/base/user/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/config/spring-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/i18n/message.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/classes/i18n/message_zh_CN.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/UserAgentUtils-1.21.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/aspectjrt-1.8.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/aspectjweaver-1.8.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/cache-api-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/commons-codec-1.10.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/commons-collections-3.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/commons-collections4-4.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/commons-dbcp-1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/commons-fileupload-1.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/commons-io-2.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/commons-lang-2.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/commons-lang3-3.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/commons-math3-3.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/commons-pool-1.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/commons-pool2-2.4.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/dubbo-2.6.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/fastjson-1.2.40.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/fluent-hc-4.5.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/freemarker-2.3.23.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/httpclient-4.5.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/httpcore-4.4.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/jackson-annotations-2.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/jackson-core-2.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/jackson-databind-2.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/javassist-3.20.0-GA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/jcl-over-slf4j-1.7.21.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/jedis-2.9.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/jline-0.9.94.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/jsqlparser-0.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/jsr250-api-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/log4j-1.2.16.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/mybatis-3.4.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/mybatis-spring-1.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/mysql-connector-java-5.1.44.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/netty-3.10.6.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/pagehelper-3.7.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/pinyin4j-2.5.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/scooper-common-1.0.26.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/scooper-core-auth-1.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/scooper-springweb-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/slf4j-api-1.7.21.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/slf4j-log4j12-1.7.21.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/spring-aop-4.3.12.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/spring-beans-4.3.10.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/spring-context-4.3.10.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/spring-context-support-4.3.12.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/spring-core-4.3.12.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/spring-data-commons-2.0.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/spring-data-keyvalue-2.0.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/spring-data-redis-2.0.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/spring-expression-4.3.12.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/spring-jdbc-4.3.12.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/spring-oxm-4.3.12.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/spring-tx-4.3.12.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/spring-web-4.3.10.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/spring-webmvc-4.3.12.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/standard-1.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/thumbnailator-0.4.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/validation-api-1.1.0.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/zkclient-0.10.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/lib/zookeeper-3.4.10.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/css/bootstrap-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/css/bootstrap-theme.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/css/bootstrap-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/css/bootstrap-theme.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/html/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/html/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/html/my_order.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/html/product_info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/html/product_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/html/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/html/release_product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/html/release_requirement.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/html/requirement_info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/html/requirement_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/image/PROD1045483468_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/image/PROD1189896696_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/image/PROD1721275555_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/image/PROD177561258_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/image/PROD2072106459_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/image/PROD644554845_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/image/PROD897695002_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/image/PROD912639198_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/js/common.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/js/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/js/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/js/loadHeader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/js/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/js/npm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/js/register.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/js/release.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/jsp/header.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/jsp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/jsp/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/jsp/my_order.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/jsp/my_product.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/jsp/product_info.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/jsp/product_list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/jsp/register.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/jsp/release_product.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/jsp/release_requirement.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/jsp/requirement_info.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/jsp/requirement_list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/my_order.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/product_info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/product_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/release_product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/release_requirement.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/requirement_info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/second-hand-market/requirement_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/test-classes/cn/showclear/base/BaseCase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/test-classes/cn/showclear/base/JUnit4ClassRunner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../platform_ssm_secondhandmarket/target/test-classes/config/applicationContext-test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../secondhandmarket/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/src/main/webapp/html/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/src/main/webapp/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/src/main/webapp/html/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/src/main/webapp/html/my_order.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/src/main/webapp/html/product_info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/src/main/webapp/html/product_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/src/main/webapp/html/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/src/main/webapp/html/release_product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/src/main/webapp/html/release_requirement.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/src/main/webapp/html/requirement_info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/src/main/webapp/html/requirement_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/target/second-hand-market/html/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/target/second-hand-market/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/target/second-hand-market/html/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/target/second-hand-market/html/my_order.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/target/second-hand-market/html/product_info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/target/second-hand-market/html/product_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/target/second-hand-market/html/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/target/second-hand-market/html/release_product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/target/second-hand-market/html/release_requirement.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/target/second-hand-market/html/requirement_info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket/target/second-hand-market/html/requirement_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/css/bootstrap-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/css/bootstrap-theme.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/css/bootstrap-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/css/bootstrap-theme.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/js/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/js/npm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/my_order.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/product_info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/product_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/release_product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/release_requirement.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/requirement_info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../secondhandmarket_web/requirement_list.html" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/dev_tools/maven/apache-maven-3.2.3" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="testCometD1 Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="testCometD1 Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/compiler.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/encodings.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="337" />
+    <option name="y" value="116" />
+    <option name="width" value="1563" />
+    <option name="height" value="879" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="testCometD1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testCometD1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testCometD1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testCometD1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testCometD1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testCometD1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testCometD1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testCometD1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testCometD1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testCometD1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../testCometD" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b9b4a31c-1823-41ce-8e89-4fa01d46468a" name="Default Changelist" comment="" />
+      <created>1556508003885</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556508003885</updated>
+      <workItem from="1556508007023" duration="1461000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1461000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info id="Designer" />
+      <window_info id="Image Layers" />
+      <window_info id="Capture Tool" />
+      <window_info id="UI Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Web" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info active="true" anchor="right" id="Maven" visible="true" weight="0.22121535" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="52" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web|testCometD1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: junit:junit:4.11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
